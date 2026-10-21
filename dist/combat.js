@@ -50,7 +50,7 @@ export const weaponMode=(weapon,id)=>ARMS[weapon]?.modes.find(m=>m.id===id)||ARM
 export const coupDeGrace=(a,b,m)=>m?.kind==='cc'&&b&&S.unconscious(b)&&S.present(b)&&E.edgeDistance(a,b)<.026;
 export const canSee=(a,b,terrain)=>E.engagedContact(a,b,terrain)||E.front(a,b)&&E.visibility(a,b,terrain).visible;
 export function eligibility(active,path,units,terrain,affected=[]){const points=E.samplePath(path);return units.filter(u=>(!u.isDeployable||u.armedTurret)&&u.team>=0&&u.team!==active.team&&S.active(u)&&!u.offTable&&!u.noARO&&!u.isDecoy&&!S.has(u,'disconnected')).map(u=>{const visible=points.filter(p=>(canSee(u,{...active,...p},terrain)||(affected.includes(u.id)&&K.sixth(u)&&E.visibility(u,{...active,...p},terrain).visible))),zoc=points.some(p=>E.edgeDistance(u,{...active,...p})<=8),contact=points.some(p=>E.inContact(u,{...active,...p},terrain));const hackArea=H.availablePrograms(revealedActor(u)).length&&points.some(p=>H.hackingArea(u,{...active,...p},{repeaters:u.hackingRepeaters||[],route:{kind:'autoFriendly'}}).inArea);return {id:u.id,lof:visible.length>0,zoc:zoc||!!hackArea,contact,affected:affected.includes(u.id),points:visible};}).filter(r=>(!units.find(u=>u.id===r.id).armedTurret||!K.marker(active)&&(r.lof||r.contact))&&(r.lof||r.affected||r.contact||(r.zoc&&(!active.stealthSilent||K.sixth(units.find(u=>u.id===r.id))||units.find(u=>u.id===r.id).combatInstinct))));}
-export function attackSpec(a,b,m,terrain,{moving=false,reactive=false,manualCover='auto',allowMarker=false,triangulated=false,respondingAttack=false}={}){
+export function attackSpec(a,b,m,terrain,{moving=false,reactive=false,manualCover='auto',allowMarker=false,triangulated=false,respondingAttack=false,coordinated=false,spearhead=true,saturation=false}={}){
  if(m.guided&&(reactive||!a.guided||!S.has(b,'targeted')||(a.guidedAttacksTurn||0)>=5||b.enclosedRoom))return {can:false,reason:'制导仅限主动轮、具备制导技能、已被标记且不在封闭房间的目标；每回合最多五次',m,sv:0,base:0,mods:[],cov:false};
  if(a.armedTurret&&(!reactive||K.marker(b)||!['cc','bs'].includes(m.kind)))return {can:false,reason:'炮塔只能对主动敌方模型宣告射击或近战 ARO',m,sv:0,base:0,mods:[],cov:false};
  if(m.sf&&(!reactive||!a.suppressive||a.suppressive.weapon!==m.sfKey||a.suppressive.modeId!==m.id))return {can:false,reason:'压制模式只限已进入该武器压制状态的 ARO',m,sv:0,base:0,mods:[],cov:false};
@@ -62,7 +62,7 @@ export function attackSpec(a,b,m,terrain,{moving=false,reactive=false,manualCove
  let reason='';if(m.requiresSkill&&!a[m.requiresSkill])reason='该配置没有对应技能';else if(!S.allowed(a,'attack'))reason='当前状态不能攻击';else if(!S.present(b)||S.has(b,'hiddenDeployment'))reason='目标不在场';else if(K.marker(b)&&!allowMarker&&!directMarker)reason='先发现迷彩标记，或声明发现＋攻击';else if(m.kind==='cc'){if(!E.inContact(a,b,terrain))reason='近战需要轮廓接触，不能隔着实体墙攻击';}else if(d<.02)reason='已接触敌人，请选择近战武器';else if(!m.guided&&(!E.visibility(a,b,terrain).visible||(!moving&&!E.front(a,b)&&!(respondingAttack&&K.sixth(a)))))reason='没有合法视线';else if(m.kind!=='direct'&&rm===null)reason='超出射程';
  const mods=m.guided?[['射程',rm||0],['被标记',3],['ECM 制导',-Math.abs(b.ecmGuided||0)]]:K.attackMods(a,b,m,{rm,cov,triangulated,directMarker}),base=m.kind==='cc'?(a.cc||14):m.attribute==='wip'?(a.wip||13):a.bs;
  const zoneMod=E.visibilityMod(a,b,terrain,{respondingAttack});if(m.kind!=='cc'&&!m.guided&&zoneMod&&!(respondingAttack&&K.sixth(a)))mods.push(['能见度区域',zoneMod]);
- const cc=m.kind==='cc',fullBurst=reactive?(!cc&&(a.totalReaction||a.neurocinetics)):!(a.neurocinetics&&!cc),bonus=cc?(!reactive?K.martial(a).burst+(a.ccBurstBonus||0):0):((a.neurocinetics?reactive:!reactive)?(a.bsBurstBonus||0)+(reactive&&a.neurocinetics?a.neuroBurstBonus||0:0):0),burst=reactive&&a.aroBurst?Math.min(6,a.aroBurst):fullBurst?Math.min(6,m.b+bonus):1;
+ const cc=m.kind==='cc',fullBurst=reactive?(!cc&&(a.totalReaction||a.neurocinetics)):!(a.neurocinetics&&!cc),bonus=cc?(!reactive?K.martial(a).burst+(a.ccBurstBonus||0):0):((a.neurocinetics?reactive:!reactive)?(a.bsBurstBonus||0)+(reactive&&a.neurocinetics?a.neuroBurstBonus||0:0):0),burst=adjustBurst(reactive&&a.aroBurst?Math.min(6,a.aroBurst):fullBurst?Math.min(6,m.b+bonus):1,{coordinated:!reactive&&coordinated,spearhead,saturation});
  return {can:!reason,reason,d,rm,cov:m.guided?false:cov,base,mods,sv:m.kind==='direct'?0:Math.max(0,base+E.clamp(mods.reduce((n,v)=>n+v[1],0),-12,12)),m:{...K.attackMode(a,m),b:m.kind==='cc'?Math.min(6,burst+(a.ccSupport||0)):m.guided?1:m.sf?3:a.reservedShots?Math.min(burst,a.reservedShots):burst}};
 }
 export function affectedBy(shape,u,a,m,terrain){return E.templateHits(shape,u,terrain)&&(m.kind!=='direct'||E.visibility(a,u,terrain).visible);}
@@ -74,7 +74,7 @@ export function declarationSpec(a,b,m,terrain,options={}){
 }
 export function declarationPoints(v,a,path,terrain,weapon,modeId){
  const m=weaponMode(weapon,modeId);if(!m||!ownsMode(v,weapon,m.id))return [];
- return (m.kind==='cc'?[a]:E.samplePath(path,.15)).filter(p=>declarationSpec(v,{...a,...p},m,terrain,{reactive:true,respondingAttack:a.attackingTarget===v.id}).can).map(p=>({x:p.x,y:p.y,z:p.z||0}));
+ return (m.kind==='cc'?[a]:E.samplePath(path,.15)).filter(p=>declarationSpec(v,{...a,...p},m,terrain,{reactive:true,respondingAttack:a.attackingTarget===v.id}).can).map(p=>({...p,z:p.z||0}));
 }
 export function templateFailure(shape,a,main,m,terrain,units=[]){
  if(!m?.template)return '';
@@ -88,7 +88,7 @@ export function reactionTemplate(v,a,m,terrain,templates,units=[]){
  if(units.some(n=>n.id!==v.id&&n.id!==a.id&&S.present(n)&&(n.team===v.team||n.team===-1)&&affectedBy(shape,n,v,m,terrain)))return null;
  return shape;
 }
-export function bestReaction(v,a,path,terrain,weapon=v.weapon,modeId,templates,units=[]){const m=weaponMode(weapon,modeId);if((v.loadout&&!ownsMode(v,weapon,m?.id))||!m)return null;const points=m.kind==='cc'?[a]:E.samplePath(path,.15).map(p=>({...a,...p}));let best=null;for(const p of points){const spec=attackSpec(v,p,m,terrain,{reactive:true,respondingAttack:a.attackingTarget===v.id}),shape=m.template?reactionTemplate(v,p,m,terrain,templates,units):null;if(m.template&&!shape)continue;if(spec.can&&(!best||spec.sv>best.spec.sv||spec.sv===best.spec.sv&&spec.d<best.spec.d))best={point:{x:p.x,y:p.y,z:p.z||0},spec,shape};}return best;}
+export function bestReaction(v,a,path,terrain,weapon=v.weapon,modeId,templates,units=[]){const m=weaponMode(weapon,modeId);if((v.loadout&&!ownsMode(v,weapon,m?.id))||!m)return null;const points=m.kind==='cc'?[a]:E.samplePath(path,.15).map(p=>({...a,...p}));let best=null;for(const p of points){const spec=attackSpec(v,p,m,terrain,{reactive:true,respondingAttack:a.attackingTarget===v.id}),shape=m.template?reactionTemplate(v,p,m,terrain,templates,units):null;if(m.template&&!shape)continue;if(spec.can&&(!best||spec.sv>best.spec.sv||spec.sv===best.spec.sv&&spec.d<best.spec.d))best={point:{...p,z:p.z||0},spec,shape};}return best;}
 export function attackSavePlan(target,hits,sv,m,cov){if(!m.noSavingRoll)return {...V.planSaves(target,hits,sv,m,cov),hackingProgram:m.hackingProgram};return {targetId:target.id,targetName:target.name||target.id,target:structuredClone(target),ammo:'无过保',hits:hits.length,criticals:hits.filter(d=>E.critical(d,sv)).length,initialCount:0,pending:[],saves:[],damage:0,effects:hits.length?(m.effects||[]).filter(e=>!(target.stateImmunities||[]).includes(e)):[],round:0};}
 export function saveHits(target,hits,sv,m,cov,roll){return V.finishSaves(attackSavePlan(target,hits,sv,m,cov),roll);}
 export const specialDice=(u,m,options={})=>K.specialDice(u,m,options)+(options.longSkill||!m||['direct','hack'].includes(m.kind)?0:Math.max(0,Number(m.sd)||0));
@@ -161,3 +161,14 @@ export function preparePools(args,rng=Math.random){
 }
 
 export function releaseDelayed(reactions,revealed){for(const r of Object.values(reactions)){if(r.action!=='delay')continue;Object.assign(r,{action:revealed?'':'none',draft:'',wave:2,wasDelayed:revealed,delayExpired:!revealed});}}
+
+// FAQ 0.1: SD is not Burst. Apply Burst caps/reductions before adding SD dice.
+export function adjustBurst(b,{coordinated=false,spearhead=true,saturation=false}={}){const n=coordinated?(spearhead?Math.ceil(b/2):1):b;return Math.max(1,n-(saturation?1:0));}
+// Reveal only when an attack actually forces a save, then check the actual
+// silhouette before generating saves for a concealed model behind total cover.
+export function revealSavingTarget(plan,target,terrain){
+ if(!plan.initialCount||!K.marker(target))return plan;
+ K.reveal(target);plan.revealedTarget=true;plan.target=structuredClone(target);
+ if(plan.attacker&&!E.visibility(plan.attacker,target,terrain).visible){Object.assign(plan,{hits:0,criticals:0,initialCount:0,pending:[],saves:[],damage:0,effects:[],notHitAfterReveal:true});}
+ return plan;
+}

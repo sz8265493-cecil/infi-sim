@@ -52,9 +52,13 @@ export function zoneBlocks(a,z){return z.kind==='eclipse'||z.kind==='whiteNoise'
 export function inContact(a,b,terrain=[]){if(edgeDistance(a,b)>.025)return false;const low=Math.max(elevation(a),elevation(b)),high=Math.min(elevation(a)+height(a),elevation(b)+height(b));if(high<low-.001)return false;const z=(low+high)/2;return !terrain.some(t=>rayBox({...a,z},{...b,z},t));}
 export const engagedContact=(a,b,terrain=[])=>a.team>=0&&b.team>=0&&a.team!==b.team&&!a.isDeployable&&!b.isDeployable&&activeState(a)&&activeState(b)&&![a,b].some(u=>hasState(u,'immA')||hasState(u,'immB'))&&inContact(a,b,terrain);
 export function visibilityMod(a,b,terrain,{respondingAttack=false}={}){if(engagedContact(a,b,terrain))return 0;const zones=(terrain.zones||[]).filter(z=>zoneCrosses(a,b,z));return zones.some(z=>zoneBlocks(a,z))?(respondingAttack?-6:0):a.msv===1&&zones.some(z=>z.kind==='smoke')?-6:0;}
-export function visibility(a,b,terrain){const angle=Math.atan2(b.y-a.y,b.x-a.x),perp={x:-Math.sin(angle),y:Math.cos(angle)},patch=3/25.4,ah=height(a),bh=height(b),ar=radius(a)*.9,br=radius(b)*.85,contact=engagedContact(a,b,terrain);
-const origins=[0,-1,1].flatMap(k=>[.5,Math.max(.5,ah-.01)].map(z=>({x:a.x+perp.x*ar*k,y:a.y+perp.y*ar*k,z:elevation(a)+Math.min(ah-.005,z)})));
-const targets=[0,-1,1].flatMap(k=>[patch/2,Math.max(patch/2,bh-patch/2)].map(z=>({x:b.x+perp.x*br*k,y:b.y+perp.y*br*k,z:elevation(b)+z})));
+export function visibility(a,b,terrain){const angle=Math.atan2(b.y-a.y,b.x-a.x),perp={x:-Math.sin(angle),y:Math.cos(angle)},patch=b.baseRadius===0?0:3/25.4,ah=height(a),bh=height(b),contact=engagedContact(a,b,terrain);
+// Sample the full cylinder, including its forward/rear rim. Sampling only
+// sideways points falsely hides a rooftop trooper from an enemy near the wall.
+const along={x:Math.cos(angle),y:Math.sin(angle)},offset=(u,f,l)=>({x:u.x+along.x*f+perp.x*l,y:u.y+along.y*f+perp.y*l});
+const footprint=[{x:a.x,y:a.y},...Array.from({length:12},(_,i)=>({x:a.x+Math.cos(i*Math.PI/6)*radius(a)*.98,y:a.y+Math.sin(i*Math.PI/6)*radius(a)*.98}))];
+const origins=footprint.flatMap(p=>[Math.min(.5,ah/2),Math.max(.005,ah-.005)].map(z=>({...p,z:elevation(a)+z})));
+const targets=[0,-.9,.9].flatMap(f=>[0,-.65,.65].map(l=>offset(b,f*radius(b),l*radius(b)))).filter(p=>[-1,1].every(k=>dist(b,{x:p.x+perp.x*k*patch/2,y:p.y+perp.y*k*patch/2})<=radius(b)+1e-6)).flatMap(p=>[patch/2,Math.max(patch/2,bh-patch/2)].map(z=>({...p,z:elevation(b)+z})));
 let first=null,open=0;for(const p of targets){const corners=[-1,1].flatMap(x=>[-1,1].map(z=>({x:p.x+perp.x*x*patch/2,y:p.y+perp.y*x*patch/2,z:p.z+z*patch/2})));const origin=origins.find(o=>corners.every(c=>!terrain.some(t=>rayBox(o,c,t))&&!(contact?[]:terrain.zones||[]).some(z=>zoneBlocks(a,z)&&!a.zoneReturnFire&&zoneRay(o,c,z,terrain))));if(origin){open++;first||={from:origin,to:p};}}
 return {visible:open>0,partial:open<targets.length,ray:first};}
 export function cover(a,b,terrain){if(b.noCover||b.skillNoCover||b.wall)return false;const vis=visibility(a,b,terrain);if(!vis.visible)return false;const roof=surfaceAt(b,terrain,elevation(b));if(roof&&elevation(b)>elevation(a)+height(a))return true;return terrain.some(t=>terrainHeight(t)>elevation(b)+.001&&pointRect(b,t)<=radius(b)+.08&&segmentRect(a,b,t,radius(b)*.6))&&vis.partial;}
