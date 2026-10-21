@@ -44,3 +44,7 @@ python3 -m http.server 4173
 用户已明确授权公开仓库及源码。主仓库为 https://github.com/sz8265493-cecil/infi-sim ，网页为 https://sz8265493-cecil.github.io/infi-sim/ 。后续测试及部署全部使用 GitHub Actions，不再向 GPT Sites 发布。旧站暂留历史版本。
 
 Pages 来源设为 GitHub Actions。main 推送或手动触发 deploy-pages.yml 后，先运行 npm test 和 JS 语法检查，再上传 dist/ 并部署。旧域名浏览器存档不会自动出现在新域名。
+
+## 2026-10-21 最终工作流调整（取代上文公开部署方案）
+
+用户确认改回私有仓库，停止 Pages 自动发布。后续在本地网页实际验证通过后再推送 GitHub，保留 Actions 自动测试。Pages 网页已取消发布，发布工作流已移除。原 GPT Sites 站点不再更新。此前公开部署章节仅保留为历史记录，不是当前操作指引。
