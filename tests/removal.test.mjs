@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import * as S from '../dist/states.js';
+import * as T from '../dist/state-ui.js';
+import * as F from '../dist/combat.js';
+import * as E from '../dist/engine.js';
+const u=(extra={})=>({id:'a',team:0,x:10,y:10,s:2,facing:0,hp:1,maxhp:1,bs:11,ph:10,arm:0,attribute:'VITA',states:[],...extra});
+test('ordinary unconscious remains on table, next wound removes model and map tokens',()=>{const a=u();S.apply(a,1);assert.equal(S.onTable(a),true);assert.match(T.mapTokens(a,[]),/昏迷/);S.apply(a,1);assert.equal(S.onTable(a),false);assert.equal(T.mapTokens(a,[]),'');assert.match(S.labels(a).join(),/已移除/);assert.equal(F.attackSpec(u({id:'b',team:1,x:6}),a,F.weaponMode('combi'),[]).can,false);assert.equal(F.eligibility(u({id:'b',team:1,x:6}),[{x:6,y:10}],[a],[]).length,0);});
+test('Remote Presence STR gets second unconscious level, then removal; VITA does not',()=>{const a=u({remotePresence:true,attribute:'STR'});S.apply(a,1);assert.ok(S.has(a,'unconscious'));S.apply(a,1);assert.ok(S.has(a,'unconscious2'));assert.equal(S.onTable(a),true);assert.equal(T.tokens(a)[0].copies,2);S.apply(a,1);assert.equal(S.onTable(a),false);const b=u({remotePresence:true});S.apply(b,2);assert.equal(S.onTable(b),false);});
+test('multiple wounds can skip unconscious; removed location is traversable',()=>{const a=u({id:'removed',x:12});S.apply(a,3);assert.equal(S.onTable(a),false);const b=u();assert.equal(E.validMove(b,{x:14,y:10},[a,b],[],4),'');});
