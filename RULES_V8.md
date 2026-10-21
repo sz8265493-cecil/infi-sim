@@ -452,3 +452,22 @@ Annihilation核对2026-10-21官网ITS18当前链接整册（/tmp/infi-its18-curr
 网页实测：真实配置9寸预算；4寸上升+5寸水平示例显示9.00/9、落在Z4并进入ARO；直接点击预算内屋顶落点正常；4寸升空后增加空中转向点、再选屋顶，总8.16/9并成功确认；未选落点时阻止确认；跳后第二项Move为4寸。普通Climb点击相接触4寸楼，4.98/6登顶Z4，确认ARO后直接整令结算而无第二项行动。测试300项通过，含截图位置的屋顶回归、真实配置加值、转向限制、草稿落点及距离累计。
 
 来源（当前N5.3／FAQ0.1）：https://infinitythewiki.com/Super-Jump 、https://infinitythewiki.com/Jump 、https://infinitythewiki.com/Climb 。
+
+## 2026-10-21：零能见度近战与半底盘窄通道修复
+
+官方依据（本次在线核对 N5.3 Wiki）：
+- https://infinitythewiki.com/CC_Attack ：近战要求对应近战武器与轮廓接触。
+- https://infinitythewiki.com/Line_of_Fire 与 https://infinitythewiki.com/Engaged_State ：交战双方不受能见度条件或其他视线规则影响。烟雾/Eclipse 仍阻断未接触单位的普通视线。
+- https://infinitythewiki.com/Disco_Baller ：迪斯科球产生 Eclipse 区域。
+- https://infinitythewiki.com/Move ：经过表面至少半个底盘宽，结束时须容纳完整底盘；两次 Move 不能用第二次的合法终点补救第一次的非法终点。
+- https://infinitythewiki.com/General_Movement_Rules ：绕行距离计入移动，敌人与障碍之间须留完整底盘宽。
+
+实现：物理轮廓接触独立于区域视线判定，实体墙仍阻止近战；近战不再叠加区域 -6。合法交战接触恢复反应方的接触视线，避免错误无视线闪避惩罚。半宽窄道内允许添加路径途经点，确认每项移动仍执行完整终点检查；火力组/附属同步移动也使用相同逻辑。窄道及出口附近提供轻微中心吸附，防止像素点选偏差在精确 12.5 mm 通道中提前截断。孤立实心墙角继续保留完整底盘碰撞。
+
+新增教学：smokeCC、eclipseCC、narrowPassage，均使用明确的场景配置。
+
+本地网页人工验证：
+- 烟雾：移动到接触，蓝方选择近战 ARO，主动方选择近战并选定蓝方，双方掷骰均为 SV15，实际完成拼骰、过保与返回结算。
+- Eclipse：移动到接触，双方宣告近战，进入结算预览，主动 CC15 保持15，无区域惩罚。
+- 25 mm 底盘 / 12.5 mm 窄道：实际点击内部途经点，尝试确认被终点重叠检查拒绝；继续点击出口，在约3.7寸内穿过并确认进入首次ARO。验证时还发现并修复出口微小横向点选偏差造成截断的问题。
+- 回归测试：306项全部通过，包括烟雾/Eclipse/白噪声近战、区域外射击阻断、隔墙禁止近战、精确半宽通道、出口偏差、过窄通道与敌人阻挡。
