@@ -1,4 +1,4 @@
-import {installLobby} from './lobby.js?v=34';
+import {installLobby} from './lobby.js?v=35';
 import * as FT from './fireteams.js?v=34';
 import * as DP from './deployment-planner.js?v=34';
 import * as TR from './terrain-rules.js?v=34';
