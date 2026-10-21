@@ -1,0 +1,186 @@
+[
+  {
+    "statePage": "Camouflaged_State",
+    "url": "https://assets.corvusbelli.net/wiki/camo_amarillo_40mm-530.jpg",
+    "path": "assets/states/camo_amarillo_40mm-530.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Camouflaged_State"
+  },
+  {
+    "statePage": "Camouflaged_State",
+    "url": "https://assets.corvusbelli.net/wiki/camo_verde_40mm-560.jpg",
+    "path": "assets/states/camo_verde_40mm-560.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Camouflaged_State"
+  },
+  {
+    "statePage": "Camouflaged_State",
+    "url": "https://assets.corvusbelli.net/wiki/camo_azul_40mm-620.jpg",
+    "path": "assets/states/camo_azul_40mm-620.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Camouflaged_State"
+  },
+  {
+    "statePage": "Decoy_State",
+    "url": "https://assets.corvusbelli.net/wiki/decoy-10.jpg",
+    "path": "assets/states/decoy-10.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Decoy_State"
+  },
+  {
+    "statePage": "Decoy_State",
+    "url": "https://assets.corvusbelli.net/wiki/decoy-20.jpg",
+    "path": "assets/states/decoy-20.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Decoy_State"
+  },
+  {
+    "statePage": "Disconnected_State",
+    "url": "https://assets.corvusbelli.net/wiki/eng-disconnected.jpg",
+    "path": "assets/states/eng-disconnected.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Disconnected_State"
+  },
+  {
+    "statePage": "Foxhole_State",
+    "url": "https://assets.corvusbelli.net/wiki/fox_hole0.jpg",
+    "path": "assets/states/fox_hole0.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Foxhole_State"
+  },
+  {
+    "statePage": "Holoecho_State",
+    "url": "https://assets.corvusbelli.net/wiki/holoecho1-550.jpg",
+    "path": "assets/states/holoecho1-550.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Holoecho_State"
+  },
+  {
+    "statePage": "Holoecho_State",
+    "url": "https://assets.corvusbelli.net/wiki/holoecho2_550.jpg",
+    "path": "assets/states/holoecho2_550.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Holoecho_State"
+  },
+  {
+    "statePage": "Immobilized-A_State",
+    "url": "https://assets.corvusbelli.net/wiki/eng-imm-a.jpg",
+    "path": "assets/states/eng-imm-a.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Immobilized-A_State"
+  },
+  {
+    "statePage": "Immobilized-B_State",
+    "url": "https://assets.corvusbelli.net/wiki/eng-imm-b.jpg",
+    "path": "assets/states/eng-imm-b.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Immobilized-B_State"
+  },
+  {
+    "statePage": "Impersonation_State",
+    "url": "https://assets.corvusbelli.net/wiki/n5/impersonation-state-1.jpg",
+    "path": "assets/states/impersonation-state-1.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Impersonation_State"
+  },
+  {
+    "statePage": "Impersonation_State",
+    "url": "https://assets.corvusbelli.net/wiki/n5/impersonation-state-2.jpg",
+    "path": "assets/states/impersonation-state-2.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Impersonation_State"
+  },
+  {
+    "statePage": "Isolated_State",
+    "url": "https://assets.corvusbelli.net/wiki/isolated0.jpg",
+    "path": "assets/states/isolated0.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Isolated_State"
+  },
+  {
+    "statePage": "Prone_State",
+    "url": "https://assets.corvusbelli.net/wiki/eng-prone.jpg",
+    "path": "assets/states/eng-prone.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Prone_State"
+  },
+  {
+    "statePage": "Possessed_State",
+    "url": "https://assets.corvusbelli.net/wiki/poss0.jpg",
+    "path": "assets/states/poss0.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Possessed_State"
+  },
+  {
+    "statePage": "Retreat_State",
+    "url": "https://assets.corvusbelli.net/wiki/retreat_0.jpg",
+    "path": "assets/states/retreat_0.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Retreat_State"
+  },
+  {
+    "statePage": "Sepsitorized_State",
+    "url": "https://assets.corvusbelli.net/wiki/sepsitorized0.jpg",
+    "path": "assets/states/sepsitorized0.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Sepsitorized_State"
+  },
+  {
+    "statePage": "Stunned_State",
+    "url": "https://assets.corvusbelli.net/wiki/stunned0.jpg",
+    "path": "assets/states/stunned0.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Stunned_State"
+  },
+  {
+    "statePage": "Suppressive_Fire_State",
+    "url": "https://assets.corvusbelli.net/wiki/suppression_fire0.jpg",
+    "path": "assets/states/suppression_fire0.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Suppressive_Fire_State"
+  },
+  {
+    "statePage": "Targeted_State",
+    "url": "https://assets.corvusbelli.net/wiki/eng-targeted.jpg",
+    "path": "assets/states/eng-targeted.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Targeted_State"
+  },
+  {
+    "statePage": "Unconscious_State",
+    "url": "https://assets.corvusbelli.net/wiki/eng-unconscious.jpg",
+    "path": "assets/states/eng-unconscious.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Unconscious_State"
+  },
+  {
+    "statePage": "Unloaded_State",
+    "url": "https://assets.corvusbelli.net/wiki/eng-unloaded.jpg",
+    "path": "assets/states/eng-unloaded.jpg",
+    "accessed": "2026-10-19",
+    "kind": "official-wiki-token",
+    "source": "https://infinitythewiki.com/Unloaded_State"
+  }
+]
