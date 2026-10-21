@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import * as X from '../dist/deployment-extras.js';import * as D from '../dist/deployables.js?v=34';
+import test from 'node:test';import assert from 'node:assert/strict';import * as X from '../dist/deployment-extras.js';import * as D from '../dist/deployables.js?v=36';
 const unit=()=>({id:'a',team:0,name:'布雷者',s:2,x:10,y:42,z:0,hp:1,maxhp:1,states:[],minelayer:1,loadout:['shockMine'],deploymentSide:'south'});
 const state=u=>({phase:'deploy',units:[u],terrain:[],objectives:[]});
 test('minelayer consumes one carried item, locks position and cannot repeat',()=>{const u=unit(),s=state(u);const result=X.placeMine(s,u,'shockMine',{x:12,y:42});assert.equal(result.error,'');assert.equal(D.remaining(u,'shockMine'),2);assert.equal(u.deploymentLocked,true);assert.equal(result.entity.noOrders,true);assert.ok(X.placeMine(s,u,'shockMine',{x:14,y:42}).error);});

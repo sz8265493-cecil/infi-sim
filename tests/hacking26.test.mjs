@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as H from '../dist/hacking.js?v=34';
+import * as H from '../dist/hacking.js?v=36';
 const unit=(id,team=0,extra={})=>({id,name:id,team,x:10,y:10,z:0,s:2,facing:0,hp:1,maxhp:1,states:[],wip:13,type:'LI',...extra});
 const evo=()=>unit('e',0,{hackingDevice:'EVO'});
 const rem=()=>unit('r',0,{x:14,type:'REM'});

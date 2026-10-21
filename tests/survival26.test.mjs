@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as S from '../dist/states.js?v=34';
-import * as U from '../dist/state-ui.js?v=34';
-import * as R from '../dist/support-actions.js?v=34';
+import * as S from '../dist/states.js?v=36';
+import * as U from '../dist/state-ui.js?v=36';
+import * as R from '../dist/support-actions.js?v=36';
 const unit=(extra={})=>({id:'a',name:'a',team:0,x:1,y:1,z:0,s:2,hp:1,maxhp:1,attribute:'VITA',type:'LI',wip:13,states:[],prone:false,ftLevel:3,...extra});
 test('NWI decision occurs once at damage boundary; restores original posture and ignores Null',()=>{
  const u=unit({nwi:true});S.apply(u,1);
