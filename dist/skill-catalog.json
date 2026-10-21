@@ -1,0 +1,986 @@
+{
+  "edition": "N5.3 + current FAQ v0.1",
+  "categories": {
+    "Common Skills": 18,
+    "Special Skills": 78,
+    "Equipment": 26
+  },
+  "entries": [
+    {
+      "en": "Alert",
+      "zh": "警戒",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Alert",
+      "revision": 3037,
+      "summary": "符合警戒条件时，在命令结尾原地改变朝向，不掷骰、不产生ARO。"
+    },
+    {
+      "en": "BS Attack",
+      "zh": "射击攻击",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/BS_Attack",
+      "revision": 4004,
+      "summary": "用档案中实际拥有的远程武器攻击，按距离、掩体和技能等计算相应属性与爆发数。"
+    },
+    {
+      "en": "Cautious Movement",
+      "zh": "谨慎移动",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Cautious_Movement",
+      "revision": 3931,
+      "summary": "长技能移动；起终点满足避开敌方视线与控制区等条件时，可不触发反应。"
+    },
+    {
+      "en": "CC Attack",
+      "zh": "近战攻击",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/CC_Attack",
+      "revision": 3953,
+      "summary": "以近战属性和具有CC特性的武器攻击接触目标，应用近战技能修正。"
+    },
+    {
+      "en": "Climb",
+      "zh": "攀爬",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Climb",
+      "revision": 4022,
+      "summary": "攀爬垂直表面，无需骰；距离与底盘支持遵守当前攀爬和通用移动规则。"
+    },
+    {
+      "en": "Discover",
+      "zh": "搜索",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Discover",
+      "revision": 3934,
+      "summary": "需要视线的WIP搜索；成功揭露标记，失败限制同玩家回合再次搜索同一标记。"
+    },
+    {
+      "en": "Dodge",
+      "zh": "闪避",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Dodge",
+      "revision": 3842,
+      "summary": "用PH躲避攻击，成功后可按规则移动；不能躲避通信攻击。"
+    },
+    {
+      "en": "Idle",
+      "zh": "待机",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Idle",
+      "revision": 3046,
+      "summary": "激活单位但不执行行动；不满足所声明技能要求时也可能转为空闲。"
+    },
+    {
+      "en": "Intuitive Attack",
+      "zh": "直觉攻击",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Intuitive_Attack",
+      "revision": 3877,
+      "summary": "使用符合条件的武器，以不加修正的WIP检定攻击通常不能直接瞄准的目标。"
+    },
+    {
+      "en": "Jump",
+      "zh": "跳跃",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Jump",
+      "revision": 3869,
+      "summary": "按合法跳跃轨迹与距离跨越地形，不掷骰，落点必须符合支撑要求。"
+    },
+    {
+      "en": "Move",
+      "zh": "移动",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Move",
+      "revision": 3530,
+      "summary": "按MOV的第一或第二数值移动，并检查路径、底盘与地形规则。"
+    },
+    {
+      "en": "Look Out",
+      "zh": "示警",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Look_Out",
+      "revision": 3047,
+      "summary": "向友军示警，使其他友军有机会通过闪避检定调整朝向。"
+    },
+    {
+      "en": "Place Deployable",
+      "zh": "放置部署物",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Place_Deployable",
+      "revision": 3894,
+      "summary": "将实际拥有的部署武器或装备放到合法位置；普通情况下须贴底部署。"
+    },
+    {
+      "en": "Reload",
+      "zh": "装填",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Reload",
+      "revision": 4034,
+      "summary": "符合补给条件时恢复一次性装备或武器的使用次数，并取消弹药耗尽。"
+    },
+    {
+      "en": "Request Speedball",
+      "zh": "请求补给",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Request_Speedball",
+      "revision": 4035,
+      "summary": "按当前补给规则请求空投补给；不能插在命令执行流程中间。"
+    },
+    {
+      "en": "Reset",
+      "zh": "重置",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Reset",
+      "revision": 3056,
+      "summary": "用WIP应对通信及制导攻击，并按状态规则尝试解除可重置状态。"
+    },
+    {
+      "en": "Speculative Attack",
+      "zh": "推测攻击",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Speculative_Attack",
+      "revision": 3548,
+      "summary": "以符合特性的武器进行B1间接射击，须应用该技能的专门限制和修正。"
+    },
+    {
+      "en": "Suppressive Fire",
+      "zh": "压制射击",
+      "category": "Common Skills",
+      "source": "https://infinitythewiki.com/Suppressive_Fire",
+      "revision": 3057,
+      "summary": "用具备压制资格的武器进入压制射击状态，并遵守其独立射程和取消条件。"
+    },
+    {
+      "en": "Aerial",
+      "zh": "滞空",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Aerial",
+      "revision": 4040,
+      "summary": "飞行模式改变接触与移动限制；不能把飞行单位当作贴底占领任务的普通模型。"
+    },
+    {
+      "en": "Berserk",
+      "zh": "狂战士",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Berserk",
+      "revision": 3236,
+      "summary": "长技能冲锋并近战，必须能够接触目标，攻击按狂暴规定处理而非普通拼骰。"
+    },
+    {
+      "en": "Booty",
+      "zh": "战利品",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Booty",
+      "revision": 3852,
+      "summary": "部署时通过战利品表获得额外装备或属性，结果加入现有配置。"
+    },
+    {
+      "en": "Camouflage",
+      "zh": "迷彩",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Camouflage",
+      "revision": 3062,
+      "summary": "允许以迷彩标记部署，或在满足条件时重新进入迷彩。"
+    },
+    {
+      "en": "Chain of Command",
+      "zh": "指挥链",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Chain_of_Command",
+      "revision": 3799,
+      "summary": "满足接替条件时继任指挥官，避免相应的指挥官阵亡局面。"
+    },
+    {
+      "en": "Climbing Plus",
+      "zh": "强化攀爬",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Climbing_Plus",
+      "revision": 3993,
+      "summary": "强化攀爬可改变技能时长，并允许在特定移动、闪避或撤退移动中沿垂直表面行动。"
+    },
+    {
+      "en": "Combat Instinct",
+      "zh": "战斗本能",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Combat_Instinct",
+      "revision": 3135,
+      "summary": "忽略突袭攻击修正，敌人的潜行对其不起作用。"
+    },
+    {
+      "en": "Combat Jump",
+      "zh": "战斗突降",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Combat_Jump",
+      "revision": 3456,
+      "summary": "保留在场外，主动回合按空降规则和检定进入战场。"
+    },
+    {
+      "en": "Commlink",
+      "zh": "通讯链接",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Infinity_Reinforcements#Commlink",
+      "revision": 3614,
+      "summary": "与增援模块关联的通信资格；具体名额与调用条件须按增援规则。"
+    },
+    {
+      "en": "Courage",
+      "zh": "勇气",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Courage",
+      "revision": 3600,
+      "summary": "可选择自动通过勇气检定；免撤退状态，但仍受指挥官阵亡影响。"
+    },
+    {
+      "en": "Counterintelligence",
+      "zh": "反情报",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Counterintelligence",
+      "revision": 3991,
+      "summary": "削弱对手指挥令战略用途造成的命令削减或指挥令使用限制。"
+    },
+    {
+      "en": "Cyberplug",
+      "zh": "赛博接口",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Cyberplug",
+      "revision": 4085,
+      "summary": "允许拥有对应的Cyberplug外围单位，按外围单位规则协同行动。"
+    },
+    {
+      "en": "Decoy",
+      "zh": "诱饵",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Decoy",
+      "revision": 3069,
+      "summary": "允许部署时进入诱饵状态，制造真实单位与诱饵标记的辨认问题。"
+    },
+    {
+      "en": "Doctor",
+      "zh": "军医",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Doctor",
+      "revision": 3979,
+      "summary": "以WIP救治符合条件的昏迷生命单位，失败会使目标死亡。"
+    },
+    {
+      "en": "Dogged",
+      "zh": "顽强",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Dogged",
+      "revision": 3071,
+      "summary": "在进入昏迷时选择暂时忽略其失能效果；持续时间与死亡条件按坚韧规则。"
+    },
+    {
+      "en": "Engineer",
+      "zh": "工程师",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Engineer",
+      "revision": 3980,
+      "summary": "以WIP修复结构单位伤势或取消允许工程师处理的状态。"
+    },
+    {
+      "en": "Explode",
+      "zh": "自爆",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Explode",
+      "revision": 3731,
+      "summary": "进入昏迷时在命令结尾按规则引爆，以圆形直接模板影响周围目标。"
+    },
+    {
+      "en": "Exrah",
+      "zh": "艾克斯拉",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Exrah",
+      "revision": 3075,
+      "summary": "进入昏迷时直接死亡，不能按普通昏迷单位救治。"
+    },
+    {
+      "en": "Forward Deployment",
+      "zh": "深入部署",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Forward_Deployment",
+      "revision": 3076,
+      "summary": "按档案列出的额外英寸扩大自身可部署区域，仍受其他部署限制。"
+    },
+    {
+      "en": "Forward Observer",
+      "zh": "前线观测员",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Forward_Observer",
+      "revision": 3878,
+      "summary": "以WIP远程观测攻击把命中的目标置于被标记状态。"
+    },
+    {
+      "en": "Frenzy",
+      "zh": "狂热",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Frenzy",
+      "revision": 3806,
+      "summary": "满足造成伤害等触发条件后获得冲动及有限掩体，并取消不兼容的标记状态。"
+    },
+    {
+      "en": "FT Master",
+      "zh": "火力组教官",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/FT_Master",
+      "revision": 4114,
+      "summary": "影响所属火力组的正规训练或凝聚距离，依实际队员训练配置判定。"
+    },
+    {
+      "en": "G: Jumper",
+      "zh": "灵魂：跳转者",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/G:_Jumper",
+      "revision": 3082,
+      "summary": "同一操作者通过多个代理模型行动，但不能按模型数重复生成命令。"
+    },
+    {
+      "en": "Guard",
+      "zh": "守卫",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Guard",
+      "revision": 3952,
+      "summary": "在符合警戒范围等要求时，近战攻击可不要求实际贴底接触。"
+    },
+    {
+      "en": "Hacker",
+      "zh": "黑客",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Hacker",
+      "revision": 3646,
+      "summary": "按拥有的设备与升级程序获得黑客程序使用资格。"
+    },
+    {
+      "en": "Hidden Deployment",
+      "zh": "隐匿部署",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Hidden_Deployment",
+      "revision": 3084,
+      "summary": "部署时秘密记录单位位置，不在地图摆出可见模型或普通标记。"
+    },
+    {
+      "en": "Immunity",
+      "zh": "免疫",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Immunity",
+      "revision": 3643,
+      "summary": "按档案指定类别忽略或转换对应弹药、特性或状态效果。"
+    },
+    {
+      "en": "Impersonation",
+      "zh": "伪装",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Impersonation",
+      "revision": 3303,
+      "summary": "使用伪装身份部署和标记等级，进入敌部署区等情形需专门检定。"
+    },
+    {
+      "en": "Impetuous",
+      "zh": "鲁莽",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Impetuous",
+      "revision": 4039,
+      "summary": "冲动阶段可进行受限的额外激活，并受冲动规则约束。"
+    },
+    {
+      "en": "Infiltration",
+      "zh": "渗透",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Infiltration",
+      "revision": 3909,
+      "summary": "可在己方半场前沿部署，越中线需渗透检定，不能进入敌部署区。"
+    },
+    {
+      "en": "Infinity Spec-Ops",
+      "zh": "别动队",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Infinity_Spec-Ops",
+      "revision": 4120,
+      "summary": "建军时按特战表定制规定数量的技能、装备或武器选项。"
+    },
+    {
+      "en": "Inspiring Leadership",
+      "zh": "鼓舞人心",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Inspiring_Leadership",
+      "revision": 3992,
+      "summary": "根据指挥官、训练和火力组条件提供领导效果。"
+    },
+    {
+      "en": "Journalist",
+      "zh": "记者",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Journalist",
+      "revision": 4086,
+      "summary": "为控制区内友军的勇气检定提供修正。"
+    },
+    {
+      "en": "Lieutenant",
+      "zh": "尉官",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Lieutenant",
+      "revision": 3667,
+      "summary": "指定军队指挥官并关联专属命令、先攻及失去指挥官规则。"
+    },
+    {
+      "en": "Limited Cover",
+      "zh": "有限掩护",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Limited_Cover",
+      "revision": 3970,
+      "summary": "受到的攻击不应用部分掩体的命中−3；过保掩体收益不因此移除。"
+    },
+    {
+      "en": "Marksmanship",
+      "zh": "神射手",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Marksmanship",
+      "revision": 3812,
+      "summary": "射击时可忽略部分掩体和纳米屏障的命中负修正；不会移除目标过保收益。"
+    },
+    {
+      "en": "Martial Arts",
+      "zh": "武术",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Martial_Arts",
+      "revision": 3707,
+      "summary": "按档案指定等级修正自身近战、敌方拼骰属性及爆发或特殊骰。"
+    },
+    {
+      "en": "MetaChemistry",
+      "zh": "超化学合成剂",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/MetaChemistry",
+      "revision": 3855,
+      "summary": "按变异化学表获得对应增益，不能自由任选所有结果。"
+    },
+    {
+      "en": "Mimetism",
+      "zh": "拟态",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Mimetism",
+      "revision": 3102,
+      "summary": "敌方需要视线的远程攻击或搜索承受档案负修正；不影响近战。"
+    },
+    {
+      "en": "Minelayer",
+      "zh": "布雷者",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Minelayer",
+      "revision": 4124,
+      "summary": "在部署阶段额外摆放符合配置的部署物，须遵守距离和敌方部署限制。"
+    },
+    {
+      "en": "Mnemonica",
+      "zh": "心智转移",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Mnemonica",
+      "revision": 3105,
+      "summary": "按意识转移条件把相应属性与身份转移到合格友军。"
+    },
+    {
+      "en": "Morpho-Scan",
+      "zh": "形态扫描",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Morpho-Scan",
+      "revision": 3106,
+      "summary": "按扫描规则复制目标指定属性，不能复制全部技能与装备。"
+    },
+    {
+      "en": "Natural Born Warrior",
+      "zh": "天生武士",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Natural_Born_Warrior",
+      "revision": 3109,
+      "summary": "自身被近战攻击且声明近战时，忽略对手施加的全部负修正；不取消其正加成。"
+    },
+    {
+      "en": "NCO",
+      "zh": "士官",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/NCO",
+      "revision": 3594,
+      "summary": "将指挥官专属命令转为可由自身使用的战术命令。"
+    },
+    {
+      "en": "Neurocinetics",
+      "zh": "神经运动插件",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Neurocinetics",
+      "revision": 3111,
+      "summary": "改变主动与反应回合的远程爆发分配，按神经动力学规则处理。"
+    },
+    {
+      "en": "No Cover",
+      "zh": "无掩体",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/No_Cover",
+      "revision": 3969,
+      "summary": "不能享受部分掩体的命中与过保修正；全掩体遮挡仍需正常判断。"
+    },
+    {
+      "en": "No Wound Incapacitation",
+      "zh": "无视伤痛",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/No_Wound_Incapacitation",
+      "revision": 3813,
+      "summary": "进入昏迷时可选择忽略该状态的失能效果，仍需遵守后续伤害等限制。"
+    },
+    {
+      "en": "Non-Hackable",
+      "zh": "不可入侵",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Non-Hackable",
+      "revision": 3116,
+      "summary": "不能成为要求特定单位类型的黑客攻击目标，不等于免疫所有黑客程序。"
+    },
+    {
+      "en": "Number 2",
+      "zh": "第二指挥",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Number_2",
+      "revision": 3117,
+      "summary": "当火力组队长失效时，按副手条件维持火力组并接替队长。"
+    },
+    {
+      "en": "Parachutist",
+      "zh": "伞兵",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Parachutist",
+      "revision": 4047,
+      "summary": "从符合档案和场景条件的战场边缘进入，而非任意点空降。"
+    },
+    {
+      "en": "Paramedic",
+      "zh": "医疗兵",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Paramedic",
+      "revision": 3119,
+      "summary": "提供医疗兵身份与对应医疗装备使用资格。"
+    },
+    {
+      "en": "Peripheral",
+      "zh": "附属",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Peripheral",
+      "revision": 4118,
+      "summary": "外围单位跟随控制者按子类别激活，不能当作独立普通士兵处理。"
+    },
+    {
+      "en": "Protheion",
+      "zh": "生命汲取",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Protheion",
+      "revision": 4051,
+      "summary": "通过符合条件的近战伤害吸收生命，按等级和上限获得收益。"
+    },
+    {
+      "en": "Regeneration",
+      "zh": "重生",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Regeneration",
+      "revision": 3123,
+      "summary": "在规定状态阶段尝试自愈；检定时机与失败后果按再生规则。"
+    },
+    {
+      "en": "Religious Troop",
+      "zh": "虔信部队",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Religious_Troop",
+      "revision": 3601,
+      "summary": "默认自动通过勇气检定；想退让时反而需要成功WIP检定。"
+    },
+    {
+      "en": "Remdriver",
+      "zh": "遥控机师",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Remdriver",
+      "revision": 3634,
+      "summary": "部署时指定无人机，让其获得驾驶员档案列出的修正。"
+    },
+    {
+      "en": "Remote Presence",
+      "zh": "远程进驻",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Remote_Presence",
+      "revision": 3126,
+      "summary": "结构单位具有两级昏迷，并获得相应修复交互。"
+    },
+    {
+      "en": "Request Reinforcements",
+      "zh": "请求增援",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Infinity_Reinforcements",
+      "revision": 3614,
+      "summary": "按增援模块组建并调用增援分队，不能当作普通短技能随时使用。"
+    },
+    {
+      "en": "Sapper",
+      "zh": "坑道工兵",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Sapper",
+      "revision": 3286,
+      "summary": "部署时或花费长技能进入散兵坑状态。"
+    },
+    {
+      "en": "Sensor",
+      "zh": "传感器",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Sensor",
+      "revision": 3274,
+      "summary": "以WIP+6探测控制区内迷彩与隐匿部署，并对普通搜索迷彩提供加成。"
+    },
+    {
+      "en": "Shasvastii",
+      "zh": "夏斯瓦提",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Shasvastii",
+      "revision": 3976,
+      "summary": "特殊昏迷胚胎状态改变部分战中计分处理，不等于普通模型仍可行动。"
+    },
+    {
+      "en": "Sixth Sense",
+      "zh": "第六感",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Sixth_Sense",
+      "revision": 3901,
+      "summary": "受到攻击时扩大反应视野，并按条文减免闪避与重置负修正。"
+    },
+    {
+      "en": "Specialist Operative",
+      "zh": "专家行动员",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Specialist_Operative",
+      "revision": 3136,
+      "summary": "在任务中获得专家资格，具体能操作的目标以任务规则为准。"
+    },
+    {
+      "en": "Stealth",
+      "zh": "潜行",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Stealth",
+      "revision": 3914,
+      "summary": "主动移动等特定技能可避免仅由控制区触发的反应，但有反潜行例外。"
+    },
+    {
+      "en": "Strategic Deployment",
+      "zh": "战略部署",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Strategic_Deployment",
+      "revision": 3137,
+      "summary": "在部署阶段把规定的前沿部署能力扩展给符合条件的火力组。"
+    },
+    {
+      "en": "Strategos",
+      "zh": "战略官",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Strategos",
+      "revision": 4052,
+      "summary": "按等级调整部署保留与指挥官命令等战略能力。"
+    },
+    {
+      "en": "Super-Jump",
+      "zh": "超级跳跃",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Super-Jump",
+      "revision": 4075,
+      "summary": "把符合条件的跳跃改为基础短技能，可与另一技能组合但受次数限制。"
+    },
+    {
+      "en": "Surprise Attack",
+      "zh": "偷袭攻击",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Surprise_Attack",
+      "revision": 3943,
+      "summary": "从标记或隐匿部署发动主动攻击时，向目标相关拼骰施加档案负修正。"
+    },
+    {
+      "en": "Tactical Awareness",
+      "zh": "战术意识",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Tactical_Awareness",
+      "revision": 3595,
+      "summary": "生成自身专属战术命令，不加入供全队共用的正规命令池。"
+    },
+    {
+      "en": "TAGCom",
+      "zh": "机甲辅控",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/TAGCom",
+      "revision": 3144,
+      "summary": "在场且未失能时，为同战斗组TAG提供档案列出的修正。"
+    },
+    {
+      "en": "Tech-Recovery",
+      "zh": "技术恢复",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Tech-Recovery",
+      "revision": 4090,
+      "summary": "以PH自行取消可由工程师取消的状态，不能靠它恢复昏迷。"
+    },
+    {
+      "en": "Technorganic",
+      "zh": "科技器官",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Technorganic",
+      "revision": 4089,
+      "summary": "允许符合条件的生命或结构单位通过两类医疗/维修方式恢复昏迷。"
+    },
+    {
+      "en": "Terrain",
+      "zh": "地形适应",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Terrain",
+      "revision": 3146,
+      "summary": "在指定地形类型中忽略相应移动限制，并获得适用的移动加成。"
+    },
+    {
+      "en": "Total Reaction",
+      "zh": "全反应",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Total_Reaction",
+      "revision": 3147,
+      "summary": "射击ARO可使用武器完整爆发及适用B修正，仍需选择合法反应目标。"
+    },
+    {
+      "en": "Transmutation",
+      "zh": "变身",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Transmutation",
+      "revision": 4109,
+      "summary": "按触发类型切换单位档案与模型，并保留规则规定的信息。"
+    },
+    {
+      "en": "Triangulated Fire",
+      "zh": "三角测距校准",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Triangulated_Fire",
+      "revision": 3873,
+      "summary": "长技能远程攻击忽略命中MOD，仅保留B修正，不能超出武器最大射程。"
+    },
+    {
+      "en": "Vulnerability",
+      "zh": "弱点",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Vulnerability",
+      "revision": 3156,
+      "summary": "遇到指定攻击或弹药时不能使用对应免疫。"
+    },
+    {
+      "en": "Warhorse",
+      "zh": "久经沙场",
+      "category": "Special Skills",
+      "source": "https://infinitythewiki.com/Warhorse",
+      "revision": 3155,
+      "summary": "免孤立、撤退及指挥官阵亡的指定影响，亦不受BS Attack负修正技能影响。"
+    },
+    {
+      "en": "360º Visor",
+      "zh": "全视野目镜",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/360%C2%BA_Visor",
+      "revision": 3511,
+      "summary": "将通常180度视野弧扩展为360度，不穿透实际遮挡。"
+    },
+    {
+      "en": "AI Motorcycle",
+      "zh": "人工智能摩托",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/AI_Motorcycle",
+      "revision": 3639,
+      "summary": "在骑乘档案和下车档案之间转换，并处理对应外围摩托模型。"
+    },
+    {
+      "en": "Albedo",
+      "zh": "反照",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Albedo",
+      "revision": 3163,
+      "summary": "让具有多光谱目镜或神射手的敌人在射击或搜索自身时受指定负修正。"
+    },
+    {
+      "en": "Baggage",
+      "zh": "辎重",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Baggage",
+      "revision": 4057,
+      "summary": "为控制区内合格友军提供装填和补给功能。"
+    },
+    {
+      "en": "Bangbomb",
+      "zh": "闪光弹",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Bangbomb",
+      "revision": 3822,
+      "summary": "对符合距离与视线条件的攻击提供闪避修正，不适用于模板攻击。"
+    },
+    {
+      "en": "Biometric Visor",
+      "zh": "生体识别目镜",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Biometric_Visor",
+      "revision": 3292,
+      "summary": "改善搜索伪装身份并提供针对伪装身份/全息回声突袭的保护。"
+    },
+    {
+      "en": "Cube",
+      "zh": "记忆立方",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Cube",
+      "revision": 3824,
+      "summary": "允许按规则花费指挥令重掷对该单位的医生救治检定。"
+    },
+    {
+      "en": "Dazer",
+      "zh": "致眩器",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Dazer",
+      "revision": 3436,
+      "summary": "部署后在控制区生成无限高的困难地形区域，特定地形能力可忽略。"
+    },
+    {
+      "en": "Deactivator",
+      "zh": "关闭器",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Deactivator",
+      "revision": 3170,
+      "summary": "以WIP关闭合格的敌方部署武器或装备，但不追溯阻止当前命令触发。"
+    },
+    {
+      "en": "Deployable Cover",
+      "zh": "可部署掩体",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Deployable_Cover",
+      "revision": 4058,
+      "summary": "在规定范围放置有独立轮廓与耐久的掩体地形。"
+    },
+    {
+      "en": "Deployable Repeater",
+      "zh": "可部署中继器",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Deployable_Repeater",
+      "revision": 3994,
+      "summary": "放置可扩展黑客区域的独立中继器装备。"
+    },
+    {
+      "en": "ECM",
+      "zh": "电子对抗装置",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/ECM",
+      "revision": 3174,
+      "summary": "对档案指定类型的来袭攻击施加相应负修正。"
+    },
+    {
+      "en": "FastPanda",
+      "zh": "极速熊猫",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/FastPanda",
+      "revision": 3437,
+      "summary": "在控制区内放置快速熊猫中继器，而非仅能贴底部署。"
+    },
+    {
+      "en": "Firewall",
+      "zh": "防火墙",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Firewall",
+      "revision": 4097,
+      "summary": "降低敌方通信攻击WIP，并提高受保护者对通信攻击的过保。"
+    },
+    {
+      "en": "GizmoKit",
+      "zh": "修理装置",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/GizmoKit",
+      "revision": 3971,
+      "summary": "远程命中或接触使用后，让结构目标进行PH检定尝试修复。"
+    },
+    {
+      "en": "Hacking Device",
+      "zh": "黑客装置",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Hacking_Device",
+      "revision": 4096,
+      "summary": "设备类型决定可用黑客程序，不能让所有黑客使用全部程序。"
+    },
+    {
+      "en": "HoloMask",
+      "zh": "全息伪装",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/HoloMask",
+      "revision": 3177,
+      "summary": "允许以其他单位外观进入全息伪装状态，真实信息按私有信息规则保存。"
+    },
+    {
+      "en": "Holoprojector",
+      "zh": "全息投影装置",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Holoprojector",
+      "revision": 3178,
+      "summary": "允许部署或进入全息回声状态，并摆放对应回声。"
+    },
+    {
+      "en": "MediKit",
+      "zh": "医疗装置",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/MediKit",
+      "revision": 3972,
+      "summary": "远程命中或接触使用后，让目标进行PH检定尝试恢复伤势。"
+    },
+    {
+      "en": "Motorcycle",
+      "zh": "摩托",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Motorcycle",
+      "revision": 3184,
+      "summary": "骑乘状态有专用移动、俯卧、攀爬和跳跃限制。"
+    },
+    {
+      "en": "Multispectral Visor",
+      "zh": "多光谱瞄准镜",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Multispectral_Visor",
+      "revision": 4111,
+      "summary": "按等级抵消拟态或能见度影响，L3另有搜索与直接攻击迷彩规则。"
+    },
+    {
+      "en": "Nanoscreen",
+      "zh": "纳米屏障",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Nanoscreen",
+      "revision": 3187,
+      "summary": "对来袭远程攻击提供命中负修正和自身过保加成，通信类攻击除外。"
+    },
+    {
+      "en": "Repeater",
+      "zh": "中继器",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/Repeater",
+      "revision": 3702,
+      "summary": "扩展友方黑客区域，并带有通过敌方中继器进行黑客攻击的交互。"
+    },
+    {
+      "en": "SymbioMate",
+      "zh": "共生伙伴",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/SymbioMate",
+      "revision": 3629,
+      "summary": "一次性共生保护提供指定ARM/BTS与增强免疫，消耗按触发条件处理。"
+    },
+    {
+      "en": "TinBot",
+      "zh": "援护机仆",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/TinBot",
+      "revision": 3717,
+      "summary": "附属提示模型提供档案指定防护，不阻挡移动或视线，也不能作为攻击目标。"
+    },
+    {
+      "en": "X-Visor",
+      "zh": "X目镜",
+      "category": "Equipment",
+      "source": "https://infinitythewiki.com/X-Visor",
+      "revision": 3193,
+      "summary": "改善负射程修正，亦作用于具有射程表的搜索与压制射击。"
+    }
+  ]
+}
