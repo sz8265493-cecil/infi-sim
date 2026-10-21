@@ -1,0 +1,14 @@
+Impact critical SR counts (expected main=4, secondary=3): [ { id: 'b', saves: 4 }, { id: 'c', saves: 4 } ]
+Direct template B2 on same target (expected 2 hits): { burst: 2, hits: 1 }
+Impact partial-cover MOD (expected -3, manual cover=yes): [
+  [ '距离', -3 ],
+  [ '掩体', 0 ],
+  [ '拟态', -0 ],
+  [ 'BS 属性修正', 0 ],
+  [ 'BS Attack 使用者修正', 0 ],
+  [ '火力组', 0 ],
+  [ '被标记', 0 ],
+  [ '状态', 0 ]
+]
+Circular AoE versus elevated silhouette (radius 2, z .5, expected intersects): false
+Discover + first Move, MOV 6-4 (expected 6): 4
