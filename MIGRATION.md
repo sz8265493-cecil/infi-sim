@@ -2,7 +2,7 @@
 
 ## 当前结构
 
-当前地址由 Sites 托管，配置见 `.openai/hosting.json`，静态目录为 `dist/`。没有数据库、服务端API、账号系统或付费API密钥。HTML、JS、JSON、图片等运行文件均在 `dist/`；浏览器通过相对路径加载资源。Sites的登录／访问控制属于托管平台，不是游戏源码中的功能。样式还引用Google Fonts；加载失败时回退到系统字体，不影响游戏逻辑，必要时可改用本地字体。
+迁移前的旧地址由 Sites 托管，配置见 `.openai/hosting.json`，静态目录为 `dist/`。没有数据库、服务端API、账号系统或付费API密钥。HTML、JS、JSON、图片等运行文件均在 `dist/`；浏览器通过相对路径加载资源。Sites的登录／访问控制属于托管平台，不是游戏源码中的功能。样式还引用Google Fonts；加载失败时回退到系统字体，不影响游戏逻辑，必要时可改用本地字体。
 
 ## 迁移静态站
 
@@ -38,3 +38,9 @@ python3 -m http.server 4173
 目标账号sz8265493-cecil（用户指定邮箱已在GitHub设置确认），仓库infi-sim，Private。源快照对应原站提交ec05f3d370f66202e1c0c73563e4a3a3cb4f242b；迁移准备副本位于同级infi-sim-github。原站及原项目保留。网页上传迁移当前源文件，原Git历史在本地保留，GitHub从迁移提交开始。新增只读权限自动测试工作流；本阶段不启用网页托管。
 
 当前独立存档键除兼容infi-sim-v5外，还包括infi-sim-match、infi-sim-tutorial，分别保存比赛与教学。迁移源码不携带任何玩家浏览器存档。
+
+## 2026-10-21 切换 GitHub Pages
+
+用户已明确授权公开仓库及源码。主仓库为 https://github.com/sz8265493-cecil/infi-sim ，网页为 https://sz8265493-cecil.github.io/infi-sim/ 。后续测试及部署全部使用 GitHub Actions，不再向 GPT Sites 发布。旧站暂留历史版本。
+
+Pages 来源设为 GitHub Actions。main 推送或手动触发 deploy-pages.yml 后，先运行 npm test 和 JS 语法检查，再上传 dist/ 并部署。旧域名浏览器存档不会自动出现在新域名。

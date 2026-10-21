@@ -34,9 +34,13 @@ npm test
 
 ## GitHub迁移
 
-私有仓库： https://github.com/sz8265493-cecil/infi-sim 。2026-10-21以当前可运行源码快照迁入。原本地Git开发历史仍保留在原项目与迁移副本中；网页上传形成新的GitHub迁移提交，不伪造原提交历史。
+公开仓库：[sz8265493-cecil/infi-sim](https://github.com/sz8265493-cecil/infi-sim)。
 
-目前仅迁移源码并启用测试，不在此仓库启用Pages或改变原站访问权限。静态部署只需托管完整`dist/`。私有源码仓库不自动等于私有网页；后续发布需明确目标受众。
+在线使用：[GitHub Pages 模拟器](https://sz8265493-cecil.github.io/infi-sim/)。
+
+2026-10-21 按用户确认改为公开，后续测试与部署统一使用 GitHub，不再更新原 GPT Sites 站点。每次推送 main，GitHub Actions 先执行规则测试及 JavaScript 语法检查，通过后发布完整 dist/；也可手动触发 Deploy GitHub Pages 工作流。
+
+最初迁移保留的是可运行源码快照；原开发历史另有本地备份。军表、图标及第三方素材的权利归属不因仓库公开而改变。
 
 ## 存档与规则边界
 
