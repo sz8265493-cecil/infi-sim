@@ -1,5 +1,5 @@
-import * as E from './engine.js?v=34';
-import * as S from './states.js?v=34';
+import * as E from './engine.js?v=36';
+import * as S from './states.js?v=36';
 export const marker=u=>!!u&&(S.has(u,'camouflaged')||S.has(u,'impersonation2'));
 export const sixth=u=>!!u.sixthSense||(u.ftLevel||0)>=5;
 export const fullVision=u=>!!u.visor360||marker(u);

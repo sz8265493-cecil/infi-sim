@@ -1,4 +1,4 @@
-import {isProne} from './states.js?v=34';
+import {isProne,active as activeState,has as hasState} from './states.js?v=36';
 // All map coordinates are inches. A grid cell is 1 inch; bases retain their mm size.
 export const BASE={0:25,1:25,2:25,3:40,4:55,5:40,6:40,7:55};
 export const WEAPONS={combi:{name:'Combi Rifle',b:3,ps:7,bands:[[16,3],[32,-3],[48,-6]]},hmg:{name:'HMG',b:4,ps:5,bands:[[8,-3],[16,0],[32,3],[48,-3]]},spitfire:{name:'Spitfire',b:4,ps:6,bands:[[8,0],[24,3],[32,-3],[48,-6]]}};
@@ -48,11 +48,14 @@ export function zoneRay(a,b,z,terrain=[]){
  for(let i=0;i<=12;i++){const t=lo+(hi-lo)*(i+.5)/13,q={x:a.x+dx*t,y:a.y+dy*t,z:a.z+(b.z-a.z)*t};if(q.z<(z.z||0))continue;const floor={x:q.x,y:q.y,z:root.z};if(!terrain.some(t=>rayBox(root,floor,t)||rayBox(floor,q,t)))return true;}return false;
 }
 export function zoneBlocks(a,z){return z.kind==='eclipse'||z.kind==='whiteNoise'&&(a.msv>0||a.marksmanship)||z.kind==='smoke'&&!a.msv;}
-export function visibilityMod(a,b,terrain,{respondingAttack=false}={}){const zones=(terrain.zones||[]).filter(z=>zoneCrosses(a,b,z));return zones.some(z=>zoneBlocks(a,z))?(respondingAttack?-6:0):a.msv===1&&zones.some(z=>z.kind==='smoke')?-6:0;}
-export function visibility(a,b,terrain){const angle=Math.atan2(b.y-a.y,b.x-a.x),perp={x:-Math.sin(angle),y:Math.cos(angle)},patch=3/25.4,ah=height(a),bh=height(b),ar=radius(a)*.9,br=radius(b)*.85;
+// Physical silhouette contact is independent of smoke, Eclipse and facing.
+export function inContact(a,b,terrain=[]){if(edgeDistance(a,b)>.025)return false;const low=Math.max(elevation(a),elevation(b)),high=Math.min(elevation(a)+height(a),elevation(b)+height(b));if(high<low-.001)return false;const z=(low+high)/2;return !terrain.some(t=>rayBox({...a,z},{...b,z},t));}
+export const engagedContact=(a,b,terrain=[])=>a.team>=0&&b.team>=0&&a.team!==b.team&&!a.isDeployable&&!b.isDeployable&&activeState(a)&&activeState(b)&&![a,b].some(u=>hasState(u,'immA')||hasState(u,'immB'))&&inContact(a,b,terrain);
+export function visibilityMod(a,b,terrain,{respondingAttack=false}={}){if(engagedContact(a,b,terrain))return 0;const zones=(terrain.zones||[]).filter(z=>zoneCrosses(a,b,z));return zones.some(z=>zoneBlocks(a,z))?(respondingAttack?-6:0):a.msv===1&&zones.some(z=>z.kind==='smoke')?-6:0;}
+export function visibility(a,b,terrain){const angle=Math.atan2(b.y-a.y,b.x-a.x),perp={x:-Math.sin(angle),y:Math.cos(angle)},patch=3/25.4,ah=height(a),bh=height(b),ar=radius(a)*.9,br=radius(b)*.85,contact=engagedContact(a,b,terrain);
 const origins=[0,-1,1].flatMap(k=>[.5,Math.max(.5,ah-.01)].map(z=>({x:a.x+perp.x*ar*k,y:a.y+perp.y*ar*k,z:elevation(a)+Math.min(ah-.005,z)})));
 const targets=[0,-1,1].flatMap(k=>[patch/2,Math.max(patch/2,bh-patch/2)].map(z=>({x:b.x+perp.x*br*k,y:b.y+perp.y*br*k,z:elevation(b)+z})));
-let first=null,open=0;for(const p of targets){const corners=[-1,1].flatMap(x=>[-1,1].map(z=>({x:p.x+perp.x*x*patch/2,y:p.y+perp.y*x*patch/2,z:p.z+z*patch/2})));const origin=origins.find(o=>corners.every(c=>!terrain.some(t=>rayBox(o,c,t))&&!(terrain.zones||[]).some(z=>zoneBlocks(a,z)&&!a.zoneReturnFire&&zoneRay(o,c,z,terrain))));if(origin){open++;first||={from:origin,to:p};}}
+let first=null,open=0;for(const p of targets){const corners=[-1,1].flatMap(x=>[-1,1].map(z=>({x:p.x+perp.x*x*patch/2,y:p.y+perp.y*x*patch/2,z:p.z+z*patch/2})));const origin=origins.find(o=>corners.every(c=>!terrain.some(t=>rayBox(o,c,t))&&!(contact?[]:terrain.zones||[]).some(z=>zoneBlocks(a,z)&&!a.zoneReturnFire&&zoneRay(o,c,z,terrain))));if(origin){open++;first||={from:origin,to:p};}}
 return {visible:open>0,partial:open<targets.length,ray:first};}
 export function cover(a,b,terrain){if(b.noCover||b.skillNoCover||b.wall)return false;const vis=visibility(a,b,terrain);if(!vis.visible)return false;const roof=surfaceAt(b,terrain,elevation(b));if(roof&&elevation(b)>elevation(a)+height(a))return true;return terrain.some(t=>terrainHeight(t)>elevation(b)+.001&&pointRect(b,t)<=radius(b)+.08&&segmentRect(a,b,t,radius(b)*.6))&&vis.partial;}
 export function attackInfo(a,b,terrain,aro='shoot',manualCover='auto'){

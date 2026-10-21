@@ -1,11 +1,11 @@
-import * as FT from './fireteams.js?v=34';
-import {partners as originalPartners} from './peripherals.js?v=34';
-import * as Z from './targetless.js?v=34';
-import * as H from './hacking.js?v=34';
-import * as K from './skills.js?v=34';
-import * as E from './engine.js?v=34';
-import * as S from './states.js?v=34';
-import * as V from './saves.js?v=34';
+import * as FT from './fireteams.js?v=36';
+import {partners as originalPartners} from './peripherals.js?v=36';
+import * as Z from './targetless.js?v=36';
+import * as H from './hacking.js?v=36';
+import * as K from './skills.js?v=36';
+import * as E from './engine.js?v=36';
+import * as S from './states.js?v=36';
+import * as V from './saves.js?v=36';
 const peripheralPartners=(u,units)=>[...new Map([...originalPartners(u,units),...FT.partners(u,units)].map(v=>[v.id,v])).values()];
 // Chinese terminology follows Infinity ARMY 7 汉化 11.9.0, 乐神局文史部.
 const mode=(id,name,kind,b,ps,bands=[],extra={})=>({id,name,kind,b,ps,bands,saves:1,...extra});
@@ -48,8 +48,8 @@ function validateEquipment(args){
 
 export const weaponMode=(weapon,id)=>ARMS[weapon]?.modes.find(m=>m.id===id)||ARMS[weapon]?.modes[0];
 export const coupDeGrace=(a,b,m)=>m?.kind==='cc'&&b&&S.unconscious(b)&&S.present(b)&&E.edgeDistance(a,b)<.026;
-export const canSee=(a,b,terrain)=>E.front(a,b)&&E.visibility(a,b,terrain).visible;
-export function eligibility(active,path,units,terrain,affected=[]){const points=E.samplePath(path);return units.filter(u=>(!u.isDeployable||u.armedTurret)&&u.team>=0&&u.team!==active.team&&S.active(u)&&!u.offTable&&!u.noARO&&!u.isDecoy&&!S.has(u,'disconnected')).map(u=>{const visible=points.filter(p=>(canSee(u,{...active,...p},terrain)||(affected.includes(u.id)&&K.sixth(u)&&E.visibility(u,{...active,...p},terrain).visible))),zoc=points.some(p=>E.edgeDistance(u,{...active,...p})<=8),contact=E.edgeDistance(u,active)<.02;const hackArea=H.availablePrograms(revealedActor(u)).length&&points.some(p=>H.hackingArea(u,{...active,...p},{repeaters:u.hackingRepeaters||[],route:{kind:'autoFriendly'}}).inArea);return {id:u.id,lof:visible.length>0,zoc:zoc||!!hackArea,contact,affected:affected.includes(u.id),points:visible};}).filter(r=>(!units.find(u=>u.id===r.id).armedTurret||!K.marker(active)&&(r.lof||r.contact))&&(r.lof||r.affected||r.contact||(r.zoc&&(!active.stealthSilent||K.sixth(units.find(u=>u.id===r.id))||units.find(u=>u.id===r.id).combatInstinct))));}
+export const canSee=(a,b,terrain)=>E.engagedContact(a,b,terrain)||E.front(a,b)&&E.visibility(a,b,terrain).visible;
+export function eligibility(active,path,units,terrain,affected=[]){const points=E.samplePath(path);return units.filter(u=>(!u.isDeployable||u.armedTurret)&&u.team>=0&&u.team!==active.team&&S.active(u)&&!u.offTable&&!u.noARO&&!u.isDecoy&&!S.has(u,'disconnected')).map(u=>{const visible=points.filter(p=>(canSee(u,{...active,...p},terrain)||(affected.includes(u.id)&&K.sixth(u)&&E.visibility(u,{...active,...p},terrain).visible))),zoc=points.some(p=>E.edgeDistance(u,{...active,...p})<=8),contact=points.some(p=>E.inContact(u,{...active,...p},terrain));const hackArea=H.availablePrograms(revealedActor(u)).length&&points.some(p=>H.hackingArea(u,{...active,...p},{repeaters:u.hackingRepeaters||[],route:{kind:'autoFriendly'}}).inArea);return {id:u.id,lof:visible.length>0,zoc:zoc||!!hackArea,contact,affected:affected.includes(u.id),points:visible};}).filter(r=>(!units.find(u=>u.id===r.id).armedTurret||!K.marker(active)&&(r.lof||r.contact))&&(r.lof||r.affected||r.contact||(r.zoc&&(!active.stealthSilent||K.sixth(units.find(u=>u.id===r.id))||units.find(u=>u.id===r.id).combatInstinct))));}
 export function attackSpec(a,b,m,terrain,{moving=false,reactive=false,manualCover='auto',allowMarker=false,triangulated=false,respondingAttack=false}={}){
  if(m.guided&&(reactive||!a.guided||!S.has(b,'targeted')||(a.guidedAttacksTurn||0)>=5||b.enclosedRoom))return {can:false,reason:'制导仅限主动轮、具备制导技能、已被标记且不在封闭房间的目标；每回合最多五次',m,sv:0,base:0,mods:[],cov:false};
  if(a.armedTurret&&(!reactive||K.marker(b)||!['cc','bs'].includes(m.kind)))return {can:false,reason:'炮塔只能对主动敌方模型宣告射击或近战 ARO',m,sv:0,base:0,mods:[],cov:false};
@@ -59,9 +59,9 @@ export function attackSpec(a,b,m,terrain,{moving=false,reactive=false,manualCove
  if(m.kind==='hack')return H.spec(a,b,m.hackingProgram,{reactive,repeaters:a.hackingRepeaters||[],route:{kind:'autoFriendly'},wipMod:-Math.abs(b.ecmHacking||0)});
  if(respondingAttack)a={...a,zoneReturnFire:true};
  const d=E.edgeDistance(a,b),rawRange=m.bands.find(([n])=>d<=n+1e-8)?.[1]??null,rm=a.xVisor&&rawRange<0?Math.min(0,rawRange+3):rawRange,cov=['bs','impact'].includes(m.kind)&&(manualCover==='auto'?E.cover(a,b,terrain):manualCover==='yes'),directMarker=K.marker(b)&&a.msv===3&&!reactive;
- let reason='';if(m.requiresSkill&&!a[m.requiresSkill])reason='该配置没有对应技能';else if(!S.allowed(a,'attack'))reason='当前状态不能攻击';else if(!S.present(b)||S.has(b,'hiddenDeployment'))reason='目标不在场';else if(K.marker(b)&&!allowMarker&&!directMarker)reason='先发现迷彩标记，或声明发现＋攻击';else if(m.kind==='cc'){if(d>.025)reason='近战需要底座接触';}else if(d<.02)reason='已接触敌人，请选择近战武器';else if(!m.guided&&(!E.visibility(a,b,terrain).visible||(!moving&&!E.front(a,b)&&!(respondingAttack&&K.sixth(a)))))reason='没有合法视线';else if(m.kind!=='direct'&&rm===null)reason='超出射程';
+ let reason='';if(m.requiresSkill&&!a[m.requiresSkill])reason='该配置没有对应技能';else if(!S.allowed(a,'attack'))reason='当前状态不能攻击';else if(!S.present(b)||S.has(b,'hiddenDeployment'))reason='目标不在场';else if(K.marker(b)&&!allowMarker&&!directMarker)reason='先发现迷彩标记，或声明发现＋攻击';else if(m.kind==='cc'){if(!E.inContact(a,b,terrain))reason='近战需要轮廓接触，不能隔着实体墙攻击';}else if(d<.02)reason='已接触敌人，请选择近战武器';else if(!m.guided&&(!E.visibility(a,b,terrain).visible||(!moving&&!E.front(a,b)&&!(respondingAttack&&K.sixth(a)))))reason='没有合法视线';else if(m.kind!=='direct'&&rm===null)reason='超出射程';
  const mods=m.guided?[['射程',rm||0],['被标记',3],['ECM 制导',-Math.abs(b.ecmGuided||0)]]:K.attackMods(a,b,m,{rm,cov,triangulated,directMarker}),base=m.kind==='cc'?(a.cc||14):m.attribute==='wip'?(a.wip||13):a.bs;
- const zoneMod=E.visibilityMod(a,b,terrain,{respondingAttack});if(!m.guided&&zoneMod&&!(respondingAttack&&K.sixth(a)))mods.push(['能见度区域',zoneMod]);
+ const zoneMod=E.visibilityMod(a,b,terrain,{respondingAttack});if(m.kind!=='cc'&&!m.guided&&zoneMod&&!(respondingAttack&&K.sixth(a)))mods.push(['能见度区域',zoneMod]);
  const cc=m.kind==='cc',fullBurst=reactive?(!cc&&(a.totalReaction||a.neurocinetics)):!(a.neurocinetics&&!cc),bonus=cc?(!reactive?K.martial(a).burst+(a.ccBurstBonus||0):0):((a.neurocinetics?reactive:!reactive)?(a.bsBurstBonus||0)+(reactive&&a.neurocinetics?a.neuroBurstBonus||0:0):0),burst=reactive&&a.aroBurst?Math.min(6,a.aroBurst):fullBurst?Math.min(6,m.b+bonus):1;
  return {can:!reason,reason,d,rm,cov:m.guided?false:cov,base,mods,sv:m.kind==='direct'?0:Math.max(0,base+E.clamp(mods.reduce((n,v)=>n+v[1],0),-12,12)),m:{...K.attackMode(a,m),b:m.kind==='cc'?Math.min(6,burst+(a.ccSupport||0)):m.guided?1:m.sf?3:a.reservedShots?Math.min(burst,a.reservedShots):burst}};
 }

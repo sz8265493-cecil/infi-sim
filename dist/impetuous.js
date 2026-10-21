@@ -1,5 +1,5 @@
-import * as E from './engine.js?v=34';
-import * as S from './states.js?v=34';
+import * as E from './engine.js?v=36';
+import * as S from './states.js?v=36';
 export const SOURCES=['https://infinitythewiki.com/Impetuous','https://infinitythewiki.com/Frenzy','https://infinitythewiki.com/Counterintelligence'];
 export const allowedSecond=['move','shoot','attack','cc','dodge','idle'];
 export const allowedFirst=['move','jump','climb','superjump','superlong','climbplus','berserk','combatJump','parachutist'];

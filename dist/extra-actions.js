@@ -1,8 +1,8 @@
 // N5.3 equipment actions. Declare without measuring; measure only in resolution.
-import * as E from './engine.js?v=34';
-import * as S from './states.js?v=34';
-import * as K from './skills.js?v=34';
-import {cancellableStates,passed} from './support-actions.js?v=34';
+import * as E from './engine.js?v=36';
+import * as S from './states.js?v=36';
+import * as K from './skills.js?v=36';
+import {cancellableStates,passed} from './support-actions.js?v=36';
 
 export const SOURCES=['https://infinitythewiki.com/MediKit','https://infinitythewiki.com/GizmoKit','https://infinitythewiki.com/Deactivator','https://infinitythewiki.com/Forward_Observer','https://infinitythewiki.com/Tech-Recovery'];
 export const LABELS={medikit:'医疗包',gizmokit:'维修包',deactivator:'拆除器',forwardObserver:'前线观测'};

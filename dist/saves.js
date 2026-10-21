@@ -1,5 +1,5 @@
-import {critical} from './engine.js?v=34';
-import * as S from './states.js?v=34';
+import {critical} from './engine.js?v=36';
+import * as S from './states.js?v=36';
 export const AMMO={CYBER:'电子地雷 · 非致命通讯攻击',N:'普通 N',AP:'穿甲 AP',DA:'双重 DA',EXP:'爆炸 EXP',EM:'电磁 E/M',PARA:'麻痹 PARA',SHOCK:'休克 Shock',STUN:'眩晕 Stun',T2:'T2',PLASMA:'等离子 ARM＋BTS',VIRAL:'病毒 Viral',BREAKER:'破盾 Breaker',MONO:'单分子',K1:'K1'};
 export function ammoOf(m){return m.ammo||(m.saves===3?(m.ap?'AP+EXP':'EXP'):m.ap?'AP':'N');}
 function rule(target,m){let ammo=ammoOf(m),stat=m.saveAttribute||'ARM',parts=ammo.split('+'),immune=(target.immunities||[]),traits=true;

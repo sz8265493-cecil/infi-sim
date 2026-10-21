@@ -1,4 +1,4 @@
-import {resolveDice,radius} from './engine.js?v=34';
+import {resolveDice,radius} from './engine.js?v=36';
 // N5.3 Initiative and Deployment. The UI owns drawing and placement validation.
 export const SOURCES=['https://infinitythewiki.com/Initiative_and_Deployment','https://infinitythewiki.com/Strategos','https://infinitythewiki.com/Infiltration','https://infinitythewiki.com/Forward_Deployment'];
 const troops=(s,t)=>s.units.filter(u=>u.team===t&&!u.isDeployable&&!u.isDecoy&&!u.peripheral);

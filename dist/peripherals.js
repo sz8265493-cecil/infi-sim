@@ -1,4 +1,4 @@
-import * as S from './states.js?v=34';
+import * as S from './states.js?v=36';
 export const source='https://infinitythewiki.com/Peripheral';
 export const controller=(u,units)=>u.peripheral?units.find(v=>v.id===u.controllerId):u;
 export function partners(u,units){const c=controller(u,units);return c?units.filter(v=>(v.id===c.id||v.controllerId===c.id)&&v.id!==u.id&&S.onTable(v)&&S.active(v)&&!S.has(v,'disconnected')):[];}

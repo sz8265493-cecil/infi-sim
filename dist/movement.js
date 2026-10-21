@@ -1,5 +1,5 @@
-import * as TR from './terrain-rules.js?v=34';
-import * as E from './engine.js?v=34';
+import * as TR from './terrain-rules.js?v=36';
+import * as E from './engine.js?v=36';
 export const FIRST={remask:'重新全息伪装 HoloMask · 整令',suppressive:'压制射击 Suppressive Fire · 整令',speculative:'推测射击 Speculative Attack · 整令',intuitiveDeploy:'直觉放置地雷 · 整令',recamo:'重新迷彩 · 整令',triangulated:'三角射击 · 整令',move:'移动 Move · 基本短技能',idle:'待机 Idle · 基本短技能',discover:'发现 Discover · 基本短技能',jump:'跳跃 Jump · 整令',climb:'攀爬 Climb · 整令',superjump:'超级跳 Jump · 基本短技能',superlong:'超级跳 Jump · 整令',climbplus:'强化攀爬 Climb · 基本短技能'};
 export const isLong=k=>String(k).startsWith('program:')||['remask','suppressive','airborne','jump','climb','superlong','recamo','triangulated','speculative','intuitiveDeploy'].includes(k);
 export const isJump=k=>['jump','superjump','superlong'].includes(k);
@@ -62,12 +62,12 @@ export function objectiveWalls(){const a=20,b=28,t=.3,g=2.5;return [{x:a,y:a,w:g
 
 // Clip only the new segment: existing declared waypoints are never silently rerouted.
 // Full-base endpoint checks are distinct from transit checks (allies may be crossed).
-export function nearestReachable(u,o,target,units,terrain){
+export function nearestReachable(u,o,target,units,terrain,{finish=true}={}){
  const base=o.path?.length?o.path:[{...u}],from=base.at(-1),used=o.cost??base.slice(1).reduce((n,p,i)=>n+E.dist(base[i],p),0),remaining=Math.max(0,budget(u,o)-used);
  const moving={...u,prone:o.stance==='proneStart'?true:o.stance==='standStart'?false:!!u.prone};
  const requested=E.contactEnd({...moving,...from},target,units),length=E.dist(from,requested),fraction=length?Math.min(1,remaining/length):1;
  const at=t=>{const p={...requested,x:from.x+(requested.x-from.x)*t,y:from.y+(requested.y-from.y)*t};if(t===1)return p;const surfaces=terrain.filter(b=>E.inside(p,b)&&Number.isFinite(E.terrainHeight(b))&&Math.abs(E.terrainHeight(b)-E.elevation(from))<=E.height(moving)+.001);p.z=surfaces.length?Math.max(...surfaces.map(E.terrainHeight)):E.elevation(from);return p;};
- const candidate=t=>{const seg=moveSegment(moving,from,at(t),terrain);if(seg.error)return {error:seg.error};const path=[...base,...seg.points.slice(1)],cost=used+seg.cost;return {path,cost,end:path.at(-1),error:validate(moving,{...o,path,cost},units,terrain,true)};};
+ const candidate=t=>{const seg=moveSegment(moving,from,at(t),terrain);if(seg.error)return {error:seg.error};const path=[...base,...seg.points.slice(1)],cost=used+seg.cost;return {path,cost,end:path.at(-1),error:validate(moving,{...o,path,cost},units,terrain,finish)};};
  let best=candidate(fraction);if(!best.error)return {...best,clipped:fraction<1||E.dist(requested,target)>.001};
  // Scan from the requested end back toward the current point; an invalid endpoint
  // may lie on an ally even though the path beyond that ally is legal.
@@ -81,4 +81,17 @@ export function autoClimb(u,click,max,terrain,units=[],{down}={}){
  candidates.sort((a,b)=>(a.id===u.wall?-1:b.id===u.wall?1:E.pointRect(click,a)-E.pointRect(click,b)));
  let error='先接触楼房墙面或屋顶边缘，再点击楼房进行攀爬';
  for(const t of candidates){const descend=down??(E.elevation(u)>=E.terrainHeight(t)-.01||!!u.wall&&E.pointRect(click,t)>.05);const plan=climbPath(u,t,max,descend);if(plan.error){error=plan.error;continue;}const bad=E.validPath(u,plan.points,units,terrain,Infinity,true);if(bad){error=bad;continue;}return {...plan,cost:E.pathLength(plan.points),building:t.id};}return {error};
+}
+
+// Snap only the draft waypoint into a genuine half-base corridor. Final positions
+// are still checked against the full footprint when the Move is confirmed.
+export function snapPassage(u,p,terrain,threshold=.28){
+ const r=E.radius(u),walls=terrain.filter(t=>E.terrainHeight(t)>E.elevation(p)+E.height(u)),candidates=[];
+ for(const a of walls)for(const b of walls){if(a===b)continue;
+  const gap=b.x-a.x-a.w,lo=Math.max(a.y,b.y),hi=Math.min(a.y+a.h,b.y+b.h);
+  if(gap>=r-.002&&gap<2*r&&hi>lo&&p.y>=lo-2*r&&p.y<=hi+2*r){const q={...p,x:E.clamp(p.x,a.x+a.w+r/2,b.x-r/2)};if(E.dist(q,p)<=threshold)candidates.push(q);}
+  const gy=b.y-a.y-a.h,lx=Math.max(a.x,b.x),hx=Math.min(a.x+a.w,b.x+b.w);
+  if(gy>=r-.002&&gy<2*r&&hx>lx&&p.x>=lx-2*r&&p.x<=hx+2*r){const q={...p,y:E.clamp(p.y,a.y+a.h+r/2,b.y-r/2)};if(E.dist(q,p)<=threshold)candidates.push(q);}
+ }
+ return candidates.sort((a,b)=>E.dist(p,a)-E.dist(p,b))[0]||null;
 }

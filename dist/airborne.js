@@ -1,6 +1,6 @@
-import * as E from './engine.js?v=34';
-import * as S from './states.js?v=34';
-import {passed} from './support-actions.js?v=34';
+import * as E from './engine.js?v=36';
+import * as S from './states.js?v=36';
+import {passed} from './support-actions.js?v=36';
 export const SOURCES=['https://infinitythewiki.com/Combat_Jump','https://infinitythewiki.com/Parachutist','https://infinitythewiki.com/Super-Jump'];
 export const LABELS={combatJump:'战斗空降',parachutist:'伞降'};
 export const ownOrder=u=>!!u.offTable&&u.airborneOrderAvailable!==false&&S.active(u)&&(u.combatJump||u.parachutist);

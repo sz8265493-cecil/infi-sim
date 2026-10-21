@@ -1,7 +1,7 @@
-import {CHARTS} from './fireteam-data.js?v=34';
-import * as E from './engine.js?v=34';
-import * as S from './states.js?v=34';
-import * as H from './hacking.js?v=34';
+import {CHARTS} from './fireteam-data.js?v=36';
+import * as E from './engine.js?v=36';
+import * as S from './states.js?v=36';
+import * as H from './hacking.js?v=36';
 const norm=x=>String(x||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[^A-Z0-9]/g,'');
 export const chart=u=>CHARTS[u.factionId]?.chart;
 export const find=(s,u)=>(s.fireteams||[]).find(f=>!f.cancelled&&f.members.includes(u.id));

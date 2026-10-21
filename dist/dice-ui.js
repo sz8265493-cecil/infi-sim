@@ -1,9 +1,9 @@
-import * as Z from './targetless.js?v=34';
-import {skillResultsHTML} from './skill-roll-ui.js?v=34';
-import * as F from './combat.js?v=34';
-import * as V from './saves.js?v=34';
-import * as S from './states.js?v=34';
-import * as E from './engine.js?v=34';
+import * as Z from './targetless.js?v=36';
+import {skillResultsHTML} from './skill-roll-ui.js?v=36';
+import * as F from './combat.js?v=36';
+import * as V from './saves.js?v=36';
+import * as S from './states.js?v=36';
+import * as E from './engine.js?v=36';
 function setContent(el,html){const old=el.querySelector('.battleBody'),top=old?.scrollTop||0;const content=document.createElement('div');content.innerHTML=html;const button=Array.from(content.children).find(n=>n.matches('button.primary')),footer=document.createElement('div');footer.className='battleFooter';if(button)footer.append(button);el.replaceChildren();const body=document.createElement('div');body.className='battleBody';body.append(...content.childNodes);el.append(body,footer);body.scrollTop=top;}
 const teamOf=p=>p?.team??(p?.id?.startsWith('b')?1:0);
 const teamName=p=>teamOf(p)?'◆ 蓝队':'▲ 红队';

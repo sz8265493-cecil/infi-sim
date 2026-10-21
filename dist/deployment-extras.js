@@ -1,8 +1,8 @@
-import * as E from './engine.js?v=34';
-import * as S from './states.js?v=34';
-import * as D from './deployables.js?v=34';
-import * as P from './pregame.js?v=34';
-import {inZone} from './hacking.js?v=34';
+import * as E from './engine.js?v=36';
+import * as S from './states.js?v=36';
+import * as D from './deployables.js?v=36';
+import * as P from './pregame.js?v=36';
+import {inZone} from './hacking.js?v=36';
 export const SOURCES=['https://infinitythewiki.com/Minelayer','https://infinitythewiki.com/Decoy_State'];
 function current(s,u){if(s.phase!=='deploy'||u.deploymentPending||u.isDeployable||u.isDecoy)return false;if(!s.pregame)return !u.deploymentLocked;return s.pregame.stage==='deploy'&&P.deploymentTeam(s)===u.team&&(P.reserveStep(s)===s.pregame.reserves[u.team].includes(u.id));}
 export function actions(s,u){if(!current(s,u))return [];const out=[],items=D.available(u,{deployableOnly:true});if(u.minelayer&&(u.minelayerUsed||0)<Number(u.minelayer)&&items.length)out.push({id:'minelayer',name:'布雷者部署',items});if(u.decoy&&!u.decoyPlaced)out.push({id:'decoy',name:'部署诱饵',count:Math.min(2,Number(u.decoy))});return out;}

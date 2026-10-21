@@ -1,4 +1,4 @@
-import * as E from './engine.js?v=34';
+import * as E from './engine.js?v=36';
 export const TYPES={Aquatic:'水域',Desert:'沙漠',Mountain:'山地',Jungle:'丛林','Zero-G':'零重力'};
 export const matches=(u,a)=>u.terrainTypes?.includes('Total')||(u.terrainChoice||u.terrainTypes?.[0])===a.type;
 export const touching=(u,p,a)=>E.pointRect(p,a)<=E.radius(u)+.001;

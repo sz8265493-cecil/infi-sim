@@ -1,7 +1,7 @@
 // N5.3: Targetless, Smoke/Eclipse, Disco Baller, Drop Bears, Pitcher.
-import * as E from './engine.js?v=34';
-import * as H from './hacking.js?v=34';
-import * as S from './states.js?v=34';
+import * as E from './engine.js?v=36';
+import * as H from './hacking.js?v=36';
+import * as S from './states.js?v=36';
 export const WEAPONS={
  smokeGrenade:{name:'烟雾手雷',attribute:'ph',bands:[[8,0],[16,-3]],zone:'smoke',speculative:true},
  eclipseGrenade:{name:'Eclipse 手雷',attribute:'ph',bands:[[8,0],[16,-3]],zone:'eclipse',speculative:true},

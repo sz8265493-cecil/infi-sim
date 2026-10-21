@@ -1,5 +1,5 @@
-import * as I from './impetuous.js?v=34';
-import * as S from './states.js?v=34';
+import * as I from './impetuous.js?v=36';
+import * as S from './states.js?v=36';
 export const group=u=>u.combatGroup||1;
 export function pools(state,team){return state.groupOrders?.[team]||{1:state.orders?.[team]||0};}
 export const regular=(state,u)=>pools(state,u.team)[group(u)]||0;

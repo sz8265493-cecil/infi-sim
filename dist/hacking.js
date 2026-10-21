@@ -1,8 +1,8 @@
 // N5.3 / FAQ 0.1 (September 2026). Declaration never measures a target.
 // Source: https://infinitythewiki.com/Hacking_Device and each program's page.
-import * as S from './states.js?v=34';
-import {front,visibility,radius,height,resolveDice} from './engine.js?v=34';
-import {planSaves,rollRound} from './saves.js?v=34';
+import * as S from './states.js?v=36';
+import {front,visibility,radius,height,resolveDice} from './engine.js?v=36';
+import {planSaves,rollRound} from './saves.js?v=36';
 const program=(id,name,ps,b,ammo,effect,target,mod=0)=>({id,name,ps,b,ammo,effect,target,mod,skill:'short',aro:true,supported:true});
 export const PROGRAMS={
  spotlight:program('spotlight','聚光 Spotlight',5,2,'AP','targeted','model'),

@@ -1,6 +1,6 @@
-import {CATALOG,BY_ID} from './state-catalog.js?v=34';
-import * as S from './states.js?v=34';
-import * as E from './engine.js?v=34';
+import {CATALOG,BY_ID} from './state-catalog.js?v=36';
+import * as S from './states.js?v=36';
+import * as E from './engine.js?v=36';
 const SURVIVAL={nwi:{id:'nwi',en:'No Wound Incapacitation',zh:'无伤失能 NWI',effect:'忽略昏迷效果；再次受伤移除，可接受救治。',icons:['https://assets.corvusbelli.net/wiki/nwi0.jpg'],official:true},dogged:{id:'dogged',en:'Dogged',zh:'顽强 Dogged',effect:'本玩家回合继续行动；不能救治，状态阶段移除。',icons:['https://assets.corvusbelli.net/wiki/dogged0.jpg'],official:true}};
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
 export function actualKeys(u,units=[]){if(!S.present(u))return ['dead'];const keys=[...(u.states||[])];if(S.isProne(u))keys.push('prone');if(!u.isDeployable&&S.active(u)&&units.some(v=>!v.isDeployable&&v.id!==u.id&&v.team!==u.team&&S.active(v)&&E.edgeDistance(u,v)<.025))keys.push('engaged');return [...new Set(keys)].filter(k=>BY_ID[k]||SURVIVAL[k]||k==='unconscious2');}

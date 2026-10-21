@@ -1,8 +1,8 @@
-import {inZone,hackingArea} from './hacking.js?v=34';
-import * as E from './engine.js?v=34';
-import * as S from './states.js?v=34';
-import * as M from './movement.js?v=34';
-import * as V from './saves.js?v=34';
+import {inZone,hackingArea} from './hacking.js?v=36';
+import * as E from './engine.js?v=36';
+import * as S from './states.js?v=36';
+import * as M from './movement.js?v=36';
+import * as V from './saves.js?v=36';
 export const engaged=(u,units)=>units.some(v=>!v.isDeployable&&v.team!==u.team&&v.team>=0&&S.onTable(v)&&S.active(v)&&E.edgeDistance(u,v)<.025);
 export function queue(result,units){return [...new Set(V.allPlans(result).filter(p=>p.hits>0).map(p=>p.targetId))].filter(id=>{const u=units.find(u=>u.id===id);return !u.possession&&!u.isDeployable&&S.active(u)&&!S.has(u,'immA')&&!S.has(u,'immB')&&!engaged(u,units);}).map(id=>({id,attackers:V.allPlans(result).filter(p=>p.targetId===id&&p.attacker).map(p=>p.attacker)}));}
 export function tier(u,p,attackers,terrain,stance='keep'){const at={...u,...p,prone:E.endingProne(u,stance)};if(attackers.every(a=>a.hackingArea?!hackingArea(a,at,{repeaters:a.hackingRepeaters||[],route:{kind:'autoFriendly'}}).inArea:!E.front(a,at)||!E.visibility(a,at,terrain).visible))return 1;if(attackers.every(a=>!a.hackingArea&&(!E.visibility(a,at,terrain).visible||(!E.cover(a,u,terrain)&&E.cover(a,at,terrain)))))return 2;return 0;}
