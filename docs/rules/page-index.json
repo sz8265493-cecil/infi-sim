@@ -1,0 +1,2430 @@
+[
+  {
+    "pdf_page": 1,
+    "headings": [
+      "NOTE: THE TEXT MODIFIED FROM THE PREVIOUS VERSION OF THE RULEBOOK IS",
+      "INDICATED IN BLUE THROUGHOUT THIS DOCUMENT. YOU CAN FIND ALL THE CHANGES AND",
+      "DELETIONS IN DETAIL ON THE BLOG."
+    ]
+  },
+  {
+    "pdf_page": 2,
+    "headings": []
+  },
+  {
+    "pdf_page": 3,
+    "headings": []
+  },
+  {
+    "pdf_page": 4,
+    "headings": [
+      "GAME STATES AND GLOSSARY MODULE........157",
+      "CHARACTERISTICS OF AN ARMY IN THE RETREAT! SITUATION .......... 146"
+    ]
+  },
+  {
+    "pdf_page": 5,
+    "headings": [
+      "INTRODUCTION",
+      "BEFORE YOU READ ANY FURTHER:",
+      "INTRODUCTION",
+      "INFINITY, A MINIATURES COMBAT GAME",
+      "GROUP OF ELITE TROOPERS ENGAGING IN UNDERCOVER AND CLANDESTINE OPERATIONS.",
+      "STRATEGIC MANEUVERS TO EMPLOY DURING THE GAME."
+    ]
+  },
+  {
+    "pdf_page": 6,
+    "headings": [
+      "BASIC RULES",
+      "BASIC RULES",
+      "BASIC RULES GAME MODES",
+      "TYPE OF GAME SWC",
+      "24 X 32",
+      "INCHES",
+      "32 X 48",
+      "INCHES",
+      "8 X 32 INCHES 250 5 60 MIN",
+      "48 X 48"
+    ]
+  },
+  {
+    "pdf_page": 7,
+    "headings": [
+      "BASIC RULES",
+      "TERMINOLOGY AND ALIGNMENT",
+      "OPEN AND",
+      "PRIVATE INFORMATION TRAITS"
+    ]
+  },
+  {
+    "pdf_page": 8,
+    "headings": [
+      "BASIC RULES",
+      "TROOPER CHARACTERISTICS"
+    ]
+  },
+  {
+    "pdf_page": 9,
+    "headings": [
+      "BASIC RULES",
+      "ATTRIBUTES SUPPORT WEAPONS COST (SWC)",
+      "SKILLS AND EQUIPMENT",
+      "CLOSE COMBAT (CC)",
+      "WEAPONRY",
+      "PHYSIQUE (PH)",
+      "WILLPOWER (WIP)"
+    ]
+  },
+  {
+    "pdf_page": 10,
+    "headings": [
+      "BASIC RULES",
+      "SECTORIAL ARMY LISTS"
+    ]
+  },
+  {
+    "pdf_page": 11,
+    "headings": [
+      "BASIC RULES",
+      "LIEUTENANT INFINITY ARMY",
+      "ORDERS AND THE ORDER POOL",
+      "TYPES OF ORDERS",
+      "REGULAR ORDER TACTICAL ORDER",
+      "IRREGULAR ORDER REMEMBER"
+    ]
+  },
+  {
+    "pdf_page": 12,
+    "headings": [
+      "BASIC RULES",
+      "ORDER POOL ORDER POOL EXAMPLE"
+    ]
+  },
+  {
+    "pdf_page": 13,
+    "headings": [
+      "BASIC RULES",
+      "REMEMBER: ARO: AUTOMATIC",
+      "STRUCTURE OF AN ORDER",
+      "BASIC SHORT SKILL + BASIC SHORT SKILL",
+      "BASIC SHORT SKILL + SHORT SKILL",
+      "LONG SKILL"
+    ]
+  },
+  {
+    "pdf_page": 14,
+    "headings": [
+      "BASIC RULES",
+      "IMPORTANT",
+      "IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 15,
+    "headings": [
+      "BASIC RULES",
+      "IMPORTANT",
+      "INITIATIVE AND DEPLOYMENT",
+      "DEPLOYMENT PHASE",
+      "INITIATIVE ROLL"
+    ]
+  },
+  {
+    "pdf_page": 16,
+    "headings": [
+      "BASIC RULES",
+      "GAME SEQUENCE",
+      "GAME ROUND PLAYER TURN",
+      "GAME SEQUENCE",
+      "PLAYER 1 PLAYER 2",
+      "TURN TURN",
+      "START OF THE TURN: TACTICAL PHASE",
+      "EXECUTIVE USE OF COMMAND TOKENS"
+    ]
+  },
+  {
+    "pdf_page": 17,
+    "headings": [
+      "BASIC RULES",
+      "RETREAT! CHECK REMEMBER",
+      "LOSS OF LIEUTENANT CHECK REMEMBER",
+      "ORDER COUNT",
+      "STATES PHASE"
+    ]
+  },
+  {
+    "pdf_page": 18,
+    "headings": [
+      "BASIC RULES",
+      "LOSS OF LIEUTENANT SILHOUETTE TEMPLATES",
+      "SILHOUETTE BASE HEIGHT TEMPLATE",
+      "S5 S6 S7 S8",
+      "LINE OF FIRE (LOF)",
+      "SILHOUETTE"
+    ]
+  },
+  {
+    "pdf_page": 19,
+    "headings": [
+      "BASIC RULES",
+      "LOF: GAME AIDS",
+      "VOLUME AND LINE OF FIRE (LOF)"
+    ]
+  },
+  {
+    "pdf_page": 20,
+    "headings": [
+      "BASIC RULES",
+      "ZONE OF CONTROL (ZOC) INTERACTION BETWEEN ZONES,",
+      "BASES AND SILHOUETTES",
+      "BASE CONTACT/ SILHOUETTE CONTACT",
+      "ZONE OF CONTROL AND AROS",
+      "ZONE OF CONTROL",
+      "8” INSIDE",
+      "TOTALLY INSIDE"
+    ]
+  },
+  {
+    "pdf_page": 21,
+    "headings": [
+      "BASIC RULES",
+      "INTERACTING WITH ZONES BREAKING COHERENCY",
+      "TOTALLY INSIDE",
+      "BREAKING COHERENCY GAME EXAMPLE",
+      "INSIDE"
+    ]
+  },
+  {
+    "pdf_page": 22,
+    "headings": [
+      "BASIC RULES",
+      "DISTANCE BETWEEN TWO MINIATURES DIFFERENT DIAMETERS"
+    ]
+  },
+  {
+    "pdf_page": 23,
+    "headings": [
+      "BASIC RULES"
+    ]
+  },
+  {
+    "pdf_page": 24,
+    "headings": [
+      "BASIC RULES",
+      "MAXIMUM MODIFIER EXAMPLE SUCCESS VALUE BELOW 1",
+      "NK TEAM",
+      "GHT BRIG",
+      "HLI AD",
+      "SILVESTAR",
+      "STAR ROV",
+      "N O C E A NIA",
+      "BS 13 MAX MOD -12 BS 1",
+      "COMBI RIFLE"
+    ]
+  },
+  {
+    "pdf_page": 25,
+    "headings": [
+      "BASIC RULES",
+      "FACE TO FACE ROLLS FACE TO FACE ROLL: DODGE AND RESET",
+      "RCE SHENKU",
+      "FENNEC",
+      "KU TROOP",
+      "FENN RS",
+      "E C F U SILIE",
+      "BREAKING TIES 6",
+      "COMBI RIFLE",
+      "HERE IS A RUNDOWN OF POSSIBLE OUTCOMES:"
+    ]
+  },
+  {
+    "pdf_page": 26,
+    "headings": [
+      "BASIC RULES",
+      "EXAMPLE OF FACE TO FACE ROLL AND NORMAL ROLL EXAMPLE OF TWO FACE TO FACE ROLLS",
+      "LONIAL 先駆 隊 L CO",
+      "LONIAL 先駆 隊",
+      "KES RCE KES RCE",
+      "T FO T FO",
+      "FENNEC SENKU A 軍",
+      "FENNEC SENKU A 軍",
+      "FENN RS FENN RS",
+      "E C F U SILIE S"
+    ]
+  },
+  {
+    "pdf_page": 27,
+    "headings": [
+      "MOVEMENT",
+      "MOVEMENT MODULE",
+      "MOVEMENTS. MOVEMENT TAKES PLACE WITHIN THE NORMAL ORDER EXPENDITURE SEQUENCE.",
+      "MOVING AND MEASURING HORIZONTAL MEASUREMENT",
+      "(COMPLEX PATHS)",
+      "IMPORTANT",
+      "HORIZONTAL MEASUREMENT",
+      "LONIAL",
+      "KES RCE",
+      "FENNEC"
+    ]
+  },
+  {
+    "pdf_page": 28,
+    "headings": [
+      "MOVEMENT",
+      "BASIC SHORT SKILL",
+      "REQUIREMENTS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 29,
+    "headings": [
+      "MOVEMENT",
+      "EXAMPLE 1 GENERAL MOVEMENT RULES"
+    ]
+  },
+  {
+    "pdf_page": 30,
+    "headings": [
+      "MOVEMENT",
+      "MOVEMENT AND OBSTACLES VAULTING ON OR OFF SURFACE",
+      "EXAMPLE OF VAULTING OVER OBSTACLES",
+      "LOWER THAN SILHOUETTE HEIGHT.",
+      "LONIAL",
+      "FENNEC",
+      "FENN RS",
+      "E C F U SILIE",
+      "MOV 4-4"
+    ]
+  },
+  {
+    "pdf_page": 31,
+    "headings": [
+      "MOVEMENT",
+      "EXAMPLE OF MOVEMENT",
+      "LONIAL",
+      "FENNEC",
+      "E C F U SILIE",
+      "MOVING AND PEEKING AROUND A CORNER",
+      "REMEMBER"
+    ]
+  },
+  {
+    "pdf_page": 32,
+    "headings": [
+      "MOVEMENT",
+      "CAUTIOUS MOVEMENT CLIMB",
+      "CAUTIOUS MOVEMENT CLIMB",
+      "LONG SKILL LONG SKILL",
+      "EFFECTS REQUIREMENTS",
+      "IMPORTANT",
+      "REMEMBER"
+    ]
+  },
+  {
+    "pdf_page": 33,
+    "headings": [
+      "MOVEMENT",
+      "REMEMBER CLIMB EXAMPLE 2",
+      "LONIAL",
+      "KES RCE",
+      "FENNEC",
+      "E C F U SILIE",
+      "MOV 4-4",
+      "CLIMB EXAMPLE 1 2”",
+      "LONIAL",
+      "FENN RS"
+    ]
+  },
+  {
+    "pdf_page": 34,
+    "headings": [
+      "MOVEMENT",
+      "JUMP EXAMPLE 1",
+      "LONIAL",
+      "FENNEC",
+      "E C F U SILIE",
+      "MOV 4-4",
+      "LONG SKILL",
+      "REQUIREMENTS",
+      "EFFECTS",
+      "LONIAL"
+    ]
+  },
+  {
+    "pdf_page": 35,
+    "headings": [
+      "MOVEMENT",
+      "EXAMPLE 3 EXAMPLE 4",
+      "LONIAL",
+      "FENNEC",
+      "FENN RS",
+      "E C F U SILIE",
+      "MOV 4-4"
+    ]
+  },
+  {
+    "pdf_page": 36,
+    "headings": [
+      "COMBAT",
+      "COMBAT MODULE",
+      "(CC) AND QUANTRONIC COMBAT (HACKING). THIS SECTION DETAILS EVERY RULE NECESSARY TO RESOLVE ATTACKS.",
+      "IN INFINITY.",
+      "MODIFIERS (MOD)",
+      "BURST (B)",
+      "ATTACK ROLL"
+    ]
+  },
+  {
+    "pdf_page": 37,
+    "headings": [
+      "COMBAT",
+      "FACE TO FACE ROLL SAVING ROLL (SR)",
+      "WOUNDS",
+      "POSSIBILITY OF SURVIVAL (PS)"
+    ]
+  },
+  {
+    "pdf_page": 38,
+    "headings": [
+      "COMBAT",
+      "UNCONSCIOUSNESS AND DEATH GUTS ROLL",
+      "GUTS ROLL",
+      "REQUIREMENTS",
+      "EFFECTS",
+      "IMPORTANT",
+      "REMEMBER"
+    ]
+  },
+  {
+    "pdf_page": 39,
+    "headings": [
+      "COMBAT",
+      "BALLISTIC SKILLS (BS) BS ATTACK",
+      "BS ATTACK",
+      "SHORT SKILL / ARO",
+      "REQUIREMENTS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 40,
+    "headings": [
+      "COMBAT",
+      "EXAMPLE OF BS ATTACK (GUIDED)",
+      "MISSILE LAUNCHER",
+      "MISSILE LAUNCHER",
+      "3 ARM EXP 6 1",
+      "8” 24” 40” 96”",
+      "TARGET",
+      "TROOPER -3 0 +3 -3",
+      "TRAJECTORY",
+      "BS ATTACK INTO A CLOSE COMBAT BS ATTACK MODIFIERS (MOD)"
+    ]
+  },
+  {
+    "pdf_page": 41,
+    "headings": [
+      "COMBAT",
+      "COVER PARTIAL COVER",
+      "EFFECTS",
+      "TYPES OF COVER:",
+      "TOTAL COVER",
+      "PARTIAL COVER",
+      "NO COVER",
+      "LINE OF FIRE AND COVER",
+      "NO COVER",
+      "PARTIAL COVER"
+    ]
+  },
+  {
+    "pdf_page": 42,
+    "headings": [
+      "COMBAT",
+      "COVER AND GAME SITUATIONS",
+      "NO COVER",
+      "PARTIAL COVER",
+      "PARTIAL COVER",
+      "TOTAL COVER",
+      "COMBI RIFLE",
+      "16” 32” 48” 96”",
+      "+3 -3 -6"
+    ]
+  },
+  {
+    "pdf_page": 43,
+    "headings": [
+      "COMBAT",
+      "SPECIAL SKILLS, WEAPONS, EQUIPMENT OR STATES",
+      "TEMPLATE WEAPONS AND EQUIPMENT",
+      "IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 44,
+    "headings": [
+      "COMBAT",
+      "AREA OF EFFECT AREA OF EFFECT OF TEMPLATE",
+      "WEAPONS AND EQUIPMENT",
+      "IMPORTANT",
+      "TEMPLATE WEAPONS, AND",
+      "ALLIED AND NEUTRAL TROOPERS"
+    ]
+  },
+  {
+    "pdf_page": 45,
+    "headings": [
+      "COMBAT",
+      "TEMPLATE WEAPONS, ALLIED AND NEUTRAL TROOPERS DIRECT TEMPLATE WEAPONS",
+      "DIRECT TEMPLATE WEAPONS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 46,
+    "headings": [
+      "COMBAT",
+      "DIRECT TEMPLATE PLACEMENT EXAMPLES EXAMPLE OF DIRECT TEMPLATE WITH BURST (B2): AREA OF",
+      "EFFECT, PLACEMENT, AND TROOPERS AT DIFFERENT LEVELS",
+      "EXAMPLE OF A DIRECT TEARDROP",
+      "TEMPLATE WEAPON. SHOT CANCELLED.",
+      "JUMP INFANTRY",
+      "IMPORTANT",
+      "IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 47,
+    "headings": [
+      "COMBAT",
+      "IMPACT TEMPLATE WEAPONS EXAMPLE OF IMPACT TEMPLATE WEAPON. TARGETS REACT",
+      "WITH BS ATTACK AND DODGE WITHOUT LOF. SHOT CANCELLED.",
+      "LONIAL",
+      "KES RCE",
+      "FENNEC 1",
+      "IMPACT TEMPLATE WEAPONS",
+      "FENN RS",
+      "E C F U SILIE",
+      "BS 12 KES"
+    ]
+  },
+  {
+    "pdf_page": 48,
+    "headings": [
+      "COMBAT",
+      "SPECULATIVE ATTACK EXAMPLE OF SPECULATIVE ATTACK",
+      "PH 14 MODS PH 11",
+      "SPECULATIVE ATTACK",
+      "LONG SKILL",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 49,
+    "headings": [
+      "COMBAT",
+      "INTUITIVE ATTACK EXAMPLE OF INTUITIVE ATTACK",
+      "INTUITIVE ATTACK",
+      "LONG SKILL",
+      "REQUIREMENTS",
+      "EFFECTS",
+      "OF EFFECT, BLAST FOCUS, AND SCENERY"
+    ]
+  },
+  {
+    "pdf_page": 50,
+    "headings": [
+      "COMBAT",
+      "EXAMPLE 1",
+      "GRENADES",
+      "8” 16” 96”",
+      "MULTI RIFLE",
+      "2 ARM DA 7 1 ANTI-MATERIEL",
+      "1 ARM/2 AP 7 3 SUPPRESSIVE FIRE",
+      "16” 32” 48” 96”",
+      "WEAPON PROFILE +3 -3 -6",
+      "(BS WEAPONS AND TEMPLATE WEAPONS)"
+    ]
+  },
+  {
+    "pdf_page": 51,
+    "headings": [
+      "COMBAT",
+      "CC ATTACK",
+      "BREAKER",
+      "CC ATTACK",
+      "COMBI RIFLE",
+      "1 BTS/2 AP 7 3 SUPPRESSIVE FIRE SHORT SKILL / ARO",
+      "16” 32” 48” 96”",
+      "+3 -3 -6",
+      "REQUIREMENTS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 52,
+    "headings": [
+      "COMBAT",
+      "MOVEMENT SEQUENCE AND CC DURING THE REACTIVE TURN:",
+      "KES RCE",
+      "FENNEC",
+      "FENN RS",
+      "E C F U SILIE",
+      "MOV 4-4",
+      "EXAMPLE OF CLOSE COMBAT AGAINST SEVERAL ENEMIES",
+      "KU TROOP",
+      "CLOSE COMBAT WITH MULTIPLE TROOPERS LAMBDA"
+    ]
+  },
+  {
+    "pdf_page": 53,
+    "headings": [
+      "COMBAT",
+      "LONIAL",
+      "KES RCE",
+      "FENNEC",
+      "LAMBDA",
+      "E C F U SILIE",
+      "MOV 4-4",
+      "MOV 4-4",
+      "CC 14 LONIAL",
+      "FENNEC"
+    ]
+  },
+  {
+    "pdf_page": 54,
+    "headings": [
+      "COMBAT",
+      "AUTOMATIC SKILL",
+      "EXAMPLE",
+      "MONOFILAMENT CC WEAPON",
+      "EFFECTS",
+      "UPGRADE PROGRAMS (UPGRADE)"
+    ]
+  },
+  {
+    "pdf_page": 55,
+    "headings": [
+      "COMBAT",
+      "SUPPORTWARE PROGRAMS HACKING DEVICES",
+      "AND HACKING PROGRAMS: CHARACTERISTICS",
+      "AUTOMATIC EQUIPMENT"
+    ]
+  },
+  {
+    "pdf_page": 56,
+    "headings": [
+      "COMBAT",
+      "HOLOMASK AND REPEATER REMEMBER",
+      "REPEATER",
+      "REPEATER",
+      "AUTOMATIC EQUIPMENT",
+      "EFFECTS",
+      "IMPORTANT",
+      "DEPLOYABLE REPEATER",
+      "DEPLOYABLE REPEATER",
+      "EQUIPMENT"
+    ]
+  },
+  {
+    "pdf_page": 57,
+    "headings": [
+      "COMBAT",
+      "EXAMPLE OF HACKING AREA AND AROS THROUGH REPEATERS KEY TO THE HACKING",
+      "PROGRAMS QUICK REFERENCE CHART",
+      "HACKER",
+      "HACKER",
+      "REPEATER",
+      "ENEMY HI",
+      "- - - - 1",
+      "EXAMPLE OF CAMOUFLAGED",
+      "STATE AND ARO THROUGH A REPEATER"
+    ]
+  },
+  {
+    "pdf_page": 58,
+    "headings": [
+      "COMBAT",
+      "HACKING PROGRAMS CHART",
+      "OPPONENT’S",
+      "NAME ATTACK MOD PS B TARGET SKILL TYPE SPECIAL",
+      "ASSISTED FIRE - - - - REM LONG SKILL TARGET MODEL GAINS MARKSMANSHIP.",
+      "TAG, HI, REM, SHORT SKILL DA AMMO, NON-LETHAL, STATE:",
+      "CARBONITE 0 0 7 2",
+      "VH, HACKER / ARO IMMOBILIZED-B.",
+      "CONTROLLED SHORT SKILL +3/-3 MOD TO THE PH OF EVERY TROOPER",
+      "- - - - -"
+    ]
+  },
+  {
+    "pdf_page": 59,
+    "headings": [
+      "COMBAT",
+      "HACKING PROGRAMS CONTROLLED JUMP",
+      "SHORT SKILL / ARO",
+      "LONG SKILL",
+      "EFFECTS",
+      "CARBONITE",
+      "SHORT SKILL / ARO",
+      "IMPORTANT:",
+      "EFFECTS",
+      "(IMP-2)."
+    ]
+  },
+  {
+    "pdf_page": 60,
+    "headings": [
+      "COMBAT",
+      "ENHANCED REACTION OBLIVION",
+      "LONG SKILL SHORT SKILL / ARO",
+      "REQUIREMENTS REQUIREMENTS",
+      "EFFECTS EFFECTS",
+      "LONG SKILL",
+      "REQUIREMENTS SPOTLIGHT",
+      "EFFECTS EFFECTS",
+      "EXAMPLE OF SUPPORTWARE USE AND CANCELLATION"
+    ]
+  },
+  {
+    "pdf_page": 61,
+    "headings": [
+      "COMBAT",
+      "TOTAL CONTROL WHITE NOISE",
+      "SHORT SKILL / ARO SHORT SKILL",
+      "REQUIREMENTS REQUIREMENTS",
+      "EFFECTS",
+      "TRINITY",
+      "SHORT SKILLS / ARO IMPORTANT:",
+      "REQUIREMENTS",
+      "EFFECTS ZERO PAIN"
+    ]
+  },
+  {
+    "pdf_page": 62,
+    "headings": [
+      "COMBAT",
+      "K U NI N",
+      "REVEREND",
+      "EV E R E N",
+      "CUSTODIER",
+      "T O DIE",
+      "MOV 4-4",
+      "WIP 14",
+      "CTICAL REG",
+      "HEAV ENT"
+    ]
+  },
+  {
+    "pdf_page": 63,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "AMMUNITION AND",
+      "WEAPONRY",
+      "AMMUNITION NORMAL (N) AMMUNITION",
+      "NORMAL (N) AMMUNITION"
+    ]
+  },
+  {
+    "pdf_page": 64,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "DOUBLE ACTION (DA) AMMUNITION REMEMBER"
+    ]
+  },
+  {
+    "pdf_page": 65,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "EXPLOSIVE (EXP) AMMUNITION EXAMPLE:",
+      "EFFECTS SHOCK AMMUNITION",
+      "PARALYSIS (PARA) AMMUNITION REMEMBER",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 66,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "SMOKE AMMUNITION EXAMPLE OF SMOKE, FACE TO FACE ROLLS AND NORMAL ROLLS",
+      "SMOKE AMMUNITION 1",
+      "EFFECTS",
+      "IMPORTANT",
+      "IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 67,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "STUN AMMUNITION",
+      "EXAMPLES OF COMBINED AMMUNITION",
+      "EFFECTS COMBINED SAVING ROLL",
+      "EXAMPLES OF COMBINED SAVING ROLLS",
+      "COMBINED AMMUNITION"
+    ]
+  },
+  {
+    "pdf_page": 68,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "WEAPONRY MIXED WEAPONS",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "TRENCH-HAMMER ANTI-MATERIEL, BS",
+      "0 0 -3 6 1 DA ARM 2",
+      "TRENCH-HAMMER ANTI-MATERIEL,",
+      "6 1 DA ARM 2"
+    ]
+  },
+  {
+    "pdf_page": 69,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "PERIMETER WEAPONS PERIMETER, DEPLOYABLE, AND BOOST EXAMPLE",
+      "CRAZYKOALA",
+      "PERIMETER WEAPONS",
+      "EFFECTS",
+      "MORAN MASAI",
+      "R E GI D",
+      "CRAZYKOALA",
+      "EFFECTS",
+      "MORAN MASAI"
+    ]
+  },
+  {
+    "pdf_page": 70,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "ARMED TURRET D-CHARGES",
+      "D-CHARGES",
+      "EFFECTS",
+      "MOV CC BS PH WIP ARM BTS STR S",
+      "-- 5 10 -- -- 2 3 1 2",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\""
+    ]
+  },
+  {
+    "pdf_page": 71,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "DISCO BALLER DROP BEARS",
+      "DISCO BALLER",
+      "EFFECTS EFFECTS",
+      "ARM BTS STR S",
+      "0 0 1 1",
+      "ACTIVATE DISCO BALL",
+      "SHORT SKILL",
+      "DROP BEARS (DEPLOYABLE MODE)",
+      "REQUIREMENTS DROPBEARS"
+    ]
+  },
+  {
+    "pdf_page": 72,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "MINE DISPENSER MINE DISPENSER",
+      "EFFECTS",
+      "[CAMO(-3)].",
+      "CYBERMINES:",
+      "WIP MOD.",
+      "CHEST MINES:",
+      "REMEMBER"
+    ]
+  },
+  {
+    "pdf_page": 73,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "MINES EXAMPLE PITCHER",
+      "PITCHER",
+      "EFFECTS",
+      "PITCHER",
+      "PITCHER -- -- -- -- 1",
+      "MINE 16” 24” 48” 96”",
+      "0 -3 -6",
+      "ARM BTS STR S",
+      "0 0 1 0"
+    ]
+  },
+  {
+    "pdf_page": 74,
+    "headings": [
+      "AMMUNITION AND WEAPONRY",
+      "SYMBIOBOMB WILDPARROT",
+      "ARM BTS STR S",
+      "SYMBIOBOMB 0 0 1 1",
+      "DEPLOYABLE PROFILES",
+      "EFFECTS DEPLOYABLE ARM BTS STR S",
+      "ARMED TURRET 2 3 1 1",
+      "CRAZYKOALA 0 0 1 1",
+      "EXAMPLE OF SYMBIOBOMB",
+      "FAST PANDA 0 0 1 1"
+    ]
+  },
+  {
+    "pdf_page": 75,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "SKILLS AND",
+      "EQUIPMENT MODULE",
+      "SKILLS AND PIECES OF EQUIPMENT.",
+      "MODIFIERS",
+      "EXPLAINED (MODS) IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 76,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "LEVELS, LABELS, AND TRAITS SHORT SKILLS",
+      "LONG SKILLS",
+      "IMPORTANT",
+      "AUTOMATIC SKILLS",
+      "DEPLOYMENT SKILLS",
+      "BASIC SHORT SKILLS"
+    ]
+  },
+  {
+    "pdf_page": 77,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "COMMON SKILLS IN INFINITY DISCOVER",
+      "ALERT!",
+      "DISCOVER",
+      "REQUIREMENTS",
+      "REQUIREMENTS EFFECTS",
+      "BS ATTACK DISCOVER",
+      "8” 32” 48” 96”",
+      "CAUTIOUS MOVEMENT +3 0 -3 -6"
+    ]
+  },
+  {
+    "pdf_page": 78,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "EXAMPLE DISCOVER + BS ATTACK",
+      "NK TEAM",
+      "N O C E A NIA",
+      "先駆 隊 BS 13",
+      "KU TROOP",
+      "WIP 12",
+      "PATHFINDER",
+      "PA A I",
+      "BLINK PATHFINDER"
+    ]
+  },
+  {
+    "pdf_page": 79,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "DODGE EXAMPLE OF DODGE AND ENGAGED",
+      "ACTIVE TROOPER",
+      "LONIAL",
+      "KES RCE",
+      "FENNEC",
+      "E C F U SILIE",
+      "MOV 4-4",
+      "BS 12 軍",
+      "KU TROOP"
+    ]
+  },
+  {
+    "pdf_page": 80,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "EXAMPLE OF DODGE AND DEPLOYABLE WEAPON IDLE",
+      "ACTIVE TROOPER",
+      "LONIAL",
+      "KES RCE",
+      "FENNEC",
+      "E C F U SILIE",
+      "MOV 4-4",
+      "KU TROOP",
+      "S BS 12"
+    ]
+  },
+  {
+    "pdf_page": 81,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "LOOK OUT! EXAMPLE OF LOOK OUT!",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 82,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "PLACE DEPLOYABLE",
+      "PLACE DEPLOYABLE",
+      "SHORT SKILL / ARO",
+      "REQUIREMENTS",
+      "EFFECTS",
+      "REMEMBER"
+    ]
+  },
+  {
+    "pdf_page": 83,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "DEPLOYABLE AND PERIMETER EXAMPLE RELOAD",
+      "ENEMY HEAVY",
+      "INFANTRY",
+      "RELOAD",
+      "SHORT SKILL /ARO",
+      "DEPLOYABLE WEAPON",
+      "REQUIREMENTS",
+      "HACKER",
+      "FASTPANDA"
+    ]
+  },
+  {
+    "pdf_page": 84,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "REQUEST SPEEDBALL",
+      "REQUEST A SPEEDBALL",
+      "AUTOMATIC SKILL",
+      "REQUIREMENTS",
+      "EFFECTS",
+      "SPEEDBALL CHART",
+      "ROLL ITEM ROLL ITEM",
+      "1-3 VITAPACK 11-13 JETPACK (S:2)",
+      "4-6 AUTOREPAIRS 14-16 OVERKILL"
+    ]
+  },
+  {
+    "pdf_page": 85,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "EXAMPLE OF SPEEDBALL (AUTOREPAIRS) SPECULATIVE ATTACK",
+      "LONG SKILL",
+      "SHORT SKILL / ARO",
+      "REQUIREMENTS",
+      "REQUIREMENTS",
+      "EFFECTS",
+      "REMEMBER"
+    ]
+  },
+  {
+    "pdf_page": 86,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "SPECIAL SKILLS IN INFINITY BERSERK",
+      "BERSERK",
+      "AERIAL LONG SKILL",
+      "AERIAL EFFECTS",
+      "IMPORTANT",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 87,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "BOOTY CHART CHAIN OF COMMAND",
+      "1-2 +1 ARM 13 PANZERFAUST",
+      "3-4 14 MONOFILAMENT CC WEAPON",
+      "FLAMETHROWER",
+      "5-6 GRENADES 15 MOV 8-4",
+      "TAG: BS ATTACK (SHOCK)",
+      "7-8 DA CC WEAPON 16",
+      "OTHER TROOP TYPES: MULTI RIFLE",
+      "MULTISPECTRAL CHAIN OF COMMAND"
+    ]
+  },
+  {
+    "pdf_page": 88,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "CLIMBING PLUS CLIMBING PLUS EXAMPLE",
+      "SHIKAMI",
+      "MOV 6-2",
+      "CLIMBING PLUS",
+      "AUTOMATIC SKILL",
+      "EFFECTS",
+      "REMEMBER COMBAT INSTINCT",
+      "COMBAT INSTINCT",
+      "AUTOMATIC SKILL"
+    ]
+  },
+  {
+    "pdf_page": 89,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "COMBAT JUMP",
+      "COMBAT JUMP",
+      "LONG SKILL",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 90,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "COURAGE DECOY",
+      "COURAGE DEPLOYMENT SKILL",
+      "EFFECTS",
+      "COUNTERINTELLIGENCE",
+      "DOCTOR",
+      "COUNTERINTELLIGENCE REQUIREMENTS",
+      "EFFECTS",
+      "IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 91,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "DOGGED ENGINEER",
+      "DOGGED ENGINEER",
+      "AUTOMATIC SKILL SHORT SKILL",
+      "REQUIREMENTS REQUIREMENTS",
+      "EFFECTS",
+      "IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 92,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "EXPLODE FORWARD DEPLOYMENT",
+      "EXPLODE FORWARD DEPLOYMENT",
+      "AUTOMATIC SKILL DEPLOYMENT SKILL",
+      "REQUIREMENTS EFFECTS",
+      "FORWARD OBSERVER",
+      "SHORT SKILL / ARO",
+      "IMPORTANT",
+      "FORWARD OBSERVER",
+      "OBSERVER TARGETED, NON-LETHAL, [***]"
+    ]
+  },
+  {
+    "pdf_page": 93,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "FRENZY",
+      "FRENZY",
+      "AUTOMATIC SKILL",
+      "G: JUMPER",
+      "REQUIREMENTS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 94,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "G: JUMPER AND VICTORY POINTS REACTIVE TURN GAME EXAMPLE",
+      "G: JUMPER AND LIEUTENANT AIR",
+      "RNE ASSA",
+      "BANSHEE",
+      "NSHEES",
+      "PROXY MK.2",
+      "G: JUMPER, HIDDEN",
+      "DEPLOYMENT AND MARKER STATES",
+      "PROXY MK.5"
+    ]
+  },
+  {
+    "pdf_page": 95,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "GUARD IMMUNITY",
+      "IMMUNITY",
+      "REQUIREMENTS AUTOMATIC SKILL",
+      "EFFECTS REQUIREMENTS",
+      "EFFECTS",
+      "IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 96,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "IMMUNITY AND CRITICAL HITS",
+      "IMPERSONATION",
+      "IMPERSONATION",
+      "IMMUNITY EXAMPLES DEPLOYMENT SKILL"
+    ]
+  },
+  {
+    "pdf_page": 97,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "IMPETUOUS INFILTRATION",
+      "IMPETUOUS INFILTRATION",
+      "AUTOMATIC SKILL DEPLOYMENT SKILL",
+      "EFFECTS EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 98,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "INFINITY SPEC-OPS REQUEST A SPECBALL",
+      "AUTOMATIC SKILL",
+      "INFINITY SPEC-OPS",
+      "AUTOMATIC SKILL EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 99,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "INSPIRING LEADERSHIP JOURNALIST",
+      "AUTOMATIC SKILL",
+      "EFFECTS",
+      "EFFECTS JOURNALIST AND CAMPAIGN RULES:",
+      "EFFECTS",
+      "IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 100,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "LIMITED COVER MARTIAL ARTS",
+      "LIMITED COVER MARTIAL ARTS",
+      "AUTOMATIC SKILL AUTOMATIC SKILL",
+      "EFFECTS REQUIREMENTS",
+      "EFFECTS",
+      "MARKSMANSHIP MARTIAL ARTS CHART",
+      "AUTOMATIC SKILL LEVEL ATTACK MOD",
+      "OPPONENT",
+      "BURST MOD"
+    ]
+  },
+  {
+    "pdf_page": 101,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "REACTIVE TROOPER",
+      "LAMBDA+",
+      "JUDBOT",
+      "METACHEMISTRY CHART",
+      "ACTIVE TROOPER",
+      "1-3 +3 PH 15 NO WOUND INCAPACITATION",
+      "RD HATAMOTO",
+      "IMPERIA",
+      "MOV 4-4"
+    ]
+  },
+  {
+    "pdf_page": 102,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "MIMETISM EXAMPLE OF ALLOWED AND PROHIBITED AREAS",
+      "ENEMY DEPLOYMENT ZONE",
+      "MIMETISM",
+      "AUTOMATIC SKILL",
+      "TROOPER WHO PASSED AN",
+      "INFILTRATION ROLL",
+      "TROOP THAT MUST DEPLOY INSIDE",
+      "DEPLOYMENT ZONE",
+      "MINELAYER"
+    ]
+  },
+  {
+    "pdf_page": 103,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "MNEMONICA MORPHO-SCAN",
+      "MORPHO SCAN",
+      "MNEMONICA SHORT SKILL",
+      "REQUIREMENTS",
+      "REQUIREMENTS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 104,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "AUTOMATIC SKILL",
+      "NO COVER",
+      "AUTOMATIC SKILL",
+      "REMEMBER"
+    ]
+  },
+  {
+    "pdf_page": 105,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "NON-HACKABLE PARACHUTIST",
+      "AUTOMATIC SKILL",
+      "LONG SKILL",
+      "EFFECTS",
+      "PARAMEDIC",
+      "PARAMEDIC",
+      "AUTOMATIC SKILL",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 106,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "PERIPHERAL",
+      "PERIPHERAL",
+      "AUTOMATIC SKILL",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 107,
+    "headings": [
+      "SKILLS AND EQUIPMENT"
+    ]
+  },
+  {
+    "pdf_page": 108,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "IMPORTANT PERIPHERAL (CYBERPLUG) EXAMPLES",
+      "PERIPHERAL (SYNCHRONIZED) EXAMPLE",
+      "EXAMPLE 2",
+      "先駆 隊 先駆 隊",
+      "ENEMY B ENEMY A",
+      "KU TROOP",
+      "KU TROOP",
+      "EXAMPLE 3",
+      "PERIPHERAL"
+    ]
+  },
+  {
+    "pdf_page": 109,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "PROTHEION EXAMPLE 2"
+    ]
+  },
+  {
+    "pdf_page": 110,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "RELIGIOUS TROOP REMOTE PRESENCE",
+      "AUTOMATIC SKILL",
+      "AUTOMATIC SKILL",
+      "EFFECTS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 111,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "SAPPER SHASVASTII",
+      "SAPPER SHASVASTII",
+      "DEPLOYMENT SKILL / LONG SKILL AUTOMATIC SKILL",
+      "REQUIREMENTS REQUIREMENTS",
+      "SIXTH SENSE",
+      "SENSOR"
+    ]
+  },
+  {
+    "pdf_page": 112,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "IMPORTANT",
+      "STRATEGIC DEPLOYMENT",
+      "REMEMBER",
+      "REQUIREMENTS",
+      "EFFECTS",
+      "ACTIVE TROOPER MOVE",
+      "+ BS ATTACK.",
+      "STEALTH",
+      "REQUIREMENTS"
+    ]
+  },
+  {
+    "pdf_page": 113,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "STRATEGOS SUPER-JUMP",
+      "STRATEGOS L1 SUPER-JUMP",
+      "AUTOMATIC SKILL AUTOMATIC SKILL",
+      "REQUIREMENTS EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 114,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "SUPER-JUMP EXAMPLE: SUPER-JUMP (JET PROPULSION): TRAJECTORY",
+      "SURPRISE ATTACK",
+      "AUTOMATIC SKILL",
+      "REQUIREMENTS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 115,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "TACTICAL AWARENESS TECH-RECOVERY",
+      "TECH-RECOVERY",
+      "TACTICAL AWARENESS AUTOMATIC SKILL",
+      "REQUIREMENTS",
+      "AUTOMATIC SKILL",
+      "EXAMPLE"
+    ]
+  },
+  {
+    "pdf_page": 116,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "TECHNORGANIC TERRAIN",
+      "TECHNORGANIC TERRAIN",
+      "AUTOMATIC SKILL AUTOMATIC SKILL",
+      "REQUIREMENTS REQUIREMENTS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 117,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "TRANSMUTATION",
+      "TRANSMUTATION",
+      "AUTOMATIC SKILL",
+      "REQUIREMENTS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 118,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "REMEMBER VULNERABILITY",
+      "VULNERABILITY",
+      "AUTOMATIC SKILL",
+      "EXAMPLES OF TRANSMUTATION",
+      "EFFECTS",
+      "VULNERABILITY EXAMPLE",
+      "TRANSMUTATION (ESCAPE SYSTEM-X):",
+      "WARHORSE",
+      "TRANSMUTATION (WIP):"
+    ]
+  },
+  {
+    "pdf_page": 119,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "EQUIPMENT IN INFINITY AI MOTORCYCLE",
+      "AI MOTORCYCLE",
+      "AUTOMATIC EQUIPMENT",
+      "IMPORTANT",
+      "ALBEDO",
+      "ALBEDO",
+      "AUTOMATIC EQUIPMENT",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 120,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "BAGGAGE BANGBOMB EXAMPLE",
+      "REACTIVE TROOPER",
+      "LONIAL",
+      "OTERS R RE",
+      "SHO E KES RCE",
+      "RI T FO",
+      "FENNEC",
+      "FENN RS",
+      "FI GH IE E C F U SILIE"
+    ]
+  },
+  {
+    "pdf_page": 121,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "CUBE/ CUBE 2.0 DEACTIVATOR",
+      "CUBE REQUIREMENTS",
+      "DEACTIVATOR",
+      "BS WEAPON (WIP)",
+      "DEACTIVATOR -- -- -- -- 1",
+      "8” 16” 24” 96”",
+      "+6 +3 -6",
+      "AUTOMATIC EQUIPMENT",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 122,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "DEPLOYABLE COVER DEPLOYABLE REPEATER",
+      "DEPLOYABLE COVER ECM",
+      "AUTOMATIC EQUIPMENT",
+      "ARM BTS STR S",
+      "IMPORTANT",
+      "0 0 1 1"
+    ]
+  },
+  {
+    "pdf_page": 123,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "FIREWALL GIZMOKIT",
+      "8” 16” 24” 96”",
+      "+3 0 -6",
+      "GIZMOKIT",
+      "HACKING DEVICE",
+      "REQUIREMENTS AUTOMATIC EQUIPMENT",
+      "EFFECTS HACKING DEVICE PLUS"
+    ]
+  },
+  {
+    "pdf_page": 124,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "HOLOMASK MEDIKIT",
+      "MEDIKIT",
+      "HOLOMASK SHORT SKILL",
+      "REQUIREMENTS",
+      "HOLOPROJECTOR",
+      "EFFECTS",
+      "MEDIKIT",
+      "8” 16” 24” 96”",
+      "+3 0 -6"
+    ]
+  },
+  {
+    "pdf_page": 125,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "MOTORCYCLE MULTISPECTRAL VISOR LEVEL 3",
+      "AUTOMATIC EQUIPMENT",
+      "IMPORTANT",
+      "MULTISPECTRAL VISOR LEVEL 1",
+      "AUTOMATIC EQUIPMENT",
+      "NANOSCREEN",
+      "EFFECTS",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 126,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "REPEATER SYMBIOMATE GAME EXAMPLE-1"
+    ]
+  },
+  {
+    "pdf_page": 127,
+    "headings": [
+      "SKILLS AND EQUIPMENT",
+      "TINBOT EXAMPLES OF TINBOT TYPES"
+    ]
+  },
+  {
+    "pdf_page": 128,
+    "headings": [
+      "COMMAND",
+      "COMMAND MODULE",
+      "GAME BY PROVIDING A MORE STRATEGIC, FUTURISTIC, AND SIMULATIVE COMPONENT.",
+      "INFINITY RULES IN A SPECIFIC SEQUENCE TO MAKE THE GAME EASIER TO LEARN.",
+      "FULLY ENJOY A GOOD GAME OF INFINITY.",
+      "COMMAND TOKENS COMMAND TOKENS: EXECUTIVE USE",
+      "COMMAND TOKENS: STRATEGIC USE COMMAND TOKENS: OPERATIONAL USE"
+    ]
+  },
+  {
+    "pdf_page": 129,
+    "headings": [
+      "COMMAND",
+      "COORDINATED ORDERS",
+      "IMPORTANT",
+      "EXAMPLE OF USE OF COMMAND TOKENS: REROLLING",
+      "COORDINATED ORDER",
+      "EFFECTS",
+      "REMEMBER"
+    ]
+  },
+  {
+    "pdf_page": 130,
+    "headings": [
+      "COMMAND",
+      "COORDINATING SKILLS COORDINATED ORDER:",
+      "TARGETLESS OR DEPLOYABLE TRAITS",
+      "COORDINATED ORDER: DODGE AND RESET",
+      "COORDINATED ORDER EXAMPLE: MOVEMENT + BS ATTACK",
+      "COORDINATED ORDER:",
+      "SUCCESS + FAILURE"
+    ]
+  },
+  {
+    "pdf_page": 131,
+    "headings": [
+      "COMMAND",
+      "COORDINATED ORDER EXAMPLE: MOVEMENT + CC ATTACK COORDINATED ORDER EXAMPLE:"
+    ]
+  },
+  {
+    "pdf_page": 132,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "FIRETEAMS MODULE",
+      "USING FEWER ORDERS THAN USUAL.",
+      "IMPORTANT",
+      "FIRETEAM TYPES",
+      "FIRETEAM DUO",
+      "FIRETEAMS: BASIC RULES",
+      "IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 133,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "GENERAL RULES FOR FIRETEAMS:",
+      "FIRETEAMS CHART"
+    ]
+  },
+  {
+    "pdf_page": 134,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "FIRETEAM INTEGRITY EXAMPLE",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 135,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "FIRETEAMS, NCO,",
+      "FIRETEAM BONUSES",
+      "FIRETEAM",
+      "REQUIREMENTS",
+      "LEVEL 1 THE TROOPERS CAN ALL BELONG TO DIFFERENT UNITS.",
+      "FIRETEAMS IN THE REACTIVE TURN LEVEL 2 AT LEAST 2 TROOPERS BELONG TO THE SAME UNIT.",
+      "LEVEL 3 AT LEAST 3 TROOPERS BELONG TO THE SAME UNIT.",
+      "FIRETEAM ARO",
+      "LEVEL 4 AT LEAST 4 TROOPERS BELONG TO THE SAME UNIT."
+    ]
+  },
+  {
+    "pdf_page": 136,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "FIRETEAM BONUS LEVEL 1",
+      "REMEMBER",
+      "FIRETEAM BONUS LEVEL 2",
+      "FIRETEAM BONUS LEVEL 3",
+      "FIRETEAMS AND CC COMBAT",
+      "FIRETEAM BONUS LEVEL 4",
+      "FIRETEAMS AND COMMS ATTACK",
+      "IMPORTANT"
+    ]
+  },
+  {
+    "pdf_page": 137,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "FIRETEAM EXAMPLES CASE 2: WILDCARDS AND AVAILABILITY HIGHER THAN 1.",
+      "EXAMPLE 1: CREATING A FIRETEAM",
+      "CASE 1: TROOPER SELECTION AND DEPLOYMENT.",
+      "ZHANSHI FIRETEAMS HARIS, CORE",
+      "MIN MAX",
+      "ZHANSHI 1 5",
+      "SHÀNG JÍ 0 2",
+      "BEASTHUNTER FTO 0 1",
+      "OKTAVIA 0 1"
+    ]
+  },
+  {
+    "pdf_page": 138,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "EXAMPLE 2: CREATING A FIRETEAM. FIRETEAM LEVEL BONUSES",
+      "EXAMPLE 3: ORDER EXPENDITURE SEQUENCE AND AROS",
+      "(FIRETEAM IN THE ACTIVE TURN)"
+    ]
+  },
+  {
+    "pdf_page": 139,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "EXAMPLE 4: MOVE AND DODGE EXAMPLE 5: MOVEMENT SKILL",
+      "(FIRETEAM IN THE ACTIVE TURN) (FIRETEAM IN THE ACTIVE TURN)",
+      "ZANSHI A",
+      "ZANSHI B",
+      "KEISOTSU 3",
+      "LONIAL",
+      "KES RCE",
+      "FENNEC",
+      "FE NN RS"
+    ]
+  },
+  {
+    "pdf_page": 140,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "EXAMPLE 8: FIRETEAM ARO (FIRETEAM IN THE REACTIVE TURN)",
+      "ZANSHI ZANSHI",
+      "SHÄNG JI INVENCIBLE",
+      "LONIAL",
+      "FENNEC",
+      "FENN RS",
+      "E C F U SILIE",
+      "ZANSHI",
+      "FIRETEAM LEADER"
+    ]
+  },
+  {
+    "pdf_page": 141,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "EXAMPLE 9: FIRETEAM ARO 2 EXAMPLE 10: FIRETEAM IN CC COMBAT VS.",
+      "(FIRETEAM IN THE REACTIVE TURN ) MARTIAL ARTS L5 (FIRETEAM IN ACTIVE TURN)",
+      "FIRETEAM LEADER",
+      "REMEMBER",
+      "अर्जुन",
+      "J U N A U NIT",
+      "J U N A U NIT"
+    ]
+  },
+  {
+    "pdf_page": 142,
+    "headings": [
+      "INFINITY FIRETEAMS",
+      "EXAMPLE 12: FIRETEAM CONFRONTATION EXAMPLE 13: GAME SITUATIONS WITH FIRETEAMS",
+      "CASE 2: FIRETEAM ORDER (MOVE + BS ATTACK) AGAINST FIRETEAM ARO (DODGE)."
+    ]
+  },
+  {
+    "pdf_page": 143,
+    "headings": [
+      "TERRAIN AND SCENERY STRUCTURES",
+      "TERRAIN AND SCENERY",
+      "STRUCTURES",
+      "BEFOREHAND.",
+      "SPECIAL TERRAIN CHARACTERISTICS OF THE TERRAIN",
+      "TYPES OF TERRAIN",
+      "SPECIAL TERRAIN",
+      "REQUIREMENTS",
+      "AREA OF EFFECT OF » JUNGLE TERRAIN:"
+    ]
+  },
+  {
+    "pdf_page": 144,
+    "headings": [
+      "TERRAIN AND SCENERY STRUCTURES",
+      "DIFFICULT TERRAIN VISIBILITY CONDITION"
+    ]
+  },
+  {
+    "pdf_page": 145,
+    "headings": [
+      "TERRAIN AND SCENERY STRUCTURES",
+      "VISIBILITY ZONES AND SPECULATIVE ATTACK VISIBILITY CONDITIONS AND COMBAT JUMP",
+      "SPECIAL TERRAIN SUGGESTIONS AND EXAMPLES",
+      "EXAMPLE TYPE OF TERRAIN DIFFICULT TERRAIN VISIBILITY CONDITIONS SATURATION ZONE",
+      "BEACH AQUATIC YES -- NO",
+      "OPEN SEA AQUATIC YES -- NO",
+      "SWAMP AQUATIC YES -- YES",
+      "ROCKY GROUND DESERT OPTIONAL -- YES",
+      "SAND DUNES DESERT YES -- NO",
+      "LOW MOUNTAIN OR STEEP"
+    ]
+  },
+  {
+    "pdf_page": 146,
+    "headings": [
+      "TRIUMPH AND DEFEAT",
+      "TRIUMPH AND",
+      "DEFEAT MODULE",
+      "CONDITIONS THAT GOVERN VICTORY—OR DEFEAT—DEPEND ON THE TYPE OF GAME PLAYED.",
+      "END-GAME: RETREAT!",
+      "STANDARD GAME POINT VALUE OF SURVIVORS (25%",
+      "ARMY POINTS",
+      "ARMY POINTS)",
+      "250 63 POINTS OR LESS",
+      "AN ARMY IN THE RETREAT! SITUATION"
+    ]
+  },
+  {
+    "pdf_page": 147,
+    "headings": [
+      "TRIUMPH AND DEFEAT",
+      "MISSION OR SCENARIO SETTING UP",
+      "THE GAMING TABLE",
+      "PLAYING SCENARIOS",
+      "FREE GAME"
+    ]
+  },
+  {
+    "pdf_page": 148,
+    "headings": [
+      "TRIUMPH AND DEFEAT",
+      "TERRAIN LAYOUT ACCESSIBILITY",
+      "ASYMMETRICAL DEPLOYMENT ZONES",
+      "250 OR 200 POINTS",
+      "150 POINTS",
+      "400, 350 OR 300 POINTS"
+    ]
+  },
+  {
+    "pdf_page": 149,
+    "headings": [
+      "SCENARIOS",
+      "SCENARIOS",
+      "POINTS DESIGNATED FOR EACH MET OBJECTIVE.",
+      "WHILE PLAYING A SCENARIO, THE PLAYER WHO GETS THE HIGHER NUMBER OF OBJECTIVE POINTS IS THE WINNER.",
+      "THE PLAYER WITH THE HIGHEST VALUE OF VICTORY POINTS WILL WIN THE TIEBREAK.",
+      "IN THE DOWNLOADS SECTION OF THE INFINITY OFFICIAL WEBSITE: INFINITYUNIVERSE.COM.",
+      "ANNIHILATION",
+      "MISSION OBJECTIVES",
+      "150-POINT 200-POINT 250-POINT 300-POINT 350-POINT 400-POINT OBJECTIVE",
+      "GAME GAME GAME GAME GAME GAME POINTS"
+    ]
+  },
+  {
+    "pdf_page": 150,
+    "headings": [
+      "SCENARIOS",
+      "FORCES AND DEPLOYMENT SCENARIO SPECIAL RULES",
+      "ARMY DEPLOYMENT",
+      "SIDE SWC GAME TABLE SIZE",
+      "POINTS ZONE SIZES",
+      "A AND B 200 4 32 IN X 48 IN 12 IN X 32 IN",
+      "A AND B 250 5 32 IN X 48 IN 12 IN X 32 IN END OF THE MISSION",
+      "A AND B 300 6 48 IN X 48 IN 12 IN X 48 IN",
+      "A AND B 400 8 48 IN X 48 IN 12 IN X 48 IN",
+      "400, 350 OR 300 POINTS 250 OR 200 POINTS"
+    ]
+  },
+  {
+    "pdf_page": 151,
+    "headings": [
+      "SCENARIOS",
+      "DOMINATION SCENARIO SPECIAL RULES",
+      "MISSION OBJECTIVES DOMINATE QUADRANTS",
+      "ARMY GAME TABLE DEPLOYMENT MINIMUM",
+      "POINTS SIZE ZONE SIZES VP",
+      "A AND B 150 3 24 IN X 32 IN 8 IN X 24 IN 38",
+      "CONSOLES",
+      "A AND B 200 4 32 IN X 48 IN 12 IN X 32 IN 50",
+      "A AND B 400 8 48 IN X 48 IN 12 IN X 48 IN 100",
+      "HACK CONSOLES"
+    ]
+  },
+  {
+    "pdf_page": 152,
+    "headings": [
+      "SCENARIOS",
+      "SPECIALIST TROOPS END OF THE MISSION",
+      "DEPLOYMENT ZONE A",
+      "QUADRANT 1 QUADRANT 2 QUADRANT 1 QUADRANT 2",
+      "QUADRANT 3 QUADRANT 4 QUADRANT 3 QUADRANT 4",
+      "DEPLOYMENT ZONE B 12” DEPLOYMENT ZONE B",
+      "12” 24”",
+      "8” 16”",
+      "CONSOLE",
+      "CONSOLE"
+    ]
+  },
+  {
+    "pdf_page": 153,
+    "headings": [
+      "SCENARIOS",
+      "SUPPLIES SCENARIO SPECIAL RULES",
+      "MISSION OBJECTIVES SUPPLY BOXES",
+      "ARMY GAME TABLE DEPLOYMENT MINIMUM",
+      "POINTS",
+      "SIZE ZONE SIZES VP",
+      "REQUIREMENTS",
+      "A AND B 200 4 32 IN X 48 IN 12 IN X 32 IN 50",
+      "A AND B 350 7 48 IN X 48 IN 12 IN X 48 IN 88",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 154,
+    "headings": [
+      "SCENARIOS",
+      "SPECIALIST TROOPS END OF THE MISSION",
+      "DEPLOYMENT ZONE A DEPLOYMENT ZONE A",
+      "DEPLOYMENT ZONE B 12” DEPLOYMENT ZONE B",
+      "12” 24”",
+      "8” 16”",
+      "SUPPLY BOXES",
+      "SUPPLY BOXES",
+      "150 POINTS",
+      "DEPLOYMENT ZONE A"
+    ]
+  },
+  {
+    "pdf_page": 155,
+    "headings": [
+      "SCENARIOS",
+      "FIREFIGHT REINFORCED TACTICAL LINK",
+      "ARMY DEPLOYMENT DESIGNATED LANDING AREA",
+      "SIDE SWC GAME TABLE SIZE",
+      "POINTS ZONE SIZES",
+      "A AND B 200 4 32 IN X 48 IN 12 IN X 32 IN",
+      "A AND B 300 6 48 IN X 48 IN 12 IN X 48 IN",
+      "SPECIALIST TROOPS",
+      "SCENARIO SPECIAL RULES"
+    ]
+  },
+  {
+    "pdf_page": 156,
+    "headings": [
+      "SCENARIOS",
+      "DEPLOYMENT ZONE A DEPLOYMENT ZONE A",
+      "DEPLOYMENT ZONE B 12” DEPLOYMENT ZONE B",
+      "150 POINTS",
+      "DEPLOYMENT ZONE A",
+      "8” DEPLOYMENT ZONE B"
+    ]
+  },
+  {
+    "pdf_page": 157,
+    "headings": [
+      "GAME STATES",
+      "GAME STATES AND",
+      "GLOSSARY MODULE",
+      "STATES",
+      "BE IN, IN INFINITY.",
+      "REPRESENTED IN THE FORM OF STATE TOKENS.",
+      "STATES THAT ARE CONSIDERED NULL ARE MARKED IN RED, SO THEY ARE MORE EASILY IDENTIFIED.",
+      "REMEMBER",
+      "CAMOUFLAGED STATE",
+      "CAMOUFLAGED"
+    ]
+  },
+  {
+    "pdf_page": 158,
+    "headings": [
+      "GAME STATES",
+      "CANCELLATION",
+      "IMPORTANT",
+      "STEP 3:",
+      "STEP 4:",
+      "LONIAL",
+      "KES RCE",
+      "FENNEC",
+      "FENN RS",
+      "E C F U SILIE"
+    ]
+  },
+  {
+    "pdf_page": 159,
+    "headings": [
+      "GAME STATES",
+      "DEAD STATE",
+      "ACTIVATION",
+      "EFFECTS",
+      "CANCELLATION",
+      "DECOY STATE",
+      "DECOY STATE",
+      "ACTIVATION",
+      "EFFECTS",
+      "CANCELLATION"
+    ]
+  },
+  {
+    "pdf_page": 160,
+    "headings": [
+      "GAME STATES",
+      "IMPORTANT ENGAGED STATE",
+      "ENGAGED STATE",
+      "DISCONNECTED STATE",
+      "CANCELLATION",
+      "EFFECTS",
+      "CANCELLATION"
+    ]
+  },
+  {
+    "pdf_page": 161,
+    "headings": [
+      "GAME STATES",
+      "FOXHOLE STATE",
+      "FOXHOLE",
+      "ACTIVATION",
+      "EFFECTS",
+      "CANCELLATION",
+      "REMEMBER",
+      "HIDDEN DEPLOYMENT STATE",
+      "HIDDEN DEPLOYMENT",
+      "ACTIVATION"
+    ]
+  },
+  {
+    "pdf_page": 162,
+    "headings": [
+      "GAME STATES",
+      "CANCELLATION",
+      "HOLOECHO STATE",
+      "HOLOECHO",
+      "ACTIVATION",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 163,
+    "headings": [
+      "GAME STATES",
+      "CANCELLATION",
+      "IMPORTANT",
+      "IMPORTANT",
+      "EXAMPLE OF HOLOECHO STATE AND MODELS:"
+    ]
+  },
+  {
+    "pdf_page": 164,
+    "headings": [
+      "GAME STATES",
+      "HOLOMASK STATE IMPORTANT",
+      "ACTIVATION",
+      "IMPORTANT",
+      "EXAMPLE OF HOLOMASK AND PRIVATE INFORMATION",
+      "EFFECTS",
+      "CANCELLATION"
+    ]
+  },
+  {
+    "pdf_page": 165,
+    "headings": [
+      "GAME STATES",
+      "EXAMPLE: BS ATTACK AGAINST A IMMOBILIZED-B STATE",
+      "TROOPER IN IMMOBILIZED-A STATE",
+      "IMMOBILIZED-B",
+      "EXAMPLE: HACKING PROGRAM VS. TROOPER",
+      "IN IMMOBILIZED-B STATE"
+    ]
+  },
+  {
+    "pdf_page": 166,
+    "headings": [
+      "GAME STATES",
+      "IMPERSONATION STATE",
+      "IMPERSONATION",
+      "ACTIVATION",
+      "EFFECTS",
+      "IMPERSONATION-1",
+      "(IMP-2).",
+      "IMPERSONATION-2",
+      "CANCELLATION"
+    ]
+  },
+  {
+    "pdf_page": 167,
+    "headings": [
+      "GAME STATES",
+      "IMPORTANT IMPERSONATION EXAMPLE: REGAINING IMPERSONATION VS",
+      "HIDDEN DEPLOYMENT",
+      "IMPORTANT",
+      "REMEMBER IMPERSONATION EXAMPLE",
+      "LONIAL",
+      "LONIAL T FO",
+      "RCE FENNEC 1",
+      "FENNEC 2 FENN RS",
+      "E C F U SILIE"
+    ]
+  },
+  {
+    "pdf_page": 168,
+    "headings": [
+      "GAME STATES",
+      "ISOLATED STATE",
+      "ISOLATED",
+      "ACTIVATION",
+      "EFFECTS",
+      "CANCELLATION",
+      "NORMAL STATE",
+      "NORMAL STATE",
+      "ACTIVATION",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 169,
+    "headings": [
+      "GAME STATES",
+      "POSSESSED STATE PRONE STATE",
+      "POSSESSED PRONE",
+      "ACTIVATION ACTIVATION",
+      "CANCELLATION"
+    ]
+  },
+  {
+    "pdf_page": 170,
+    "headings": [
+      "GAME STATES",
+      "RETREAT! STATE SEPSITORIZED STATE",
+      "RETREAT! SEPSITORIZED",
+      "ACTIVATION ACTIVATION",
+      "EFFECTS",
+      "STUNNED STATE",
+      "STUNNED",
+      "ACTIVATION",
+      "EFFECTS",
+      "CANCELLATION"
+    ]
+  },
+  {
+    "pdf_page": 171,
+    "headings": [
+      "GAME STATES",
+      "SUPPRESSIVE FIRE STATE TARGETED STATE",
+      "SUPPRESSIVE FIRE TARGETED",
+      "ACTIVATION ACTIVATION",
+      "CANCELLATION",
+      "SUPPRESSIVE FIRE MODE WEAPON",
+      "* * * * 3 [***]",
+      "16” 24” 96”"
+    ]
+  },
+  {
+    "pdf_page": 172,
+    "headings": [
+      "GAME STATES",
+      "UNCONSCIOUS STATE UNLOADED STATE",
+      "UNCONSCIOUS UNLOADED",
+      "ACTIVATION ACTIVATION",
+      "EFFECTS"
+    ]
+  },
+  {
+    "pdf_page": 173,
+    "headings": [
+      "GLOSSARY",
+      "GLOSSARY",
+      "GAME MECHANICS AND THE WAY SPECIFIC RULES, SKILLS, WEAPONS, AND PIECES OF EQUIPMENT WORK.",
+      "THESE CONCEPTS GRADUALLY AS THEY COME UP DURING THEIR FIRST GAMES.",
+      "TERMINOLOGY",
+      "ALIGNMENT"
+    ]
+  },
+  {
+    "pdf_page": 174,
+    "headings": [
+      "GLOSSARY",
+      "TRAITS"
+    ]
+  },
+  {
+    "pdf_page": 175,
+    "headings": [
+      "GLOSSARY"
+    ]
+  },
+  {
+    "pdf_page": 176,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "QUICK REFERENCE CHARTS",
+      "WEAPON CHART",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "TACTICAL BOW +3 0 -6 8 1 DA ARM 2 ANTI-MATERIEL, SILENT (-6).",
+      "VIRAL TACTICAL BIOWEAPON (DA+SHOCK),",
+      "+3 0 -6 8 1 N BTS 1"
+    ]
+  },
+  {
+    "pdf_page": 177,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "CC WEAPONS",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "AP CC WEAPON 8 1 AP ARM/2 1 CC.",
+      "AP+DA CC",
+      "8 1 AP+DA ARM/2 2 ANTI-MATERIEL, CC.",
+      "WEAPON"
+    ]
+  },
+  {
+    "pdf_page": 178,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "DISPOSABLE SUPPORT WEAPONS",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "AKRYLAT-KANONE -3 0 +3 -3 -- 1 PARA PH-6 1",
+      "IMMOBILIZED-A, NON-LETHAL.",
+      "DISPOSABLE (2), NON-LETHAL",
+      "BLITZEN -3 0 +3 -3 6 1 E/M BTS/2 2"
+    ]
+  },
+  {
+    "pdf_page": 179,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "GRENADE LAUNCHERS",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "SPECULATIVE ATTACK, NON-",
+      "ECLIPSE GRENADE LETHAL, IMPACT TEMPLATE",
+      "0 -3 -6 -- 1 ECLIPSE -- --",
+      "LAUNCHER (CIRCULAR), REFLECTIVE,"
+    ]
+  },
+  {
+    "pdf_page": 180,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "MARKSMAN RIFLES",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "AP MARKSMAN",
+      "-3 +3 -3 -6 7 3 AP ARM/2 1 SUPPRESSIVE FIRE",
+      "BREAKER",
+      "-3 +3 -3 -6 7 3 AP BTS/2 1 SUPPRESSIVE FIRE"
+    ]
+  },
+  {
+    "pdf_page": 181,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "INTUITIVE ATTACK, CONCEALED,",
+      "DISPOSABLE (3), DIRECT",
+      "AP MINES ARM=0 | BTS=0 | STR=1 | S=0 7 1 AP ARM/2 1",
+      "TEMPLATE (SMALL TEARDROP),",
+      "DEPLOYABLE, [*]."
+    ]
+  },
+  {
+    "pdf_page": 182,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "PHEROWARE TACTICS (PT)",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "BS WEAPON (WIP), COMMS",
+      "ATTACK, DISPOSABLE (2),",
+      "PT: ENDGAME 7 1 AP BTS/2 1",
+      "DOUBLE SHOT, NO LOF, TARGET",
+      "(VITA), ZONE OF CONTROL."
+    ]
+  },
+  {
+    "pdf_page": 183,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "RED FURIES",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "AP RED FURY 0 +3 -3 -6 7 4 AP ARM/2 1 SUPPRESSIVE FIRE",
+      "MULTI RED FURY",
+      "MULTI RED FURY",
+      "0 +3 -3 -6 7 4 AP ARM/2 1 SUPPRESSIVE FIRE"
+    ]
+  },
+  {
+    "pdf_page": 184,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "RIOTSTOPPERS",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "DIRECT TEMPLATE (LARGE",
+      "HEAVY TEARDROP), INTUITIVE",
+      "-- 1 PARA PH-6 1",
+      "IMMOBILIZED-A."
+    ]
+  },
+  {
+    "pdf_page": 185,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "SNIPER RIFLES",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "AP SNIPER RIFLE -3 0 +3 -3 5 2 AP ARM/2 1",
+      "K1 SNIPER RIFLE -3 0 +3 -3 7 2 N ARM=0 1 ANTI-MATERIEL",
+      "MULTI SNIPER",
+      "-3 0 +3 -3 5 2 AP ARM/2 1"
+    ]
+  },
+  {
+    "pdf_page": 186,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "THUNDERBOLTS",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "AP THUNDERBOLT -3 0 +3 0 6 2 AP ARM/2 1",
+      "THUNDERBOLT -3 0 +3 0 6 2 N ARM 1",
+      "UNCATEGORIZED",
+      "SAVING NUMBER"
+    ]
+  },
+  {
+    "pdf_page": 187,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "UNCATEGORIZED",
+      "SAVING NUMBER",
+      "NAME RANGE PS B AMMUNITION ROLL OF SAVING TRAITS",
+      "ATTRIBUTE ROLLS",
+      "8\" 16” 24\" 32\" 40\" 48” 96\"",
+      "0 -3 -6 -- 2 -- -- --",
+      "OBSERVER TARGETED, NON-LETHAL, [***]",
+      "GIZMOKIT +3 0 -6 -- 1 -- -- -- NON-LETHAL, [***].",
+      "HYPER-RAPID"
+    ]
+  },
+  {
+    "pdf_page": 188,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "SUPPRESSIVE FIRE",
+      "0 -3 * 3 * * * [***]",
+      "MODE WEAPON",
+      "SPECULATIVE ATTACK, IMPACT",
+      "URAGAN MRL",
+      "-3 +3 0 -6 6 3 AP+SHOCK ARM/2 1 TEMPLATE (CIRCULAR), BURST:",
+      "SINGLE TARGET.",
+      "-3 +3 0 -6 5 3 AP+SHOCK ARM/2 1 BURST: SINGLE TARGET.",
+      "INTUITIVE ATTACK, NON-"
+    ]
+  },
+  {
+    "pdf_page": 189,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "QUICK REFERENCE CHARTS TYPES OF ORDERS",
+      "REGULAR ORDER",
+      "GAME SEQUENCE",
+      "IRREGULAR ORDER",
+      "SPECIAL LIEUTENANT ORDER",
+      "TACTICAL ORDER"
+    ]
+  },
+  {
+    "pdf_page": 190,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "EXPENDITURE SEQUENCE",
+      "STRUCTURE OF AN ORDER",
+      "BASIC SHORT SKILL + SHORT SKILL",
+      "LONG SKILL"
+    ]
+  },
+  {
+    "pdf_page": 191,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "ORDERS AND AROS REFERENCE CHART",
+      "BASIC SHORT SKILLS LONG SKILLS",
+      "NAME TYPE PAGE NAME TYPE PAGE",
+      "DISCOVER COMMON 77 ASSISTED FIRE HACKING 59",
+      "IDLE COMMON 80 BERSERK SPECIAL 86",
+      "MOVE COMMON 29 CAUTIOUS MOVEMENT COMMON 32",
+      "CYBERMASK HACKING 59",
+      "COMBAT JUMP SPECIAL 89",
+      "CLIMB COMMON 32"
+    ]
+  },
+  {
+    "pdf_page": 192,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "IMPETUOUS TROOPER ACTIVATION",
+      "MARTIAL ARTS CHART",
+      "LEVEL ATTACK MOD OPPONENT MOD BURST MOD",
+      "1 0 -3 0",
+      "2 +3 -3 0",
+      "3 +3 -3 +1SD",
+      "4 +3 -3 +1B",
+      "5 +3 -3 +1B, +1SD",
+      "BOOTY CHART"
+    ]
+  },
+  {
+    "pdf_page": 193,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "AMMO QUICK REFERENCE CHART",
+      "AMMUNITION SAVING ROLL (SR) NUMBER OF ROLLS (SR: NO) SPECIAL EFFECT",
+      "N ARM / BTS * 1",
+      "HALVES THE TARGET’S ARM OR BTS",
+      "AP ARM / BTS * 1",
+      "ATTRIBUTE.",
+      "DA ARM / BTS * 2",
+      "STATE: ISOLATED STATE: IMM-B",
+      "AGAINST HI, REM, VH, AND TAG"
+    ]
+  },
+  {
+    "pdf_page": 194,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "PROGRAMS LOADED BY EACH HACKING DEVICE",
+      "DEVICE PROGRAM 1 PROGRAM 2 PROGRAM 3 PROGRAM 4 PROGRAM 5 PROGRAM 6",
+      "HACKING DEVICE CARBONITE SPOTLIGHT TOTAL CONTROL OBLIVION",
+      "HACKING DEVICE",
+      "CARBONITE SPOTLIGHT TOTAL CONTROL OBLIVION WHITE NOISE CYBERMASK",
+      "KILLER HACKING",
+      "TRINITY CYBERMASK",
+      "DEVICE",
+      "EVO HACKING ENHANCED"
+    ]
+  },
+  {
+    "pdf_page": 195,
+    "headings": [
+      "QUICK REFERENCE CHARTS",
+      "RETREAT! CHART",
+      "TOTAL ARMY POINTS VICTORY POINTS (25% OF THE ARMY LIST)",
+      "400 100 POINTS OR LESS",
+      "350 88 POINTS OR LESS",
+      "300 75 POINTS OR LESS",
+      "250 63 POINTS OR LESS",
+      "200 50 POINTS OR LESS",
+      "150 38 POINTS OR LESS",
+      "FIRETEAM BONUSES CHART"
+    ]
+  },
+  {
+    "pdf_page": 196,
+    "headings": [
+      "[DIVE ACTIVE]",
+      "[ACCESSING MAYA: ONLINE]",
+      "ONE-HUNDRED AND EIGHTY-FIVE YEARS INTO THE FUTURE, HUMANKIND HAS REACHED THE STARS, COLONIZED",
+      "SEVERAL STAR SYSTEMS, CLASHED WITH AN ENORMOUSLY POWERFUL ALIEN EMPIRE, AND SURVIVED AGAINST",
+      "ALL ODDS. IT HAS NOT WON ANYTHING YET… BUT IT HAS SURVIVED. AN UNEASY TRUCE WITH THE UR HEGEMONY",
+      "HAS UTTERLY TRANSFORMED THE POLITICAL AND MILITARY LANDSCAPE OF THE HUMAN SPHERE. HUMANITY’S",
+      "FORMER ALIEN ADVERSARY IS NOW AN UNWELCOME ALLY, ANOTHER FORCE TO BE CONSIDERED WHEN IT COMES TO",
+      "FORMING ALLIANCES AND STRATEGIZING, BUT AT WHAT COST?",
+      "INFINITY N5 IS A TABLETOP WARGAME THAT USES 35 MM METAL AND PLASTIC MINIATURES TO CREATE SKIRMISHES",
+      "IN A HI-TECH SCI-FI SETTING INFLUENCED BY MANGA AESTHETICS—AN EXCITING, ACTION-PACKED VISION OF THE"
+    ]
+  }
+]

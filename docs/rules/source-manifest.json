@@ -1,0 +1,30 @@
+{
+  "review_date": "2026-10-22",
+  "sources": [
+    {
+      "kind": "rules",
+      "filename": "eng-n5-update-5-3.pdf",
+      "path": "/Users/bytedance/Downloads/eng-n5-update-5-3.pdf",
+      "sha256": "53921e91c2d3d62ad5f7125abcd4174b2cf937d45320233eed5b6d301b66af3f",
+      "pages": 196,
+      "version": "5.3"
+    },
+    {
+      "kind": "faq",
+      "filename": "eng-faqs-n5-v0-1.pdf",
+      "path": "/Users/bytedance/Downloads/eng-faqs-n5-v0-1.pdf",
+      "sha256": "7bf26b7d039db7826ef5500b1a2159fe54855b4e632133cab416becee65b85aa",
+      "pages": 5,
+      "version": "0.1"
+    },
+    {
+      "kind": "tokens",
+      "filename": "infinity-tokens-n5.pdf",
+      "path": "/Users/bytedance/Downloads/infinity-tokens-n5.pdf",
+      "sha256": "c378580be5ecb03be95df251ef72a9204b617688ec1183e02647ac53837266f6",
+      "pages": 9,
+      "version": "N5（封面未标5.3修订号）"
+    }
+  ],
+  "scope": "规则书目录与模块规则重点梳理；FAQ全部正文；token全部九页视觉检查。不是全部196页逐行验证，也不是模拟器全实现。"
+}
