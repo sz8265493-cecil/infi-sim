@@ -185,6 +185,7 @@ export function validateAllocations(args,{declaration=true}={}){
  if(!v||v.team===a.team||v.team<0||!S.onTable(v))return {can:false,reason:'分枪目标必须是在场敌军'};
  const sp=(declaration?declarationSpec:attackSpec)(a,v,m,terrain,{moving:E.pathLength(args.path||[])>0,manualCover:args.manualCover,allowMarker:args.allowMarkers?.includes(v.id),triangulated:args.triangulated});if(declaration&&!sp.can)return {can:false,reason:v.name+'：'+sp.reason};}
  if(used>total)return {can:false,reason:'分配B总数超过可用B'+total};
+ if(used<total)return {can:false,total,used,reason:'主动轮必须分配完整B：已分配 '+used+'/'+total+' B，还需分配 '+(total-used)+' B'};
  const sd=specialDice(a,m,{longSkill:args.triangulated||args.longSkill});const destinations=args.sdTargets||(sd===1?[sdTarget]:Array.from({length:sd},()=>sdTarget));if(sd&&(destinations.length!==sd||Array.from(destinations).some(id=>!ids.has(id))))return {can:false,reason:'须将每颗SD指定给一个已分配B的目标'};
  return {can:true,total,used,sd,sdTargets:destinations};
 }
