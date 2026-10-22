@@ -1,4 +1,4 @@
-import {LESSONS} from './lessons.js?v=36';
+import {LESSONS} from './lessons.js?v=38';
 import {MISSIONS} from './mission.js?v=36';
 const esc=x=>String(x||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function category(id,l){return /fireteam/.test(id)?'火力组':/FAQ/.test(l.kind+' '+l.title)?'FAQ':/climb|jump|Jump|narrow|height|lowwall|room|terrain/.test(id)?'移动与地形':/saves|removal|em$|para|doctor|engineer|guts/.test(id)?'过保与状态':/hacking|whiteNoise|possession|controlledJump|evoSupport|cybermine/.test(id)?'黑客与装备':'射击与反应';}

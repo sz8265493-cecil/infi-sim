@@ -1,4 +1,4 @@
-import {installLobby} from './lobby.js?v=36';
+import {installLobby} from './lobby.js?v=38';
 import * as FT from './fireteams.js?v=36';
 import * as DP from './deployment-planner.js?v=36';
 import * as TR from './terrain-rules.js?v=36';
@@ -35,7 +35,7 @@ import {animatePools,animateSaves,showBattle} from './dice-ui.js?v=36';
 import {referenceHTML} from './reference.js?v=36';
 import * as E from './engine.js?v=36';
 import * as F from './combat.js?v=36';
-import {LESSONS} from './lessons.js?v=36';
+import {LESSONS} from './lessons.js?v=38';
 const ACTION_NAMES={demolition:'爆破装药 · 爆破模式',supportware:'黑客支援程序',zeroPain:'零痛 Zero Pain',medikit:'医疗包 MediKit',gizmokit:'维修包 GizmoKit',deactivator:'拆除器 Deactivator',doctor:'医生 Doctor',engineer:'工程师 Engineer',deployable:'放置部署物',reload:'装填 Reload',targetless:'投掷／发射部署武器',activateBall:'激活迪斯科球',whiteNoise:'白噪声 White Noise'};
 const $=id=>document.getElementById(id),svg=$('board'),C=['#ff438a','#24d9ff'];
 const safeText=v=>String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
