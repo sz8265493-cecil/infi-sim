@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as H from '../dist/hacking.js?v=36';
+import * as H from '../dist/hacking.js?v=82';
 const unit=(id,team=0,extra={})=>({id,name:id,team,x:10,y:10,z:0,s:2,facing:0,hp:1,maxhp:1,states:[],wip:13,type:'LI',...extra});
 const evo=()=>unit('e',0,{hackingDevice:'EVO'});
 const rem=()=>unit('r',0,{x:14,type:'REM'});
@@ -49,3 +49,5 @@ test('upgraded program values are unit-local and NWI hackers retain devices',()=
  assert.equal(H.programFor(actor,'totalControl').b,2);assert.equal(H.spec(actor,unit('t',1,{type:'TAG'}),'totalControl').m.srMod,-2);
  assert.deepEqual(H.availablePrograms({...actor,offTable:true}),[]);
 });
+
+test('enemy repeater route reaches remote Hacker only, Firewall choice never stacks',()=>{const a={id:'a',team:0,hp:1,states:[],s:2,x:10,y:10,wip:13,hackingDevice:'HD'},b={id:'b',team:1,hp:1,states:[],s:2,x:35,y:35,wip:13,hackingDevice:'HD',hackingFirewall:-6,firewallChoices:{a:-3}},r={id:'r',team:1,hp:1,states:[],s:0,x:12,y:10,repeater:true};const opts={repeaters:[r],route:{kind:'enemy',id:'r'}};const s=H.spec(a,b,'spotlight',opts);assert.equal(s.can,true);assert.equal(s.sv,10);assert.equal(s.m.srMod,3);assert.equal(H.spec(a,{...b,hackingDevice:null},'spotlight',opts).can,false);assert.equal(H.spec(a,b,'spotlight',{...opts,route:{kind:'direct'}}).can,false);});

@@ -1,14 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import * as A from '../dist/army-import.js?v=36';
+import * as A from '../dist/army-import.js?v=97';
 import * as EQ from '../dist/equipment.js?v=36';
-import * as K from '../dist/skills.js?v=36';
-import * as F from '../dist/combat.js?v=36';
-import * as D from '../dist/deployables.js?v=36';
-import * as O from '../dist/orders.js?v=36';
-import * as V from '../dist/saves.js?v=36';
-import {applyMineAttacks} from '../dist/mine-resolution.js?v=36';
+import * as K from '../dist/skills.js?v=117';
+import * as F from '../dist/combat.js?v=117';
+import * as D from '../dist/deployables.js?v=84';
+import * as O from '../dist/orders.js?v=102';
+import * as V from '../dist/saves.js?v=75';
+import {applyMineAttacks} from '../dist/mine-resolution.js?v=79';
 import {ARMY_EXAMPLES} from '../dist/army-examples.js';
 const army=()=>A.previewArmy(ARMY_EXAMPLES[0].code,JSON.parse(fs.readFileSync('dist/assets/army-103.json'))).units.map((u,i)=>({...u,team:0,x:17,y:23+i*2,z:0,facing:0}));
 test('TAGCom applies to same group TAG using dedicated PH, does not stack and expires with Null provider',()=>{const units=army(),tag=units.find(u=>u.armyRef.unitId===34),bee=units.find(u=>u.armyRef.unitId===935);EQ.syncTAGCom(units);assert.equal(K.dodgeSV(tag),15);assert.equal(tag.gizmokitPH+tag.tagcomGizmo,14);assert.equal(bee.tagcomDodge,0);bee.states=['isolated'];EQ.syncTAGCom(units);assert.equal(K.dodgeSV(tag),15);bee.hp=0;bee.states=['unconscious'];EQ.syncTAGCom(units);assert.equal(K.dodgeSV(tag),12);});
@@ -24,4 +24,4 @@ test('D Charges uses CC-6, EXP AP saves and shared three-shot inventory',()=>{co
 test('imported HoloMask keeps its own loadout and supports same-silhouette appearance',()=>{const u=army().find(u=>u.armyRef.unitId===1561),before=[...u.loadout];assert.ok(u.holoOptions.length);assert.equal(K.enterMask(u,u.holoOptions[0].ref),true);assert.deepEqual(u.loadout,before);assert.equal(K.marker(u),false);assert.ok(K.masked(u));K.reveal(u);assert.equal(!!K.masked(u),false);});
 test('fixture skills and equipment all resolve without unsupported fallback',()=>{for(const [i,f] of ['army-103','army-yujing'].entries()){const r=A.previewArmy(ARMY_EXAMPLES[i].code,JSON.parse(fs.readFileSync('dist/assets/'+f+'.json')));assert.ok(r.units.length>=14);for(const u of r.units)assert.deepEqual(u.unsupported,[],u.name);}});
 
-test('difficult terrain distinguishes matching first MOV from second and stops unmatched entry',async()=>{const T=await import('../dist/terrain-rules.js?v=36'),M=await import('../dist/movement.js?v=36');const u={s:2,x:17,y:23,z:0,mov:4,mov2:4,terrainTypes:['Mountain'],terrainChoice:'Mountain',terrainAreas:[{x:15,y:20,w:5,h:10,type:'Mountain'}]};assert.equal(M.budget(u,{moveKind:'move',path:[u],stance:'keep'}),5);assert.equal(M.budget(u,{moveKind:'move',secondMove:true,path:[u],stance:'keep'}),4);const v={...u,y:19,terrainChoice:'Jungle',terrainTypes:['Jungle']};assert.ok(T.pathError(v,[v,{...v,y:22}]));assert.equal(M.budget(v,{moveKind:'move',secondMove:true,terrainStopped:true,path:[v],stance:'keep'}),0);});
+test('difficult terrain distinguishes matching first MOV from second and stops unmatched entry',async()=>{const T=await import('../dist/terrain-rules.js?v=117'),M=await import('../dist/movement.js?v=88');const u={s:2,x:17,y:23,z:0,mov:4,mov2:4,terrainTypes:['Mountain'],terrainChoice:'Mountain',terrainAreas:[{x:15,y:20,w:5,h:10,type:'Mountain'}]};assert.equal(M.budget(u,{moveKind:'move',path:[u],stance:'keep'}),5);assert.equal(M.budget(u,{moveKind:'move',secondMove:true,path:[u],stance:'keep'}),4);const v={...u,y:19,terrainChoice:'Jungle',terrainTypes:['Jungle']};assert.ok(T.pathError(v,[v,{...v,y:22}]));assert.equal(M.budget(v,{moveKind:'move',secondMove:true,terrainStopped:true,path:[v],stance:'keep'}),0);});

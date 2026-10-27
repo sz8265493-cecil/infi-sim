@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as K from '../dist/skills.js?v=36';
-import * as F from '../dist/combat.js?v=36';
+import * as K from '../dist/skills.js?v=117';
+import * as F from '../dist/combat.js?v=117';
 const unit=(id,team,x,extra={})=>({id,name:id,team,x,y:10,z:0,s:2,facing:team?180:0,bs:12,cc:20,wip:13,ph:12,hp:1,maxHp:1,states:[],...extra});
 const a=()=>unit('a',0,10), b=()=>unit('b',1,15);
 const rifle={id:'test',kind:'bs',b:3,ps:7,bands:[[48,0]],ammo:'N'};
