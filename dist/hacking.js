@@ -1,8 +1,8 @@
 // N5.3 / FAQ 0.1 (September 2026). Declaration never measures a target.
 // Source: https://infinitythewiki.com/Hacking_Device and each program's page.
-import * as S from './states.js?v=36';
-import {front,visibility,radius,height,resolveDice} from './engine.js?v=36';
-import {planSaves,rollRound} from './saves.js?v=36';
+import * as S from './states.js?v=109';
+import {front,visibility,radius,height,resolveDice} from './engine.js?v=117';
+import {planSaves,rollRound} from './saves.js?v=109';
 const program=(id,name,ps,b,ammo,effect,target,mod=0)=>({id,name,ps,b,ammo,effect,target,mod,skill:'short',aro:true,supported:true});
 export const PROGRAMS={
  spotlight:program('spotlight','聚光 Spotlight',5,2,'AP','targeted','model'),
@@ -58,7 +58,7 @@ export function attackSpec(u,target,id,options={}){
  // explicit firewall choice supplied by caller; no stacking. Device firewall
  // is unavailable when Isolated/Null; independent equipment can be supplied.
  const deviceFW=!disabled(target)?Number(target.hackingFirewall||0):0;
- const firewall=options.firewall??Math.min(area.firewall,deviceFW,Number(target.firewall||0));
+ const choices=firewalls(target,area.firewall),preferred=target.firewallChoices?.[u.id];const firewall=options.firewall??(choices.includes(preferred)?preferred:Math.min(...choices));
  const mods=d.program.mod+(has(target,'targeted')?3:0)+Math.min(0,firewall)+(options.wipMod||0);
  return {...d,can:area.inArea,reason:area.inArea?'':'目标不在所宣告路径的黑客范围内，转为待机',sv:Math.max(0,u.wip+Math.max(-12,Math.min(12,mods))),firewall,area};
 }
@@ -69,7 +69,7 @@ export function resolveAttack({user,target,program,dice,opposingDice=[],opposing
  if(!spec.can)return {spec,hits:[],opposingHits:[],plan:null};
  if(dice.length>spec.burst||[...dice,...opposingDice].some(d=>!Number.isInteger(d)||d<1||d>20))throw Error('黑客骰池无效');
  const result=opposed?resolveDice(dice,spec.sv,opposingDice,opposingSV):{a:dice.filter(d=>d<=spec.sv),b:opposingDice.filter(d=>d<=opposingSV)};
- const p=spec.program,mode={ps:p.ps,ammo:p.ammo,saveAttribute:'BTS',nonlethal:!!p.effect,srMod:(p.srMod||0)+(spec.firewall<0?3:0)};
+ const p=spec.program,mode={kind:'hack',ps:p.ps,ammo:p.ammo,saveAttribute:'BTS',nonlethal:!!p.effect,srMod:(p.srMod||0)+(spec.firewall<0?3:0)};
  const plan=planSaves(target,result.a,spec.sv,mode,false);
  plan.hacking={program:p.id,effect:p.effect,cancelPossession:p.id==='totalControl'&&has(target,'possessed')};
  return {spec,hits:result.a,opposingHits:result.b,plan:plan.initialCount?plan:null};
@@ -108,9 +108,9 @@ export function supportActions(actor,{reactive=false,aroEligible=false,trigger='
 export function supportSpec(actor,id,{target=null,units=[],terrain=[],reactive=false,aroEligible=false,trigger='',troopType='',repeaters=[],route={kind:'autoFriendly'},measure=true}={}){
  const p=programFor(actor,id);let reason='';
  if(!supportActions(actor,{reactive,aroEligible,trigger}).some(p=>p.id===id))reason='没有该程序，或当前状态／主动反应阶段不允许使用';
- else if(id==='cybermask'&&measure&&units.some(v=>v.team!==actor.team&&v.team>=0&&S.onTable(v)&&!v.offTable&&(S.active(v)||has(v,'camouflaged')||has(v,'impersonation2'))&&front(v,actor)&&visibility(v,actor,terrain).visible))reason='网络伪装必须位于敌方模型及标记视线之外';
+ else if(id==='cybermask'&&measure&&units.some(v=>v.team!==actor.team&&v.team>=0&&S.onTable(v)&&!v.offTable&&(S.active(v)||has(v,'camouflaged')||has(v,'impersonation1')||has(v,'impersonation2'))&&front(v,actor)&&visibility(v,actor,terrain).visible))reason='网络伪装必须位于敌方模型及标记视线之外';
  else if(['assistedFire','enhancedReaction'].includes(id)){
-  if(!target||target.team!==actor.team||target.type!=='REM'||!S.onTable(target)||target.offTable||['camouflaged','impersonation','impersonation2','holoecho'].some(k=>has(target,k)))reason='目标必须是同军表的 REM 模型';
+  if(!target||target.team!==actor.team||target.type!=='REM'||!S.onTable(target)||target.offTable||['camouflaged','impersonation','impersonation1','impersonation2','holoecho'].some(k=>has(target,k)))reason='目标必须是同军表的 REM 模型';
   else if(measure&&!hackingArea(actor,target,{repeaters,route}).inArea)reason='目标不在黑客范围内';
  }else if(id==='fairyDust'&&!['HI','REM','TAG','VH'].includes(troopType))reason='选择 HI、REM、TAG 或 VH 类型';
  return {can:!reason,reason,program:p,id,actorId:actor.id,targetId:target?.id,troopType,noRoll:p?.noRoll,skill:p?.skill,immediate:id==='controlledJump',burst:id==='zeroPain'?2:0,sv:Math.max(0,(actor.wip||0)+S.rollMod(actor)),opponentMod:id==='zeroPain'?-3:0};
@@ -129,6 +129,7 @@ export function syncSupportware(units){
  return next;
 }
 export function cancelSupportware(units,actorId){const next=structuredClone(units);const actor=next.find(u=>u.id===actorId);if(actor)delete actor.supportware;return syncSupportware(next);}
+export function declareProgram(units,actorId,id,{targetId,troopType}={}){let next=cancelSupportware(units,actorId);const actor=next.find(u=>u.id===actorId);if(PROGRAMS[id]?.supportware&&actor){const targets=recipients({id,targetId,troopType,team:actor.team},next);for(const u of next)if(u.supportware&&recipients({...u.supportware,team:u.team},next).some(n=>targets.includes(n)))delete u.supportware;}return syncSupportware(next);}
 export function resolveSupport(units,actorId,id,options={}){
  const actor=units.find(u=>u.id===actorId);if(!actor)return {can:false,reason:'黑客不在军表中',units};
  const target=options.target||units.find(u=>u.id===options.targetId),spec=supportSpec(actor,id,{...options,target,units});
@@ -151,3 +152,8 @@ export function resolveZeroPain(actor,dice,attacks=[],options={}){
   return {...a,sv,opposed:true,avoided:r.a.length>0,hits:r.b,defensiveHits:r.a};
  })};
 }
+
+export function routes(u,repeaters=[]){return [{value:'autoFriendly',label:'自身／友方网络',route:{kind:'autoFriendly'}},{value:'direct',label:'仅自身控制区',route:{kind:'direct'}},...repeaters.filter(r=>!disabled(r)&&r.repeater!==false).map(r=>({value:(r.team===u.team?'friendly':'enemy')+':'+r.id,label:(r.team===u.team?'友方中继器 · ':'敌方中继器 · ')+(r.name||r.id),route:{kind:r.team===u.team?'friendly':'enemy',id:r.id}}))];}
+export function anyArea(u,target,repeaters=[]){return routes(u,repeaters).some(x=>hackingArea(u,target,{repeaters,route:x.route}).inArea);}
+export function firewalls(target,routeFirewall=0){const values=[routeFirewall,disabled(target)?0:Number(target.hackingFirewall||0),Number(target.firewall||0)].filter(v=>v<0);return [...new Set(values.length?values:[0])];}
+export function effectiveFirewall(actor,target,routeFirewall=0){const choices=firewalls(target,routeFirewall),p=target.firewallChoices?.[actor.id];return choices.includes(p)?p:Math.min(...choices);}

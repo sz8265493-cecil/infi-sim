@@ -1,13 +1,13 @@
 // Reproducible core-rule probes. These are not a claim of full match UI coverage.
-import * as E from './engine.js?v=36';
-import * as F from './combat.js?v=36';
-import * as K from './skills.js?v=36';
-import * as D from './deployables.js?v=36';
-import * as H from './hacking.js?v=36';
-import * as FT from './fireteams.js?v=36';
-import * as P from './peripherals.js?v=36';
-import * as Q from './mission.js?v=36';
-import * as S from './states.js?v=36';
+import * as E from './engine.js?v=117';
+import * as F from './combat.js?v=117';
+import * as K from './skills.js?v=117';
+import * as D from './deployables.js?v=84';
+import * as H from './hacking.js?v=82';
+import * as FT from './fireteams.js?v=108';
+import * as P from './peripherals.js?v=107';
+import * as Q from './mission.js?v=81';
+import * as S from './states.js?v=109';
 const u=(v={})=>({id:'a',name:'规则训练员',en:'TRAINER',slug:'trainer',s:2,team:0,x:5,y:5,z:0,hp:1,maxhp:1,states:[],cc:15,bs:12,ph:11,wip:13,facing:0,weapon:'combi',loadout:['combi','cc'],...v});
 const ftFixture=()=>{const units=[u(),u({id:'b',x:6}),u({id:'c',x:7})],f={id:'f',label:'HARIS 训练组',team:0,type:'HARIS',members:['a','b','c'],leaderId:'a',assignments:{a:{name:'A'},b:{name:'B',min:1},c:{name:'C'}}};return {units,fireteams:[f],f};};
 export const FAQ_CASES=[

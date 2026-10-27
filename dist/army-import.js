@@ -1,14 +1,17 @@
 import {decodeArmyCode,encodeArmyCode} from './army-code.js?v=36';
-import * as F from './combat.js?v=36';
-import * as D from './deployables.js?v=36';
-import * as E from './engine.js?v=36';
-import * as Q from './mission.js?v=36';
+import * as F from './combat.js?v=117';
+import * as D from './deployables.js?v=84';
+import * as E from './engine.js?v=117';
+import * as Q from './mission.js?v=81';
 export const label=t=>t.name+(t.extras?.length?' ('+t.extras.map(x=>x.name).join(', ')+')':'');
 const alias={'Combi Rifle':'复合步枪','Pistol':'手枪','CC Weapon':'近战武器','Heavy Machine Gun':'重机枪','Spitfire':'轻机枪','Light Flamethrower':'轻型喷火器','Heavy Flamethrower':'重型喷火器','Chain Rifle':'链式步枪','Boarding Shotgun':'登舰霰弹枪','Light Shotgun':'轻型霰弹枪','Flash Pulse':'闪光脉冲','PARA CC Weapon':'麻痹近战武器'};
-const special={'Cybermine':'cyberMine','Smoke Grenades':'smokeGrenade','Smoke Grenade Launcher':'smokeLauncher','Eclipse Grenades':'eclipseGrenade','Eclipse Grenade Launcher':'eclipseLauncher','Disco Baller':'discoBaller','Drop Bears':'dropBears','Pitcher':'pitcher','Shock Mine':'shockMine','AP Mine':'apMine','E/M Mine':'emMine','PARA Mine':'paraMine','Monofilament Mine':'monoMine','Viral Mine':'viralMine','Deployable Repeater':'deployableRepeater'};
-const basicSkills={'360º Visor':'visor360','Remote Presence':'remotePresence','Courage':'courage','Religious Troop':'religious','Camouflage':'camouflage','Stealth':'stealth','Sixth Sense':'sixthSense','Combat Instinct':'combatInstinct','Climbing Plus':'climbingPlus','Super-Jump':'superJump','Sensor':'sensor','Triangulated Fire':'triangulatedFire','Total Reaction':'totalReaction','Tactical Awareness':'tacticalAwareness','Marksmanship':'marksmanship','X Visor':'xVisor','Limited Cover':'limitedCover','No Cover':'skillNoCover','Warhorse':'warhorse','Natural Born Warrior':'naturalBornWarrior','Number 2':'number2','NCO':'nco','Baggage':'baggage','Repeater':'repeater','Specialist Operative':'specialist','Technorganic':'technorganic'};
+const special={'CrazyKoala':'crazyKoala','CrazyKoalas':'crazyKoala','FastPanda':'fastPanda','WildParrot':'wildParrot','Cybermine':'cyberMine','Smoke Grenades':'smokeGrenade','Smoke Grenade Launcher':'smokeLauncher','Eclipse Grenades':'eclipseGrenade','Eclipse Grenade Launcher':'eclipseLauncher','Disco Baller':'discoBaller','Drop Bears':'dropBears','Pitcher':'pitcher','Shock Mine':'shockMine','AP Mine':'apMine','E/M Mine':'emMine','PARA Mine':'paraMine','Monofilament Mine':'monoMine','Viral Mine':'viralMine','Deployable Repeater':'deployableRepeater'};
+const basicSkills={'Holoprojector':'holoprojector','Biometric Visor':'biometricVisor','360º Visor':'visor360','Remote Presence':'remotePresence','Courage':'courage','Religious Troop':'religious','Camouflage':'camouflage','Stealth':'stealth','Sixth Sense':'sixthSense','Combat Instinct':'combatInstinct','Climbing Plus':'climbingPlus','Super-Jump':'superJump','Sensor':'sensor','Triangulated Fire':'triangulatedFire','Total Reaction':'totalReaction','Tactical Awareness':'tacticalAwareness','Marksmanship':'marksmanship','X Visor':'xVisor','Limited Cover':'limitedCover','No Cover':'skillNoCover','Warhorse':'warhorse','Natural Born Warrior':'naturalBornWarrior','Number 2':'number2','NCO':'nco','Baggage':'baggage','Repeater':'repeater','Specialist Operative':'specialist','Technorganic':'technorganic'};
 function skill(u,t){
  const n=t.name.replaceAll('\u00a0',' '),ex=t.extras.map(e=>e.name.replaceAll('\u00a0',' ')),value=ex[0],num=Number(value);
+ if(n==='Impersonation'&&(!ex.length||value==='IMP-2')){u.impersonation=value==='IMP-2'?2:1;return true;}
+ if(n==='Protheion'&&(!ex.length||ex.length===1&&[-3,-6].includes(num))){u.protheion=true;u.protheionMod=ex.length?num:0;return true;}
+ if(n==='Bangbomb'&&ex.length===1&&num>0){u.bangbomb=num;return true;}
  if(n==='Holomask'){u.holomask=true;return true;}
  if(n==='Impetuous'){u.impetuous=true;return true;}
  if(n==='Frenzy'){u.frenzy=true;return true;}
@@ -24,10 +27,11 @@ function skill(u,t){
  if(n==='Combat Jump'){u.combatJump=true;for(const x of ex){if(x==='Explosion')u.combatJumpExplosion=true;else if(/^PH=\d+$/.test(x))u.combatJumpPH=+x.slice(3);else return false;}return true;}
  if(n==='Parachutist'){u.parachutist=true;return !ex.length;}
  if(n==='Terrain'&&ex.length===1&&value.split('/').every(x=>['Aquatic','Desert','Mountain','Jungle','Zero-G','Total'].includes(x))){u.terrainTypes=value.split('/');u.terrainChoice=u.terrainTypes[0];return true;}
- if(n==='Infiltration'){u.infiltration=true;for(const x of ex){if(/^PH=\d+$/.test(x))u.infiltrationPH=+x.slice(3);else return false;}return true;}
+ if(n==='Infiltration'){u.infiltration=true;for(const x of ex){if(/^PH=\d+$/.test(x))u.infiltrationPH=+x.slice(3);else if(/^ReRoll PH=\d+$/.test(x))u.infiltrationRerollPH=+x.slice(10);else return false;}return true;}
  if(n==='Hidden Deployment'){u.hiddenDeployment=true;return true;}
  if(n==='Strategos L2'&&!ex.length){u.strategos=2;return true;}
  if(n==='No Wound Incapacitation'){u.nwi=true;return true;}
+ if(n==='Explode'&&!ex.length){u.explode=true;return true;}
  if(n==='Dogged'){u.dogged=true;return true;}
  if(n==='TAGCom'&&ex.join(', ')==='Dodge (PH+3), GizmoKit (PH+1)'){u.tagcom={dodge:3,gizmokit:1};return true;}
  if(n==='ECM: Guided'){u.ecmGuided=num;return true;}
@@ -70,7 +74,7 @@ export function buildWeapon(t,catalog){
  const modes=[],warnings=[];let disposable=0;
  for(const [i,w] of rows.entries()){
   const props=w.properties||[],p=props.filter(x=>!(x==='[**]'&&[14,23,25,175].includes(t.id))).join('|'),cc=props.includes('CC'),direct=p.includes('Direct Template'),impact=p.includes('Impact Template');
-  if(/Deployable|Targetless|Comms|Zone of Control|Perimeter|Boost|State: Sepsitorized|State: Targeted|State: Stunned \/|BS Weapon \(PH\)|Throwing Weapon|\[\*|Improvised|Silent|Double Shot|CC Attack/.test(p)){warnings.push((w.mode||w.name)+'：专属流程未实现');continue;}
+  if(/Deployable|Targetless|Comms|Zone of Control|Perimeter|Boost|State: Sepsitorized|State: Targeted|State: Stunned \/|Throwing Weapon|\[\*|Improvised|Silent|Double Shot|CC Attack/.test(p)){warnings.push((w.mode||w.name)+'：专属流程未实现');continue;}
   const ammoName=catalog.ammunitions.find(a=>a.id===w.ammunition)?.name;
   let ammo=ammoName?.toUpperCase().replaceAll('E/M','EM').replaceAll(' ','');
   if(p.includes('Bioweapon'))ammo='VIRAL';else if(w.saving==='ARM and BTS')ammo='PLASMA';else if(w.saving==='ARM=0')ammo=p.includes('State: Dead')?'MONO':'K1';else if(w.saving==='BTS/2'&&ammo==='AP')ammo='BREAKER';
@@ -79,7 +83,7 @@ export function buildWeapon(t,catalog){
   const bands=Object.values(w.distance||{}).filter(Boolean).map(x=>[x.max/2.5,Number(x.mod)]).sort((a,b)=>a[0]-b[0]);
   if(!Number.isFinite(ps)||!Number.isFinite(b)||(!cc&&!direct&&!bands.length)){warnings.push((w.mode||w.name)+'：参数不完整');continue;}
   const template=direct?(p.includes('Large')?'large':'small'):impact?'circle':undefined;
-  const m={id:'m'+i,name:w.mode||'标准模式',kind:cc?'cc':direct?'direct':impact?'impact':'bs',b,ps,bands,saves:1,ammo,sd,opponentMod,nonlethal:p.includes('Non-lethal'),continuous:p.includes('Continous Damage'),saveAttribute:w.saving?.startsWith('BTS')?'BTS':'ARM',...(template?{template}:{}),...(p.includes('BS Weapon (WIP)')||p.includes('Technical Weapon')?{attribute:'wip'}:{})};
+  const m={id:'m'+i,name:w.mode||'标准模式',kind:cc?'cc':direct?'direct':impact?'impact':'bs',b,ps,bands,saves:1,ammo,sd,opponentMod,intuitive:p.includes('Intuitive Attack'),speculative:p.includes('Speculative Attack'),...(p.includes('BS Weapon (PH)')?{attribute:'ph'}:{}),nonlethal:p.includes('Non-lethal'),continuous:p.includes('Continous Damage'),saveAttribute:w.saving?.startsWith('BTS')?'BTS':'ARM',...(template?{template}:{}),...(p.includes('BS Weapon (WIP)')||p.includes('Technical Weapon')?{attribute:'wip'}:{})};
   modes.push(m);if(/Pistol/.test(w.name)&&!cc)modes.push({...m,id:'cc'+i,name:(w.mode||'标准')+' · 近战',kind:'cc',b:1,bands:[]});
   const d=p.match(/Disposable \((\d+)\)/);if(d)disposable=+d[1];
   if(p.includes('Suppressive Fire'))modes.push({...m,id:'sf'+i,name:(w.mode||'标准')+' · 压制射击',b:3,bands:[[16,0],[24,-3]],sf:true,sfKey:key});
@@ -98,7 +102,7 @@ function buildAncillaries(e,catalog){
  for(let i=0;i<(inc.q||1);i++)units.push(structuredClone(u));
  }return units.length?{units}:{units,error:true};
 }
-export function registerWeapons(units){for(const u of units)for(const [key,w] of Object.entries(u.armyWeapons||{})){F.addGuidedModes(w);F.ARMS[key]=w;if(w.disposable)D.ITEMS[key]={id:key,name:w.name,capacity:w.disposable};}}
+export function registerWeapons(units){for(const u of units)for(const [key,w] of Object.entries(u.armyWeapons||{})){F.addGuidedModes(w);F.addLongModes(w);F.ARMS[key]=w;if(w.disposable)D.ITEMS[key]={id:key,name:w.name,capacity:w.disposable};}}
 export function previewArmy(code,catalog){
  const decoded=decodeArmyCode(code);if(decoded.factionId!==catalog.factionId||![201,103].includes(decoded.factionId))throw Error('军表阵营与官方资料不匹配；不会替换为其他阵营配置。');
  const errors=[],warnings=[],units=[];let points=0,swc=0,swcBonus=0;

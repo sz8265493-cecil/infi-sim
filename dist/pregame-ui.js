@@ -1,5 +1,5 @@
-import * as DP from './deployment-planner.js?v=36';
-import * as P from './pregame.js?v=36';
+import * as DP from './deployment-planner.js?v=102';
+import * as P from './pregame.js?v=102';
 const name=t=>t===0?'▲ 红方':'◆ 蓝方';
 const button=(id,text)=>`<button id="${id}">${text}</button>`;
 export function flowHTML(s){const stage=s.pregame?.stage;const index={import:0,initiative:1,choice:2,decisions:2,deploy:3,ready:4,complete:4}[stage]??0;return `<div class="pregame-flow">${['导入双方军表','尉官 WIP 拼骰','先手权 / 部署权','主要部署 / 保留模型','开始游戏'].map((x,i)=>`<span style="${i===index?'color:#ffbd50;font-weight:800':''}">${i+1} ${x}</span>`).join(' → ')}</div>`;}

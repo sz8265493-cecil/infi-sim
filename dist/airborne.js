@@ -1,6 +1,6 @@
-import * as E from './engine.js?v=36';
-import * as S from './states.js?v=36';
-import {passed} from './support-actions.js?v=36';
+import * as E from './engine.js?v=117';
+import * as S from './states.js?v=109';
+import {passed} from './support-actions.js?v=109';
 export const SOURCES=['https://infinitythewiki.com/Combat_Jump','https://infinitythewiki.com/Parachutist','https://infinitythewiki.com/Super-Jump'];
 export const LABELS={combatJump:'战斗空降',parachutist:'伞降'};
 export const ownOrder=u=>!!u.offTable&&u.airborneOrderAvailable!==false&&S.active(u)&&(u.combatJump||u.parachutist);
@@ -21,7 +21,7 @@ export function validateLanding(u,p,action,{units=[],terrain=[],objectives=[],fa
  if(!reason&&!failed&&action==='parachutist'&&!u.parachutistDZ&&enemyDZ(u,p))reason='普通伞降不能进入敌方部署区';
  if(!reason&&!failed&&action==='combatJump'){
   if(terrain.some(t=>(t.enclosed||t.objectiveRoom)&&E.inside(p,t)))reason='不能空降到封闭建筑内部';
-  if((terrain.zones||[]).some(z=>z.visibility!==false&&E.dist(p,z)<=E.radius(u)+(z.r||0)))reason='不能空降到可见度限制区内或与其接触';
+  if(E.visibilityZones(terrain).some(z=>z.visibility!==false&&(z.w!==undefined?E.pointRect(p,z)<=E.radius(u):E.dist(p,z)<=E.radius(u)+(z.r||0))))reason='不能空降到可见度限制区内或与其接触';
  }
  return {can:!reason,reason};
 }

@@ -1,9 +1,10 @@
+import * as PM from './perimeter.js?v=84';
 // N5.3: Place Deployable, Reload, Mines, Deployable Repeater and Traits.
 // Declaration helpers do not measure; placement/trigger checks run at resolution.
-import * as E from './engine.js?v=36';
-import * as S from './states.js?v=36';
-import {WEAPONS as TARGETLESS} from './targetless.js?v=36';
-import {inZone} from './hacking.js?v=36';
+import * as E from './engine.js?v=117';
+import * as S from './states.js?v=109';
+import {WEAPONS as TARGETLESS} from './targetless.js?v=75';
+import {inZone} from './hacking.js?v=82';
 export const ITEMS={shockMine:{id:'shockMine',name:'休克地雷',capacity:3,deployable:true,s:0,concealed:true,ps:7,ammo:'SHOCK'},deployableRepeater:{id:'deployableRepeater',name:'可部署中继器',capacity:3,deployable:true,s:1,repeater:true},panzerfaust:{id:'panzerfaust',name:'铁拳火箭筒',capacity:2}};
 for(const [id,name,ammo,ps] of [['apMine','穿甲地雷','AP',7],['emMine','电磁地雷','EM',7],['paraMine','麻痹地雷','PARA',0],['monoMine','单分子地雷','MONO',8],['viralMine','病毒地雷','VIRAL',7]])ITEMS[id]={...ITEMS.shockMine,id,name,ammo,ps};
 ITEMS.cyberMine={...ITEMS.shockMine,id:'cyberMine',name:'电子地雷 Cybermine',ps:5,ammo:'DA',cyber:true};
@@ -12,7 +13,11 @@ ITEMS.discoBall={id:'discoBall',name:'迪斯科球',s:1};
 for(const [id,w] of Object.entries(TARGETLESS))if(w.capacity&&!ITEMS[id])ITEMS[id]={id,name:w.name,capacity:w.capacity};
 ITEMS.armedTurret={id:'armedTurret',name:'武装炮塔（射手步枪）',capacity:1,deployable:true,nonReloadable:true,perimeter:true,s:2};
 ITEMS.ancillary={id:'ancillary',name:'部署 Crabbot 附属模型',capacity:1,deployable:true,nonReloadable:true,s:1};
-export const isMine=id=>!!ITEMS[id]?.ammo;
+ITEMS.crazyKoala={id:'crazyKoala',name:'CrazyKoala',capacity:2,deployable:true,perimeter:true,boost:true,s:1,ps:5,ammo:'SHOCK'};
+ITEMS.fastPanda={id:'fastPanda',name:'FastPanda',capacity:1,deployable:true,perimeter:true,repeater:true,indiscriminate:true,s:1};
+ITEMS.wildParrot={id:'wildParrot',name:'WildParrot',capacity:1,deployable:true,perimeter:true,s:1,ps:7,ammo:'EM'};
+export const isMine=id=>!!ITEMS[id]?.ammo&&!ITEMS[id]?.boost;
+export const isTriggerWeapon=id=>isMine(id)||!!ITEMS[id]?.boost;
 export const carried=u=>[...new Set([...(u.deployableItems||[]),...(u.loadout||[])])].filter(id=>ITEMS[id]);
 export const remaining=(u,id)=>carried(u).includes(id)?Math.max(0,ITEMS[id].capacity-(u.spentWeapons?.[id]||0)):0;
 export const available=(u,{deployableOnly=false}={})=>carried(u).filter(id=>(!deployableOnly||ITEMS[id].deployable)&&remaining(u,id)>0);
@@ -24,17 +29,10 @@ export function entity(u,id,p,orderId){if(id==='ancillary'){const a=u.ancillaryP
 const smallDefault={length:8.3367,width:2.37};
 export function mineShape(mine,target,templates={},offset=0){const t=templates.small||smallDefault,a=Math.atan2(target.y-mine.y,target.x-mine.x)+offset,r=25/25.4/2;return E.teardrop({x:mine.x+r*Math.cos(a),y:mine.y+r*Math.sin(a),z:mine.z||0},a,t.length,t.width,t.poly);}
 export function inTriggerArea(mine,target,terrain=[],templates={}){return E.templateHits(mineShape(mine,target,templates),target,terrain);}
-export function placement(u,id,p,{route=[u],reactive=false,units=[],terrain=[],intuitive=false,orderId=0,templates={},ranged=false}={}){if(!ITEMS[id]||!ranged&&(!ITEMS[id]?.deployable||!carried(u).includes(id)))return {error:'未携带该部署物'};const token=entity(u,id,p,orderId);if(p.wall)return {error:'部署物不能放在垂直墙面'};const bad=E.validPosition(token,p,units,terrain);if(bad)return {error:bad};const points=reactive?[u]:E.samplePath(route,.025);if(itemPerimeter(id)&&(!perimeterReach(u,token,units,terrain)))return {error:'炮塔必须完整处于本人8寸控制区内，并有底盘能够通过的路径'};if(!ranged&&!itemPerimeter(id)&&!points.some(q=>E.edgeDistance({...u,...q},token)<.026))return {error:'部署物必须接触宣告者或主动轮移动路径'};if(isMine(id)&&!intuitive){const enemies=units.filter(v=>v.team!==u.team&&v.team!==-1&&S.onTable(v)&&!v.isDeployable&&inTriggerArea(token,v,terrain,templates));if(enemies.some(v=>S.has(v,'camouflaged'))&&!enemies.some(v=>!S.has(v,'camouflaged')&&S.active(v)))return {error:'触发区只有敌方迷彩标记，不能普通放置地雷'};}return {error:'',entity:token};}
+export function placement(u,id,p,{route=[u],reactive=false,units=[],terrain=[],intuitive=false,orderId=0,templates={},ranged=false}={}){if(!ITEMS[id]||!ranged&&(!ITEMS[id]?.deployable||!carried(u).includes(id)))return {error:'未携带该部署物'};const token=entity(u,id,p,orderId);if(p.wall)return {error:'部署物不能放在垂直墙面'};const bad=E.validPosition(token,p,units,terrain);if(bad)return {error:bad};const points=reactive?[u]:E.samplePath(route,.025);if(itemPerimeter(id)&&(!perimeterReach(u,token,units,terrain)))return {error:'外围部署物必须完整处于本人8寸控制区内，并有完整轮廓能够通过的路径'};if(!ranged&&!itemPerimeter(id)&&!points.some(q=>E.edgeDistance({...u,...q},token)<.026))return {error:'部署物必须接触宣告者或主动轮移动路径'};if(isTriggerWeapon(id)&&!intuitive&&!ITEMS[id].indiscriminate){const enemies=units.filter(v=>v.team!==u.team&&v.team!==-1&&S.onTable(v)&&!v.isDeployable&&(ITEMS[id].boost?inZone(token,v):inTriggerArea(token,v,terrain,templates)));if(enemies.some(v=>S.has(v,'camouflaged'))&&!enemies.some(v=>!S.has(v,'camouflaged')&&S.active(v)))return {error:'触发区只有敌方迷彩标记，不能普通放置地雷'};}return {error:'',entity:token};}
 // Called for declared/executed skills, not post-resolution Dodge/Guts movement.
 // Returns automatic template hits; caller removes the mine and resolves each save.
-export function mineTrigger(mine,target,{units=[],terrain=[],templates={},orderId,postResolution=false}={}){if(!isMine(mine.deployableKind)||!S.present(mine)||mine.hp<=0||mine.placedOrderId===orderId||postResolution||target.isDeployable||target.team===mine.team||target.team===-1||!S.onTable(target))return null;for(const offset of [0,...Array.from({length:180},(_,i)=>(i+1)*Math.PI/180).flatMap(a=>[a,-a])]){const shape=mineShape(mine,target,templates,offset);if(!E.templateHits(shape,target,terrain))continue;const hits=units.filter(v=>S.onTable(v)&&E.templateHits(shape,v,terrain));if(hits.some(v=>v.team===mine.team&&v.id!==mine.id))continue;return {mineId:mine.id,shape,hits:hits.filter(v=>v.id!==mine.id).map(v=>v.id),ps:ITEMS[mine.deployableKind].ps,ammo:ITEMS[mine.deployableKind].ammo,cyber:!!ITEMS[mine.deployableKind].cyber,dodgeMod:-3};}return null;}
+export function mineTrigger(mine,target,{units=[],terrain=[],templates={},orderId,postResolution=false}={}){if(ITEMS[mine.deployableKind]?.boost)return PM.trigger(mine,target,ITEMS[mine.deployableKind],{units,terrain,orderId,postResolution});if(!isMine(mine.deployableKind)||!S.present(mine)||mine.hp<=0||orderId!==undefined&&mine.placedOrderId===orderId||postResolution||target.isDeployable||target.team===mine.team||target.team===-1||!S.onTable(target)||['camouflaged','impersonation1','impersonation2'].some(k=>S.has(target,k)))return null;for(const offset of [0,...Array.from({length:180},(_,i)=>(i+1)*Math.PI/180).flatMap(a=>[a,-a])]){const shape=mineShape(mine,target,templates,offset);if(!E.templateHits(shape,target,terrain))continue;const hits=units.filter(v=>S.onTable(v)&&E.templateHits(shape,v,terrain));if(hits.some(v=>(v.team===mine.team||S.has(v,'impersonation1')||S.has(v,'impersonation2'))&&v.id!==mine.id))continue;return {mineId:mine.id,shape,hits:hits.filter(v=>v.id!==mine.id).map(v=>v.id),ps:ITEMS[mine.deployableKind].ps,ammo:ITEMS[mine.deployableKind].ammo,cyber:!!ITEMS[mine.deployableKind].cyber,dodgeMod:-3};}return null;}
 
 const itemPerimeter=id=>!!ITEMS[id]?.perimeter;
-export function perimeterReach(u,t,units,terrain){
- const within=p=>Math.hypot(p.x-u.x,p.y-u.y)+E.radius(t)<=8+E.radius(u)+.001&&Math.abs((p.z||0)-(u.z||0))<.01;
- if(!within(t))return false;
- const r=E.radius(t)+.025,points=[{x:u.x,y:u.y,z:u.z||0},t,...terrain.flatMap(b=>[{x:b.x-r,y:b.y-r},{x:b.x+b.w+r,y:b.y-r},{x:b.x-r,y:b.y+b.h+r},{x:b.x+b.w+r,y:b.y+b.h+r}]).map(p=>({...p,z:u.z||0})).filter(within)];
- const obstacles=units.filter(v=>v.id!==u.id),seen=new Set([0]),queue=[0];
- while(queue.length){const i=queue.shift();for(let j=1;j<points.length;j++)if(!seen.has(j)&&!E.validPath({...t,id:u.id},[points[i],points[j]],obstacles,terrain,Infinity)){if(j===1)return true;seen.add(j);queue.push(j);}}
- return false;
-}
+export function perimeterReach(u,t,units,terrain){if(Math.hypot(t.x-u.x,t.y-u.y)+E.radius(t)>8+E.radius(u)+.001||(t.z||0)<(u.z||0)-8||(t.z||0)+E.height(t)>(u.z||0)+E.height(u)+8+.001)return false;return !!PM.route(t,{x:u.x,y:u.y,z:u.z||0},[t],units.filter(v=>v.id!==u.id),terrain);}

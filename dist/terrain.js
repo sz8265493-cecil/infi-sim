@@ -1,4 +1,4 @@
-import * as E from './engine.js?v=36';
+import * as E from './engine.js?v=117';
 export const LEGACY_TERRAIN=[{x:5,y:5,w:7,h:6,kind:'building',name:'01 / STORAGE'},{x:20,y:4,w:8,h:4,kind:'building',name:'02 / DEPOT'},{x:36,y:5,w:7,h:6,kind:'building',name:'03 / TRANSIT'},{x:7,y:16,w:7,h:6,kind:'building',name:'04 / STACK'},{x:28,y:14,w:6,h:6,kind:'building',name:'05 / LAB'},{x:18,y:25,w:6,h:6,kind:'building',name:'06 / HUB'},{x:36,y:27,w:7,h:6,kind:'building',name:'07 / STORAGE'},{x:6,y:36,w:7,h:6,kind:'building',name:'08 / TRANSIT'},{x:24,y:38,w:7,h:5,kind:'building',name:'09 / HANGAR'},{x:17,y:16,w:4,h:.6,kind:'cover',name:'BARRIER'},{x:15,y:26,w:.6,h:4,kind:'cover',name:'BARRIER'},{x:28,y:29,w:4,h:.6,kind:'cover',name:'BARRIER'},{x:37,y:19,w:4,h:1.4,kind:'cover',name:'CARGO'},{x:5,y:27,w:4,h:1.4,kind:'cover',name:'CARGO'},{x:36,y:39,w:5,h:1.2,kind:'cover',name:'CARGO'}];
 LEGACY_TERRAIN.forEach((t,i)=>Object.assign(t,{id:'t'+i,height:t.kind==='building'?[4,6,9,6,4,6,9,4,6][i]:1.2}));
 LEGACY_TERRAIN[9].height=1.7;LEGACY_TERRAIN[10].height=.7;LEGACY_TERRAIN[11].height=.7;
@@ -20,7 +20,7 @@ export function deploymentPosition(u,index){const r=E.radius(u),slots=[{x:6.8,y:
 // Magnetism only proposes a nearby legal endpoint; it never supplies a path around an obstacle.
 export function snapToCover(u,p,terrain,{enabled=true,threshold=.28,valid=()=>true}={}){
  if(!enabled||p.wall)return {point:p,terrainId:null};const r=E.radius(u),candidates=[];
- for(const t of terrain){if(E.terrainHeight(t)<=(p.z||0)+.01)continue;
+ for(const t of terrain.flatMap(E.terrainParts)){if(!E.overlapsAltitude(u,p,t))continue;
   const q={x:E.clamp(p.x,t.x,t.x+t.w),y:E.clamp(p.y,t.y,t.y+t.h)},d=E.dist(p,q);let points;
   if(d>1e-9)points=[{x:q.x+(p.x-q.x)*r/d,y:q.y+(p.y-q.y)*r/d}];
   else points=[{x:t.x-r,y:p.y},{x:t.x+t.w+r,y:p.y},{x:p.x,y:t.y-r},{x:p.x,y:t.y+t.h+r}];

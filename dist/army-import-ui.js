@@ -1,6 +1,6 @@
 import {decodeArmyCode} from './army-code.js?v=36';
 import {ARMY_EXAMPLES} from './army-examples.js?v=36';
-import {previewArmy,exampleCode,label} from './army-import.js?v=36';
+import {previewArmy,exampleCode,label} from './army-import.js?v=97';
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function installArmyImport({canImport,apply}){
  const dialog=document.createElement('dialog');dialog.id='armyImport';dialog.setAttribute('aria-label','官方军表导入');document.body.append(dialog);

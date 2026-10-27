@@ -1,6 +1,6 @@
-import {inDeployment} from './pregame.js?v=36';
-import * as E from './engine.js?v=36';
-import * as S from './states.js?v=36';
+import {inDeployment} from './pregame.js?v=102';
+import * as E from './engine.js?v=117';
+import * as S from './states.js?v=109';
 export const SOURCE='https://experience.corvusbelli.com/en/game-content/4fdeacaa-ad46-4d37-aa5b-d5284f452653';
 export const R=20/25.4;
 export const objectives=()=>[12,24,36].map((x,i)=>({id:'console'+i,name:['西','中央','东'][i]+'控制台',kind:'console',x,y:24,r:R,owner:null})).concat([0,1].map(team=>({id:'beacon'+team,name:(team?'蓝':'红')+'方信标',kind:'beacon',team,x:24,y:team?12:36,r:12.5/25.4,carrier:null})));

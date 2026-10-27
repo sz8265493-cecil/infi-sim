@@ -1,6 +1,6 @@
 // N5.3: Doctor / Engineer. Effects are committed only after optional rerolls.
-import * as S from './states.js?v=36';
-import {edgeDistance} from './engine.js?v=36';
+import * as S from './states.js?v=109';
+import {edgeDistance} from './engine.js?v=117';
 
 export const SOURCES=['https://infinitythewiki.com/Doctor','https://infinitythewiki.com/Engineer','https://infinitythewiki.com/Stunned_State','https://infinitythewiki.com/Technorganic','https://infinitythewiki.com/Command_Tokens'];
 export const LABELS={doctor:'医生',engineer:'工程师'};
@@ -32,7 +32,8 @@ export function validate(actor,target,skill,mode,{reactive=false,measure=true}={
  !availableActions(actor).includes(skill)?'当前状态不能宣告该技能':
  !target||!S.onTable(target)?'目标不在桌面上':
  !modes(actor,target,skill).some(m=>m.id===mode)?'目标不符合此技能模式的要求':
- actor.id!==target.id&&measure&&edgeDistance(actor,target)>.025?'必须与目标轮廓接触':'';
+ actor.id!==target.id&&[actor,target].some(u=>u.aerial&&S.active(u))?'有效Aerial单位不能轮廓接触，不能使用接触救治':
+ actor.id!==target.id&&measure&&edgeDistance(actor,target)>.025&&!(actor.remoteContactPoints||[]).some(v=>S.active(v)&&S.onTable(v)&&!v.aerial&&edgeDistance(v,target)<=.025)?'必须与目标轮廓接触':'';
  return {can:!reason,reason};
 }
 export function spec(actor,target,skill,mode,options={}){
@@ -68,4 +69,22 @@ export function resolve(actor,target,skill,mode,{die,sv,...options}={}){
   next.states=next.states.filter(k=>!['nwi','dogged'].includes(k));next.hp=-(next.attribute==='STR'&&next.remotePresence?2:1);S.health(next);removed=true;
  }else{damage=1;S.apply(next,1);removed=S.has(next,'dead');}
  return {...info,applied:true,die,sv:sv??info.sv,success,target:next,recovered:Math.max(0,next.hp-beforeHp),damage,removed,removedStates};
+}
+
+// All requirements are checked against the same Resolution snapshot. Do not
+// revalidate a later declaration after an earlier positive effect healed it.
+export function resolveBatch(target, declarations, {coordinated=false}={}){
+ const results=declarations.map(d=>({...d,result:resolve(d.actor,target,d.skill,d.mode,d.roll)}));
+ let valid=results.filter(d=>d.result.applied),next=structuredClone(target);
+ if(coordinated){const successes=valid.filter(d=>d.result.success);valid=successes.length?[successes.sort((a,b)=>b.result.recovered-a.result.recovered)[0]]:valid.slice(0,1);}
+ for(const d of valid.filter(d=>d.result.success)){
+  if(d.mode==='states')next.states=next.states.filter(s=>!d.result.removedStates.includes(s));
+  else {const amount=d.skill==='doctor'?Math.max(1,Number(config(d.actor,d.skill).wounds)||1):1;
+   next.hp=Math.min(next.maxhp,S.has(next,'nwi')?1:d.skill==='engineer'&&next.remotePresence&&S.unconscious(next)?1:next.hp+amount);S.health(next);}
+ }
+ for(const d of valid.filter(d=>!d.result.success&&d.mode!=='states')){
+  if(d.skill==='doctor'){next.states=next.states.filter(s=>!['nwi','dogged'].includes(s));next.hp=-(next.attribute==='STR'&&next.remotePresence?2:1);S.health(next);}
+  else S.apply(next,1);
+ }
+ return {target:next,results,coordinated};
 }

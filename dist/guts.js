@@ -1,10 +1,12 @@
-import {inZone,hackingArea} from './hacking.js?v=36';
-import * as E from './engine.js?v=36';
-import * as S from './states.js?v=36';
-import * as M from './movement.js?v=36';
-import * as V from './saves.js?v=36';
-export const engaged=(u,units)=>units.some(v=>!v.isDeployable&&v.team!==u.team&&v.team>=0&&S.onTable(v)&&S.active(v)&&E.edgeDistance(u,v)<.025);
-export function queue(result,units){return [...new Set(V.allPlans(result).filter(p=>p.hits>0).map(p=>p.targetId))].filter(id=>{const u=units.find(u=>u.id===id);return !u.possession&&!u.isDeployable&&S.active(u)&&!S.has(u,'immA')&&!S.has(u,'immB')&&!engaged(u,units);}).map(id=>({id,attackers:V.allPlans(result).filter(p=>p.targetId===id&&p.attacker).map(p=>p.attacker)}));}
+import {inZone,hackingArea} from './hacking.js?v=82';
+import * as E from './engine.js?v=117';
+import * as S from './states.js?v=109';
+import * as M from './movement.js?v=88';
+import * as V from './saves.js?v=109';
+export const engaged=(u,units)=>S.onTable(u)&&units.some(v=>!v.isDeployable&&v.team!==u.team&&v.team>=0&&S.onTable(v)&&S.active(v)&&E.edgeDistance(u,v)<.025);
+export const successValue=u=>u.wip+S.rollMod(u);
+export const autoFail=(u,g)=>!!g.failedStun&&!u.courage&&!u.religious;
+export function queue(result,units){return [...new Set(V.allPlans(result).filter(p=>p.hits>0).map(p=>p.targetId))].filter(id=>{const u=units.find(u=>u.id===id);return !u.possession&&!u.isDeployable&&S.active(u)&&!S.has(u,'immA')&&!S.has(u,'immB')&&!engaged(u,units);}).map(id=>({id,failedStun:V.allPlans(result).some(p=>p.targetId===id&&p.ammo?.split('+').includes('STUN')&&p.saves?.some(s=>s.fail)),attackers:V.allPlans(result).filter(p=>p.targetId===id&&p.attacker).map(p=>p.attacker)}));}
 export function tier(u,p,attackers,terrain,stance='keep'){const at={...u,...p,prone:E.endingProne(u,stance)};if(attackers.every(a=>a.hackingArea?!hackingArea(a,at,{repeaters:a.hackingRepeaters||[],route:{kind:'autoFriendly'}}).inArea:!E.front(a,at)||!E.visibility(a,at,terrain).visible))return 1;if(attackers.every(a=>!a.hackingArea&&(!E.visibility(a,at,terrain).visible||(!E.cover(a,u,terrain)&&E.cover(a,at,terrain)))))return 2;return 0;}
 export function legalPath(u,path,units,terrain,objectives=[],stance='keep'){const moving={...u,prone:stance==='proneStart'?true:stance==='standStart'?false:!!u.prone};const cost=path.slice(1).reduce((n,p,i)=>n+E.dist(path[i],p),0);const err=M.validate(moving,{moveKind:'move',path,cost,distance:2,stance},units,terrain);if(err)return err;for(const p of E.samplePath(path,.1)){if(units.some(v=>v.id!==u.id&&v.team!==u.team&&v.team>=0&&S.present(v)&&E.edgeDistance({...moving,...p},v)<.025)||objectives.some(v=>E.dist(p,v)<E.radius(u)+(v.r||.5)+.01))return '勇气移动不能接触敌人或任务目标';}return '';}
 // Search straight routes and routes around terrain corners; all suggested paths are validated.

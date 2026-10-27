@@ -6,10 +6,10 @@ export const canProne=u=>u.type!=='TAG'&&u.type!=='VH'&&!u.motorcycle&&!u.aerial
 export const isProne=u=>unconscious(u)?canProne(u):!!u.prone;
 export function syncPosture(u){if(unconscious(u))u.prone=canProne(u);}
 export const survivalActive=u=>has(u,'nwi')||has(u,'dogged');
-export const active=u=>(u.hp>0||survivalActive(u))&&!has(u,'dead')&&!has(u,'unconscious')&&!has(u,'unconscious2');
+export const active=u=>(u.hp>0||survivalActive(u))&&!has(u,'disconnected')&&!has(u,'dead')&&!has(u,'unconscious')&&!has(u,'unconscious2');
 export const present=u=>!has(u,'dead');
 export const onTable=u=>present(u)&&!u.offTable&&!u.deploymentPending&&!has(u,'hiddenDeployment');
-export function allowed(u,skill){if(!active(u)||has(u,'disconnected'))return false;if(u.armedTurret)return skill==='attack';if(has(u,'immA'))return skill==='dodge';if(has(u,'immB'))return skill==='reset';if(has(u,'stunned')&&skill==='attack')return false;return true;}
+export function allowed(u,skill){if(u.cyberplugIdle&&!['idle','doctor','engineer'].includes(skill))return false;if(u.motorcycle&&['climb','climbplus','cautious','ladder'].includes(skill))return false;if(!active(u)||has(u,'disconnected'))return false;if(u.armedTurret)return skill==='attack';if(has(u,'immA'))return skill==='dodge';if(has(u,'immB'))return skill==='reset';if(has(u,'stunned')&&skill==='attack')return false;return true;}
 export const rollMod=u=>has(u,'stunned')?-3:0;
 export const dodgeMod=u=>rollMod(u)+(has(u,'immA')?-6:0);
 export const resetMod=u=>rollMod(u)+(has(u,'immB')?-3:0)+(has(u,'isolated')?-9:0)+(has(u,'targeted')?-3:0);
@@ -31,20 +31,23 @@ export function chooseSurvival(u,choice=null){
  const pending=u.pendingChoice;if(!pending||!pendingSurvival(u).length)return false;
  if(choice!==null&&!pending.options.includes(choice))return false;
  delete u.pendingChoice;
+ if(choice)delete u.pendingExplode;
  if(choice){u.states=(u.states||[]).filter(s=>!['unconscious','unconscious2','nwi','dogged'].includes(s));u.states.push(choice);u.prone=!!pending.prone;u.ftLevel=has(u,'isolated')?0:pending.ftLevel;}
  return true;
 }
 export function apply(u,damage=0,effects=[]){
  const wasActive=active(u),wasSurviving=survivalActive(u),prior={prone:!!u.prone,ftLevel:u.ftLevel||0};
- u.hp-=damage;u.states=[...new Set([...(u.states||[]),...effects.filter(k=>k!=='shock')])];
- const shock=effects.includes('shock')&&!u.shockImmune&&!(u.immunities||[]).some(x=>['Shock','Enhanced'].includes(x));
+ u.hp-=damage;u.states=[...new Set([...(u.states||[]),...effects.filter(k=>!['shock','shockViral'].includes(k))])];
+ const shock=(effects.includes('shock')||effects.includes('shockViral'))&&!u.shockImmune&&!(u.immunities||[]).some(x=>String(x).toUpperCase()==='SHOCK'||String(x).toUpperCase()==='ENHANCED'&&!effects.includes('shockViral'));
  if(wasSurviving&&(damage>0||shock)||shock&&u.attribute!=='STR'&&(u.maxhp??u.maxHp)===1&&u.hp<=0){u.states=u.states.filter(s=>!['nwi','dogged'].includes(s));u.hp=deathHp(u);}
  health(u);
  if(wasActive&&!wasSurviving&&damage>0&&unconscious(u)){
   const options=[...(u.nwi?['nwi']:[]),...(u.dogged?['dogged']:[])];
   if(options.length)u.pendingChoice={options,...prior};
  }
+ if(u.explode&&wasActive&&unconscious(u))u.pendingExplode=true;
+ if(!unconscious(u))delete u.pendingExplode;
  if(has(u,'isolated'))u.ftLevel=0;
 }
-export function recover(u,skill){if(skill==='dodge')u.states=(u.states||[]).filter(k=>k!=='immA');if(skill==='reset')u.states=(u.states||[]).filter(k=>!['immB','isolated','targeted'].includes(k));}
+export function recover(u,skill){if(skill==='dodge'&&!u.spaceImmA)u.states=(u.states||[]).filter(k=>k!=='immA');if(skill==='reset')u.states=(u.states||[]).filter(k=>!['immB','isolated','targeted'].includes(k));}
 export function statesPhase(units){for(const u of units){u.states=(u.states||[]).filter(k=>k!=='stunned');if(has(u,'dogged')){u.states=u.states.filter(k=>k!=='dogged');u.hp=deathHp(u);health(u);}}}
