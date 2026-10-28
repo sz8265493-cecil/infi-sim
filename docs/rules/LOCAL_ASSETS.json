@@ -1,0 +1,796 @@
+{
+  "downloaded": "2026-10-27",
+  "owner": "Corvus Belli; original rights retained",
+  "images": [
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/aida-swanson-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/aida-swanson-1-1.svg",
+      "sha256": "2ff76afd7587eef5167e396fd626f2b48757faf0b9af13264a056c2096e6a5b1"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/anaconda-merc-tag-squad-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/anaconda-merc-tag-squad-1-1.svg",
+      "sha256": "a724ebe9644254c8dda9c7b85fddc824c867bcfc2dfcfee47e6b6257524ca461"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/anaconda-merc-tag-squad-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/anaconda-merc-tag-squad-2-1.svg",
+      "sha256": "a724ebe9644254c8dda9c7b85fddc824c867bcfc2dfcfee47e6b6257524ca461"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/armbots-bulleteer-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/armbots-bulleteer-1-1.svg",
+      "sha256": "f6a85576f98212f3681450d64cd17ea27399626884f67f4bc78043190695592f"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/armbots-peacemakers-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/armbots-peacemakers-1-1.svg",
+      "sha256": "80d77a56e3c6c5add4f4f456e1ccc10d068164dc43319ef24458976851cfe769"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/armbots-peacemakers-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/armbots-peacemakers-2-1.svg",
+      "sha256": "80d77a56e3c6c5add4f4f456e1ccc10d068164dc43319ef24458976851cfe769"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/authorized-bounty-hunters-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/authorized-bounty-hunters-1-1.svg",
+      "sha256": "929ece06eea5fba398faa9aec6cec723f45376b812c2e4b64de895878adba1bf"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/avicenna-mercenary-doctor-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/avicenna-mercenary-doctor-1-1.svg",
+      "sha256": "24a25b30b55035f76d36b0409d611b64d8aabe9ef7769695223e29f310e74def"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/bashi-bazouks-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/bashi-bazouks-1-1.svg",
+      "sha256": "cef65826cba544a7ae464bafc3a9f6672283a6dadc9a5162ff1faa4455a85900"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/beasthunters-free-guild-null-1.svg",
+      "path": "assets/vendor/army/img/logo/units/beasthunters-free-guild-null-1.svg",
+      "sha256": "139eb80ea5a4f6a4e4f3bfaaf4d94a24d7f14478ce786b27d9ce8240bf73c01f"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/bixie-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/bixie-1-1.svg",
+      "sha256": "3e48b91e037c311ab3f77d1f80ab1ab4e05abe5b1e7ecac3afa869ea37559e85"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/blue-wolf-mongol-cavalry-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/blue-wolf-mongol-cavalry-2-1.svg",
+      "sha256": "a847157884ddf725bd7ff445cfcd2ab91093ea29e99dbc02d5c4b84eb4d3346f"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/blue-wolf-mongol-cavalry-null-1.svg",
+      "path": "assets/vendor/army/img/logo/units/blue-wolf-mongol-cavalry-null-1.svg",
+      "sha256": "1b2f6581daae7deda7f48a6c48c623ef0b57b359cbfc4af03059bb08fce8da41"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/carmen-johns-mercenary-biker-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/carmen-johns-mercenary-biker-1-1.svg",
+      "sha256": "2de5035a008ad7a89f408fe76562bad594f4ccfcc669a19671b635ece2345280"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/carmen-johns-mercenary-biker-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/carmen-johns-mercenary-biker-2-1.svg",
+      "sha256": "2de5035a008ad7a89f408fe76562bad594f4ccfcc669a19671b635ece2345280"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/celestial-guard-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/celestial-guard-1-1.svg",
+      "sha256": "2409b743545f0f3b9bd2fd8a65bbc40640ec9a381fb7b436d7050ab727d4753e"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/chaiyi-yaokong-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/chaiyi-yaokong-1-1.svg",
+      "sha256": "972af7f9dc639316f55703238ec6e1133a821a1731750940b7f93ae916c11ee3"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/clipper-dronbot-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/clipper-dronbot-1-1.svg",
+      "sha256": "b3219af71b9584940c140cefdfcf806bd3d1adbb738dbbaa59fad2e67145caa4"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/coadjutor-crosiers-military-order-infantry-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/coadjutor-crosiers-military-order-infantry-1-1.svg",
+      "sha256": "587174c2ad712612122cbe8cee1ecb29d297a1c559d12e5d38011bf7c76ac9c0"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/confessor-spec-ops-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/confessor-spec-ops-2-1.svg",
+      "sha256": "56fd8cd241eadaf033a94e3b2f06060d82e438740fec23a2b86e029ddf7d9d60"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/confessor-team-ops-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/confessor-team-ops-1-1.svg",
+      "sha256": "d31918eb6108992d4a1d74359086e7abb4c1a2229bd6a20057fd0f954b3646fb"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/confessor-team-ops-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/confessor-team-ops-2-1.svg",
+      "sha256": "d31918eb6108992d4a1d74359086e7abb4c1a2229bd6a20057fd0f954b3646fb"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/confessor-team-ops-3-1.svg",
+      "path": "assets/vendor/army/img/logo/units/confessor-team-ops-3-1.svg",
+      "sha256": "56fd8cd241eadaf033a94e3b2f06060d82e438740fec23a2b86e029ddf7d9d60"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/crusader-brethren-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/crusader-brethren-1-1.svg",
+      "sha256": "cb86d79b3f05ba044b98cd371de5413c381dcf97532888f128f3195f335dc75e"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/csu-corporate-security-unit-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/csu-corporate-security-unit-1-1.svg",
+      "sha256": "d6ac03bd5d8105d2ca52e90a22cbcaca7998992627ebfb6da8f7d408a1cc29b5"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/cube-jaeger-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/cube-jaeger-1-1.svg",
+      "sha256": "f9d556cbd05f6d5df84b47f4174f69869bd07504d0cdbc8fe398f82241a3ce56"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/daofei-tactical-section-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/daofei-tactical-section-1-1.svg",
+      "sha256": "c8bbd090772a2cf8df7d64d1261a42c73bb99da69af33f80e6828e34286f21f8"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/daoying-operative-control-unit-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/daoying-operative-control-unit-1-1.svg",
+      "sha256": "0e23e15500ecaced2c63f145f4602713fc8a92a778cbbeed24ff4d0b8b0d2331"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/dart-optimate-huntress-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/dart-optimate-huntress-1-1.svg",
+      "sha256": "2864c63f225121623012ed2ad4c94fa5ba4051d39dddba86ec0c805cc8f75231"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/dart-optimate-huntress-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/dart-optimate-huntress-2-1.svg",
+      "sha256": "7613d2a219b3e99b3d7dfca0d5766556b984af67f08ccacb01350558f4177fb6"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/dokkaebi-cyberteam-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/dokkaebi-cyberteam-1-1.svg",
+      "sha256": "5d5963823e48f363f287ab774de857e1838b0de1a4e867ed7731d99dbfd5339c"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/druze-shock-teams-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/druze-shock-teams-1-1.svg",
+      "sha256": "4e36c2f8381790512b198b4428f9209f7569b79e8e7672870d670852083e0b77"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/emily-handelman-intel-agent-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/emily-handelman-intel-agent-1-1.svg",
+      "sha256": "5f27f7ab66b8e57dd22729b7f2354d657ed4c42285a6096fe0784ae93efd4377"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/father-inquisitor-mendoza-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/father-inquisitor-mendoza-1-1.svg",
+      "sha256": "8e6c8b6c56ecc4ca5ed5b61350cf33c7f827bd463cfaf142732ed07a37b6b37d"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/father-lucien-sforza-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/father-lucien-sforza-1-1.svg",
+      "sha256": "c83cdd2c9da13a81c76878230490762e57783204850893c6cccc8777231d0dac"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/feiquan-imperial-tactical-wing-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/feiquan-imperial-tactical-wing-1-1.svg",
+      "sha256": "b3a05390629a0547849b464df3d622538b97beaf9a6ed75cc7e22904fd317ef1"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/fiddler-aristeia-s-ex-toymaker-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/fiddler-aristeia-s-ex-toymaker-1-1.svg",
+      "sha256": "2cc4ca10d223f1d8e6a104c7e1c4b6c23ef9c446be595e385ee7ef5452875230"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/fiddler-aristeia-s-ex-toymaker-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/fiddler-aristeia-s-ex-toymaker-2-1.svg",
+      "sha256": "2cc4ca10d223f1d8e6a104c7e1c4b6c23ef9c446be595e385ee7ef5452875230"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/freelance-operator-samsa-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/freelance-operator-samsa-1-1.svg",
+      "sha256": "05b2c8ae7dbb36c01dee5dc740898164e45b6f6c3ceccb4a47308b665c14e7c9"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/fugazi-dronbot-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/fugazi-dronbot-1-1.svg",
+      "sha256": "7e9f29f8d3fbdfd7336076f66289344d42bdd29b4188e7a24952f07653acef56"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/gabriele-de-fersen-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/gabriele-de-fersen-1-1.svg",
+      "sha256": "07f0b9b986d0487dda095a48ab75defae0300e646c98d7639ef5fd8a4ee4f358"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/gud-n-troops-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/gud-n-troops-1-1.svg",
+      "sha256": "a36095946effa1035d4d111afe1921b85e8cd37b69fe354f3a140b829e733269"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/guijia-squadrons-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/guijia-squadrons-1-1.svg",
+      "sha256": "8cbd4912238acdd03cef711e2f81e07a6d0e254ab95898fdc410e738f6669d2f"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/guijia-squadrons-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/guijia-squadrons-2-1.svg",
+      "sha256": "a847157884ddf725bd7ff445cfcd2ab91093ea29e99dbc02d5c4b84eb4d3346f"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/guilang-skirmishers-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/guilang-skirmishers-1-1.svg",
+      "sha256": "8e05b7d6482086737f5412c4f982228c63c96b8dce2a310b7851083531cd9258"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/h-idao-special-support-group-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/h-idao-special-support-group-1-1.svg",
+      "sha256": "5789e52818101c0332271c6bd5a265dff3703f499637906367e56ad57889e9d0"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/hac-tao-special-unit-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/hac-tao-special-unit-1-1.svg",
+      "sha256": "eac75c7d7ea9991bb4ac53f52ff21607575d2754157b42fa18b16287a5467891"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/haetae-unit-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/haetae-unit-1-1.svg",
+      "sha256": "1e31105b2ea78be819244400fdebd1b0adce7a0a7889411e92ace4f41c4f22eb"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/hannibal-mercenary-team-leader-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/hannibal-mercenary-team-leader-1-1.svg",
+      "sha256": "3ca2c238f8f122d8413722945bcb87b49dbe53be879e67888f5671b9c2110d21"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/highlander-caterans-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/highlander-caterans-1-1.svg",
+      "sha256": "0a4500b766662370fc5a23d073fcae47e10402676dcb28e1ab0c3d29f43de3a3"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/hsien-warriors-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/hsien-warriors-1-1.svg",
+      "sha256": "df23e448433fa15d85b2f89cee8b7b509341eb33318f5a41130fd74f62dd29fe"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/hulang-shocktroopers-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/hulang-shocktroopers-1-1.svg",
+      "sha256": "492cc165bdf9c06720b8eeb5726b00c18b032c491444129a59b2af1a6b6e2b7c"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/hundun-ambush-unit-null-1.svg",
+      "path": "assets/vendor/army/img/logo/units/hundun-ambush-unit-null-1.svg",
+      "sha256": "ed80483eb53fa0fb52df36dd2701013b595ce819bd0d53f73bb59f83fd04a052"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/husong-yaokong-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/husong-yaokong-1-1.svg",
+      "sha256": "965b130bb5e04467dceb9f54ca6bd5bfdb75bc48289a1ecf663c96bb8501ef7e"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/hwarang-corps-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/hwarang-corps-1-1.svg",
+      "sha256": "0fbaa88d92146d72691938d821e15a5d46acf51771a527c44bb465e2c669fac8"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/imperial-agents-pheasant-rank-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/imperial-agents-pheasant-rank-1-1.svg",
+      "sha256": "243ae7b1f06c4e4883c2ba8b4b034435ae35b3207f1ae8c75954075ba6d981bc"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/indigo-brother-konstantinos-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/indigo-brother-konstantinos-1-1.svg",
+      "sha256": "769b575d6a40f828356c1b49c7356b9f040bce81103bf1353ea5187bb36fe4cb"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/infirmarers-of-saint-lazarus-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/infirmarers-of-saint-lazarus-1-1.svg",
+      "sha256": "1c3a40108a502fc0a0a63cb6bcc4d4e66f03d4444272c4bf4e9820b2a5a996fb"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/jeanne-d-arc-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/jeanne-d-arc-1-1.svg",
+      "sha256": "385de4b080c64fe9a69714bc19908b4bc6ae36e214a8c9d1a3b22e2cefd48d03"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/jeanne-d-arc-v2-mobility-armor-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/jeanne-d-arc-v2-mobility-armor-1-1.svg",
+      "sha256": "385de4b080c64fe9a69714bc19908b4bc6ae36e214a8c9d1a3b22e2cefd48d03"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/john-hawkwood-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/john-hawkwood-1-1.svg",
+      "sha256": "36b8cf8939672024c11ff86f9e9fa5526741eb732d4e6c90fd75d854ab0e3bd7"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/johnny-kao-optimate-and-technomancer-master-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/johnny-kao-optimate-and-technomancer-master-1-1.svg",
+      "sha256": "1f22f0ce3a0d55637846a9a060985e6836ec77703e3671d1b0a83e91cfb628b3"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/knauf-outlaw-sniper-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/knauf-outlaw-sniper-1-1.svg",
+      "sha256": "2c616d46f5410d45a0b5c33bcca8b4875c5e278ae69d56a85720fc380a3e0df4"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/knight-commander-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/knight-commander-1-1.svg",
+      "sha256": "eaf82baf7100cf141e122003701f5bff838c723559395639e0ad6381fb996b38"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/knight-hospitaller-kyle-hawkins-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/knight-hospitaller-kyle-hawkins-1-1.svg",
+      "sha256": "6517a0772381d2b458647c0331aab401379e786a84060e42a5c680fd634d6fc6"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/knight-of-justice-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/knight-of-justice-1-1.svg",
+      "sha256": "a1c4b75941e0cd4ea70ed266714740d153404aa50a9d9adaa2dcc91defd35adc"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/knights-hospitaller-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/knights-hospitaller-1-1.svg",
+      "sha256": "c13a3dc040ec692fd50958d39d8bf004af986da28efd19e09bb936d91f007f72"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/knights-of-montesa-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/knights-of-montesa-1-1.svg",
+      "sha256": "bfbcd0645e921b26cdc1f822b6f46b35d2acc43cb427410ffe546ea15af81d9a"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/knights-of-santiago-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/knights-of-santiago-1-1.svg",
+      "sha256": "56403c45e67a928d90107bf49915b04115498ed1bd6cbba579f066a959da0d1c"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/knights-of-the-holy-sepulchre-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/knights-of-the-holy-sepulchre-1-1.svg",
+      "sha256": "17b4a3925ad08442b3e18d28a813da7051c775ace7dd38a921188caaa871ba26"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/krakot-renegades-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/krakot-renegades-1-1.svg",
+      "sha256": "73818419743a2cf69ee25f0f84c92ba63c38d73e74c0995ad720d72afe15f58b"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/krit-kokram-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/krit-kokram-1-1.svg",
+      "sha256": "ab5cbd11bd9141a237fbd3aeb0ffb7009226278b6778f594ba5214fbda83d149"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/kts-kaplan-tactical-services-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/kts-kaplan-tactical-services-1-1.svg",
+      "sha256": "d9f64423e972e6d92fcf8b4ba68652da603463bd03948a4e32096163b60b65c9"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/kuang-shi-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/kuang-shi-1-1.svg",
+      "sha256": "dcc22a556a474a9237cc5b64093de0baac6d52427bf4884ca83d498d3d2382b5"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/kunai-solutions-ninjas-null-1.svg",
+      "path": "assets/vendor/army/img/logo/units/kunai-solutions-ninjas-null-1.svg",
+      "sha256": "5dcc3bcd661788668c31055ac5d47abb1fdc87a67f7d7a985b111f66d8f7f861"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/laxmee-hacker-of-fortune-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/laxmee-hacker-of-fortune-1-1.svg",
+      "sha256": "b41c787805dee243ee88d7c6ecb6cb2c74f19a38a21f35297dfe7e39a621a6d2"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/lei-g-ng-invincibles-lord-of-thunder-null-1.svg",
+      "path": "assets/vendor/army/img/logo/units/lei-g-ng-invincibles-lord-of-thunder-null-1.svg",
+      "sha256": "c53288ccb94c97303b7aa086aca4526d4091d083da48d62a8f94782ba568bbf5"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/liang-kai-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/liang-kai-1-1.svg",
+      "sha256": "0674eea19826f63d32457315d3dd3ec95f26b28458b73412354814171a7848f6"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/libertos-freedom-fighters-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/libertos-freedom-fighters-1-1.svg",
+      "sha256": "abf521af461fa07047fb9732473fd9293ecd68979067b4d53163c6ce8de13e3e"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/liu-xing-jump-infantry-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/liu-xing-jump-infantry-1-1.svg",
+      "sha256": "1e42e9f8db39c030270568250be8581751a350e75d270f194db10111bf5a880d"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/longwang-imperial-tag-police-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/longwang-imperial-tag-police-1-1.svg",
+      "sha256": "ec4e98638a25be17289ed569ad8fbccd9261109b350aedeacf5f307ffade313d"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/major-lunah-ex-aristeia-sniper-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/major-lunah-ex-aristeia-sniper-1-1.svg",
+      "sha256": "7b784ab7126e81c21a7db1cb9351c7577a4346227498f5853732bb9c42bb0792"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/mcmurrough-merc-dog-warrior-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/mcmurrough-merc-dog-warrior-1-1.svg",
+      "sha256": "0e826cb019eaf07aa34d36760b6194f79f83c8b8cc08a6f7ef83a27173473470"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/mech-engineer-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/mech-engineer-1-1.svg",
+      "sha256": "2a633ef8505914f3a3f827ba2a96d35286463c88696635df11ca9be34abd88a1"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/military-order-curators-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/military-order-curators-1-1.svg",
+      "sha256": "5f982e29e3804a45bf5c4fbbd0bd6d6228bba04002690a7e06953d62dc402e40"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/miranda-ashcroft-authorized-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/miranda-ashcroft-authorized-1-1.svg",
+      "sha256": "c6d61ed7909d6393739b32f14cde4c196fa9910e02fa7603d6dba2dc4efd4cc2"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/miyamoto-mushashi-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/miyamoto-mushashi-1-1.svg",
+      "sha256": "8011db72d0c89807828f8892cafa9e823a0477c0c247ab42a435c5586170e104"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/monstruckers-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/monstruckers-1-1.svg",
+      "sha256": "7511a786997e9730158c3dbf2528e236117275353c386a9d66ca203a43a670df"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/motorized-bounty-hunters-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/motorized-bounty-hunters-1-1.svg",
+      "sha256": "e6b8b9a193157c0f8306145f42a0835e3951bdb94a9e0be4c0f600c018c9601a"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/motorized-knights-of-montesa-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/motorized-knights-of-montesa-1-1.svg",
+      "sha256": "bfbcd0645e921b26cdc1f822b6f46b35d2acc43cb427410ffe546ea15af81d9a"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/mowang-troops-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/mowang-troops-1-1.svg",
+      "sha256": "bdffb207895ae087a6e9f9805368eddb9fc4692a362226681c7e73c934706021"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/mulebots-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/mulebots-1-1.svg",
+      "sha256": "cd5c155c77f689f528e4a3415400938473b62675fd836df917d7f35d204ed446"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/ninjas-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/ninjas-1-1.svg",
+      "sha256": "b9b12341c2d0899af0340588f28cae6aeac5c9523b7f4341af42a1ba18a70276"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/oktavia-grimsdottir-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/oktavia-grimsdottir-1-1.svg",
+      "sha256": "141a089831f2de1ef219a28d365dc8769b6228c8e869864dadf4d86801bc37b1"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/order-sergeants-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/order-sergeants-1-1.svg",
+      "sha256": "70f011bbc57ceb428a21779d5390f913f65cace0997e33113a87217e081145be"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/order-sergeants-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/order-sergeants-2-1.svg",
+      "sha256": "70f011bbc57ceb428a21779d5390f913f65cace0997e33113a87217e081145be"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/palbots-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/palbots-1-1.svg",
+      "sha256": "dae6b35a4e6cc20c6d172b8946a5d5e1fe24ab51b0df83c32d0c417d5e574ede"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/panoceanian-black-friars-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/panoceanian-black-friars-1-1.svg",
+      "sha256": "e63c5ca9dfc69fd5de81b5db4e6cf6b745ee72aeddb1f27e467f2f307c52f489"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/pathfinder-dronbot-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/pathfinder-dronbot-1-1.svg",
+      "sha256": "c6500df152e8e61e566256dd8f914c7c78bfc65f838ee23aa3f982ea6f4951ca"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/qishi-stateempire-tag-pilots-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/qishi-stateempire-tag-pilots-1-1.svg",
+      "sha256": "2ab4a2df2f3e4c3f514f254fe2d938e3cd5d4ed870f36e9d7ccb28848da11610"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/racerbots-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/racerbots-1-1.svg",
+      "sha256": "cd6bc21d8c163dbf08259c59e6bde5da5d2bde67d73285b87221ce45d415b543"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/raoul-spector-mercenary-operative-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/raoul-spector-mercenary-operative-1-1.svg",
+      "sha256": "b1548027e9d1a8e2521850bf7d247f3fbe1db31d30fb1772d12400a271519694"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/raveneye-officers-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/raveneye-officers-1-1.svg",
+      "sha256": "5c0982d5e0e6dcf299d827a3c652303ec31d47c2327106b06b7890ff89f1710c"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/saito-togan-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/saito-togan-1-1.svg",
+      "sha256": "59a5659460d1ef79dd82aa9d0ccba27b3a1dfda8ff852a7506bfea78777ce38e"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/scarface-and-cordelia-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/scarface-and-cordelia-1-1.svg",
+      "sha256": "851e374575bad5369ce2ae23ae97489c098dadb4f7202aae7eaf1b291e1bb772"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/scarface-and-cordelia-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/scarface-and-cordelia-2-1.svg",
+      "sha256": "9cb040ad51fad1202a11dd94e502e192883210a33be792b9c4133d2f35dec156"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/scarface-and-cordelia-3-1.svg",
+      "path": "assets/vendor/army/img/logo/units/scarface-and-cordelia-3-1.svg",
+      "sha256": "8a90a2cfa6dbcb76cdfa8eaa841c2f066fa3956620d5f3d1fd70cd7e643c045c"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/senor-massacre-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/senor-massacre-1-1.svg",
+      "sha256": "893ff00df071e35430cf1a45750f518f6548b91d009d66a9d72d076d8a832361"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/seraphs-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/seraphs-1-1.svg",
+      "sha256": "cabd1776140b3e3014e05b0d1149083398efdf7e044c2a6481930d094f5867ad"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/seraphs-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/seraphs-2-1.svg",
+      "sha256": "cabd1776140b3e3014e05b0d1149083398efdf7e044c2a6481930d094f5867ad"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/seraphs-3-1.svg",
+      "path": "assets/vendor/army/img/logo/units/seraphs-3-1.svg",
+      "sha256": "2345b7e291e3c1a2bf61d79eae15e5d826be78d257507103c7a842544a3a3414"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/shang-ji-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/shang-ji-1-1.svg",
+      "sha256": "d6c484bcdf14bae315cc70d82e1534bd605c0659412d452e45b765491b52d368"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/shaolin-warrior-monks-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/shaolin-warrior-monks-1-1.svg",
+      "sha256": "f04bd72ce393329bb4013c2e061be37eeb4288146c0072ed22e18a9829a8610f"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/shona-carano-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/shona-carano-1-1.svg",
+      "sha256": "2d039599e81c17504f2178139eeb17d61442a897e03d28625a70554d72f38891"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/sierra-dronbot-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/sierra-dronbot-1-1.svg",
+      "sha256": "1056170519dbd73f77cdf2fafe69fce5534297966b5b71fcd043ab21a5b50fef"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/silver-snakes-yin-she-unit-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/silver-snakes-yin-she-unit-1-1.svg",
+      "sha256": "569f4cd705531ff1ccb72f6600f531ab70eacab456ebfb4dd99ecbf15466cbe9"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/son-bae-yaokong-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/son-bae-yaokong-1-1.svg",
+      "sha256": "f144383ef9407e16b8ecc5902189fcbcf512c4cecd8d96646f5705fbc2804634"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/sulsa-warriors-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/sulsa-warriors-1-1.svg",
+      "sha256": "fa4c8ab9cddb02b956211f03425e5ad90eba99b019be0b1a93520447ef914b4d"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/sulyong-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/sulyong-1-1.svg",
+      "sha256": "b6b5c5fcc131823abab3a422c06934fe9de8a519f6d5d849df6d5bb4027f2f4e"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/sun-tze-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/sun-tze-1-1.svg",
+      "sha256": "ceff42acfec05282d5c9c7729f5e448883aee40d7ca47d170180c86f211d2c50"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/team-crux-father-knights-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/team-crux-father-knights-1-1.svg",
+      "sha256": "006d6b75488f0e6d09274066b8c6955b1bd2650fdf8d2083934b83f000f9b496"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/tech-bees-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/tech-bees-1-1.svg",
+      "sha256": "522bafada76800fc12ae5577397717b598a8bd119dc1c5998d06a44bdda39569"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/teutonic-knights-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/teutonic-knights-1-1.svg",
+      "sha256": "b7c8a61b57f50c71cd53e578f92aea8a013fa431731cfaed248a4c7e1f40c194"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/tiger-soldiers-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/tiger-soldiers-1-1.svg",
+      "sha256": "1395613a9e6e6801b71cd7db30375208d652d74f444aa761b111f33bdf12e33a"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/tikbalangs-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/tikbalangs-1-1.svg",
+      "sha256": "45564daebff7aae6daf73621f1b0584fc87bcfc40c7a5167b850c50a435ba4f5"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/tikbalangs-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/tikbalangs-2-1.svg",
+      "sha256": "2345b7e291e3c1a2bf61d79eae15e5d826be78d257507103c7a842544a3a3414"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/trinitarians-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/trinitarians-1-1.svg",
+      "sha256": "7ea2e5d69c83200b49048d822dae11dd46dcc0ad46d3d4ae2375123b3274015d"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/triphammers-repurposed-industrial-tags-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/triphammers-repurposed-industrial-tags-2-1.svg",
+      "sha256": "9cb040ad51fad1202a11dd94e502e192883210a33be792b9c4133d2f35dec156"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/uhahu-hacker-for-hire-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/uhahu-hacker-for-hire-1-1.svg",
+      "sha256": "cf19588b4ed21d5115e8b224113435cd0d94c305caae980b2d5f0fab10984f81"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/valerya-gromoz-mercenary-hacker-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/valerya-gromoz-mercenary-hacker-1-1.svg",
+      "sha256": "0a82c0673c246ec94a4d926712d2671ef4fabd7b14dcaa4408de8377a700bd15"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/valkyrie-elite-bodyguard-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/valkyrie-elite-bodyguard-1-1.svg",
+      "sha256": "d06297b6b7dddc3b25bf7397b7d208f085585a6a66a274452083c222db5d4fcd"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/warcors-war-correspondents-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/warcors-war-correspondents-1-1.svg",
+      "sha256": "266ba6d5750523690308a7d61ac23986e44bdd9a252e627141a418def5eba659"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/wardrivers-merc-hackers-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/wardrivers-merc-hackers-1-1.svg",
+      "sha256": "c01d3369b04110e60122c162df7489bdb989da8108ce41e17a968f42fcb6b308"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/weibing-yaokong-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/weibing-yaokong-1-1.svg",
+      "sha256": "27808b4c13b36f9d412ebe88c0cf314fbe12851918ef506e9d83624c6a6b3ca2"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/wild-bill-legendary-gunslinger-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/wild-bill-legendary-gunslinger-1-1.svg",
+      "sha256": "51c4d1aad93a58ab5875b2fe53be107e7a4fa06845980f6b69b486ce40b592e6"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/wolfgang-amadeus-wolff-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/wolfgang-amadeus-wolff-1-1.svg",
+      "sha256": "c0f35ff231fce489f688d9e0afddefbb7bc90ca5a77f1f4038f737999dd37eb4"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yan-hu-invicibles-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/yan-hu-invicibles-1-1.svg",
+      "sha256": "7727158a9eca621fe0ce34e5ce6c536b5074f67907eca43ea31fa59def3f3f5e"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yaofang.svg",
+      "path": "assets/vendor/army/img/logo/units/yaofang.svg",
+      "sha256": "aac07fed070040f9bdc10ae0401c541772f833bb2e0de0401859b53f8fcbf8a6"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yaopu-pangguling-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/yaopu-pangguling-1-1.svg",
+      "sha256": "3474f35aabd64d8a10165e96fb31fe0be7eefa37cc4096e94dc04fb1c965c6dd"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yaoxie-lu-duan-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/yaoxie-lu-duan-1-1.svg",
+      "sha256": "05f24b3109667f5f772ff39633244fe424c509895b6402615c98c36dd1accad2"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yaoxie-rui-shi-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/yaoxie-rui-shi-1-1.svg",
+      "sha256": "c79e94c479ad528c17e60964e106d4cb8031152c2e536106ab114e0b4ba29df0"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yaozao-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/yaozao-1-1.svg",
+      "sha256": "70099acea06f2341a9240b0be8d6f12b8649eea3bb232cdc6c959ae64fec4618"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yojimbo-sword-for-hire-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/yojimbo-sword-for-hire-1-1.svg",
+      "sha256": "dbbc09a93e2330cb3b6e83f4b22de774f6d0bb982c269570e0e5b9f3c64e16a6"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yu-jing-team-ops-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/yu-jing-team-ops-1-1.svg",
+      "sha256": "069d1a37588ba81e10c4255fbaa72ee6d849191a37aa07c6534f3b4e4e39bb78"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yu-jing-team-ops-2-1.svg",
+      "path": "assets/vendor/army/img/logo/units/yu-jing-team-ops-2-1.svg",
+      "sha256": "069d1a37588ba81e10c4255fbaa72ee6d849191a37aa07c6534f3b4e4e39bb78"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yu-jing-team-ops-3-1.svg",
+      "path": "assets/vendor/army/img/logo/units/yu-jing-team-ops-3-1.svg",
+      "sha256": "a0d8915a7f67f24d6a9cb54bec0641103b564a352868c4dc6a0eae11c36ff66a"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/yuan-yuan-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/yuan-yuan-1-1.svg",
+      "sha256": "88b3bc24b8b1c735fabd39dd27ac85fe434aaa735ca1393621ee390013bbd89d"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/zhanshi-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/zhanshi-1-1.svg",
+      "sha256": "b90cfe0ec6a7d7d583a54edc04edd64eb15b914ec54b335b587a7b5332168b97"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/zhanshi-yisheng-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/zhanshi-yisheng-1-1.svg",
+      "sha256": "801247f3652619b446b6c94aaac3367760998efd5fe676a73cd103a073ca8bf7"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/zhanying-imperial-agents-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/zhanying-imperial-agents-1-1.svg",
+      "sha256": "95e41cfc54f8409b45e29203168aa65580cc270c879498a05ef77e4f920cfc79"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/zhencha-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/zhencha-1-1.svg",
+      "sha256": "5e7291388041d24750b3e981cf34df01fd56d17aeafdfeda3b2aef929ca3f1c2"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/army/img/logo/units/zuy-ng-invincibles-1-1.svg",
+      "path": "assets/vendor/army/img/logo/units/zuy-ng-invincibles-1-1.svg",
+      "sha256": "a32cbd3f101ef6397457a1785f9a349787b38b8e4fb18bd514d62c3928c0046d"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/wiki/dogged0.jpg",
+      "path": "assets/vendor/wiki/dogged0.jpg",
+      "sha256": "7ef14c34dc824743f3069206e45e4057cd19c83cde2d29fb1e582118fcf9455d"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/wiki/nwi0.jpg",
+      "path": "assets/vendor/wiki/nwi0.jpg",
+      "sha256": "b4c159a8256b55b98d3544f3709f59cb636d4dc1cb3392b360e1e9567b6b4852"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/wiki/power-up0.jpg",
+      "path": "assets/vendor/wiki/power-up0.jpg",
+      "sha256": "233db24de1e7cc92979bf376e0d4caadfe8e863b6b8ea885396dbb25727d4b7d"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/wiki/power-up20.jpg",
+      "path": "assets/vendor/wiki/power-up20.jpg",
+      "sha256": "92b83160190e1d29102173151aff255c3a39753aecc1213185c46e12d551c672"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/wiki/proxy_active0.jpg",
+      "path": "assets/vendor/wiki/proxy_active0.jpg",
+      "sha256": "c00d388bfb70933e29653731e8832d174d251e7baaaf2453841640db8ec2b725"
+    },
+    {
+      "source": "https://assets.corvusbelli.net/wiki/transmuted0.jpg",
+      "path": "assets/vendor/wiki/transmuted0.jpg",
+      "sha256": "520eeae9ddf06bb83d2dd82112952638c76675945e27f35306b9eb89daecbc32"
+    }
+  ]
+}
