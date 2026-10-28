@@ -1,7 +1,7 @@
-import * as AIR from './airborne.js?v=117';
-import * as F from './combat.js?v=117';
-import * as K from './skills.js?v=117';
-import * as V from './saves.js?v=109';
+import * as AIR from './airborne.js?v=122';
+import * as F from './combat.js?v=122';
+import * as K from './skills.js?v=122';
+import * as V from './saves.js?v=122';
 // All coordinated landings are simultaneous: include every final friendly base.
 export function finalizeLandings(results,units,terrain,templates){
  for(const d of results){const u=units.find(v=>v.id===d.actorId);if(!u||!d.explosion)continue;d.explosion=AIR.explosion({...u,combatJumpExplosionUsed:false},units,terrain,templates);}

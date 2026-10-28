@@ -1,5 +1,5 @@
 // N5.3 Peripheral (Cyberplug): explicit Connected/Autonomous profiles.
-import * as S from './states.js?v=109';
+import * as S from './states.js?v=122';
 export const isCyber=u=>u?.peripheral==='cyberplug';
 export const independent=u=>isCyber(u)&&u.cyberplugMode==='autonomous';
 export const controller=(u,units)=>isCyber(u)?units.find(v=>v.id===u.controllerId):u;

@@ -1,6 +1,6 @@
-import * as S from './states.js?v=109';
-import * as P from './pregame.js?v=102';
-import * as V from './saves.js?v=109';
+import * as S from './states.js?v=122';
+import * as P from './pregame.js?v=122';
+import * as V from './saves.js?v=122';
 export const names={symbioMate:'SymbioMate 共生防护',symbioBomb:'SymbioBomb 共生炸弹'};
 export function candidates(state,owner,key){return state.units.filter(u=>u.team===owner.team&&u.id!==owner.id&&Number(u.transmutation?.threshold)>0&&S.onTable(u)&&!(u.states||[]).some(s=>['camouflaged','impersonation','impersonation1','impersonation2','holoecho'].includes(s))&&!u[key]);}
 export function assign(state,owner,key,targetId){if(!Object.hasOwn(names,key)||state.phase!=='deploy'||!P.editable(state,owner)||!(owner[key+'Stock']>0))return {error:'只能在拥有者的部署阶段分配未使用装备'};const target=candidates(state,owner,key).find(u=>u.id===targetId);if(!target)return {error:'必须选择场上的同军表Transmutation(X)模型；每类装备最多一件'};target[key]={ownerId:owner.id};owner[key+'Stock']--;return {target};}

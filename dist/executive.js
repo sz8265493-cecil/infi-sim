@@ -1,6 +1,6 @@
-import * as S from './states.js?v=109';
-import * as O from './orders.js?v=102';
-import * as PJ from './proxies.js?v=77';
+import * as S from './states.js?v=122';
+import * as O from './orders.js?v=122';
+import * as PJ from './proxies.js?v=122';
 export function count(units,team,group){return new Set(units.filter(u=>u.team===team&&O.group(u)===group&&!u.peripheral&&!u.isDeployable&&!u.isDecoy&&S.present(u)).map(u=>PJ.key(u)||u.id)).size;}
 export function check(state,u,to){if(state.phase!=='play'||!state.tacticalWindow||state.order||u.team!==state.team)return '仅己方战术阶段、激活模型之前可转组';if((state.commandTokens?.[state.team]||0)<1)return '需要1枚指挥令';if(u.peripheral||u.isDeployable||u.isDecoy||!S.present(u))return '请选择在军表中的控制者／部队';if(!Number.isInteger(to)||to<1||to>10||to===O.group(u))return '选择不同的合法战斗组';if(count(state.units,u.team,to)>=10)return '目标组已达10名：昏迷仍占位，代理体整组算1名';return '';}
 export function move(state,u,to){const error=check(state,u,to);if(error)return {error};const ids=new Set(PJ.members(state.units,u).map(v=>v.id)),old=O.group(u);for(const v of state.units)if(ids.has(v.id)||ids.has(v.controllerId))v.combatGroup=to;state.commandTokens[state.team]--;O.refresh(state,state.team);return {ids:[...ids],old,to};}

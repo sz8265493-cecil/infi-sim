@@ -1,5 +1,5 @@
-import * as E from './engine.js?v=117';
-import * as M from './movement.js?v=88';
+import * as E from './engine.js?v=122';
+import * as M from './movement.js?v=122';
 
 export function movementRange(unit,plan,{distance=2,label='移动',turnOnly=false}={}){
  if(!unit||turnOnly)return null;

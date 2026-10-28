@@ -1,18 +1,31 @@
 // Shared dice, per-shot templates and per-actor attacks. Never roll an ARO twice.
-import * as F from './combat.js?v=117';
-import * as E from './engine.js?v=117';
-import * as K from './skills.js?v=117';
-import * as S from './states.js?v=109';
-import * as Z from './targetless.js?v=75';
-import * as V from './saves.js?v=109';
+import * as F from './combat.js?v=122';
+import * as E from './engine.js?v=122';
+import * as K from './skills.js?v=122';
+import * as S from './states.js?v=122';
+import * as Z from './targetless.js?v=122';
+import * as V from './saves.js?v=122';
 const intersection=(a,b)=>{const bag=[...b];return a.filter(n=>{const i=bag.indexOf(n);if(i<0)return false;bag.splice(i,1);return true;});};
 export function groups(args){
  const out=[];
  for(const d of args.declarations||[]){const a=args.units.find(u=>u.id===d.actorId),m=F.weaponMode(d.weapon,d.modeId);if(!a||!m)continue;
  const active={...a,...d.origin,reservedWeapon:d.weapon,reservedShots:d.reservedShots,ccSupport:d.ccSupport??a.ccSupport??0},target=args.units.find(v=>v.id===d.targetId),sp=target?F.attackSpec(active,target,m,args.terrain,{moving:E.pathLength(d.path||[])>0,coordinated:!!args.coordinated&&m.kind!=='cc',spearhead:a.id===args.active.id,ignoreSaturation:!m.template}):null;
- const b=d.burst??sp?.m.b??1,shots=d.shots?.length?d.shots:m.template?Array.from({length:b},()=>({targetId:d.targetId,aim:d.aim})):[{targetId:d.targetId,burst:b}];
+ const b=d.burst??sp?.m.b??1,shots=(d.shots?.length?d.shots:m.template?Array.from({length:b},()=>({targetId:d.targetId,aim:d.aim})):[{targetId:d.targetId,burst:b}]).map((shot,i)=>({...shot,sd:shot.sd??(i===(d.sdShot||0)?F.specialDice(a,m):0)}));
+ // Explicit templates are individual B1 groups only after the allocated Burst
+ // has been reduced per main target. Reducing each B1 separately loses the MOD.
+ const saturated=new Set();
+ if(m.template&&d.shots?.length){
+  const byTarget=new Map();for(const [i,shot] of shots.entries()){const indices=byTarget.get(shot.targetId)||[];indices.push(i);byTarget.set(shot.targetId,indices);}
+  for(const [targetId,indices] of byTarget){const t=args.units.find(u=>u.id===targetId);if(indices.length<2||!t||!E.saturation(active,t,args.terrain))continue;
+   const selected=d.saturationDiscard?.[targetId],discard=indices.includes(selected)?selected:indices.at(-1);saturated.add(discard);
+   // SD is allocated to the target, not spent as a template. Keep it in that
+   // target's surviving pool even if its original template was removed.
+   const receiver=indices.find(i=>i!==discard);shots[receiver].sd+=shots[discard].sd;shots[discard].sd=0;
+  }
+ }
+
  for(const [i,shot] of shots.entries()){const t=args.units.find(u=>u.id===shot.targetId),sh=m.template?F.makeTemplate(active,shot.aim||t,m,args.templates):null;
- out.push({id:'volley:'+a.id+':'+i,actorId:a.id,targetId:shot.targetId,weapon:d.weapon,modeId:d.modeId,m,active,origin:d.origin||a,path:d.path||[a],shape:sh,burst:shot.burst??(m.template?1:b),sd:shot.sd??(i===(d.sdShot||0)?F.specialDice(a,m):0),idle:!!d.idle||!t,startedMarker:!!d.startedMarker,targetless:d.targetless});}
+ out.push({id:'volley:'+a.id+':'+i,actorId:a.id,targetId:shot.targetId,weapon:d.weapon,modeId:d.modeId,m,active,origin:d.origin||a,path:d.path||[a],shape:sh,burst:shot.burst??(m.template?1:b),sd:shot.sd,saturationCancelled:saturated.has(i),idle:!!d.idle||!t||saturated.has(i),startedMarker:!!d.startedMarker,targetless:d.targetless});}
  }
  if(!out.length)out.push({id:'volley:idle',actorId:args.active.id,active:args.active,origin:args.attackPoint,path:args.path,weapon:args.weapon,modeId:args.modeId,m:F.weaponMode(args.weapon,args.modeId),idle:true,burst:0,sd:0});
  return out;
@@ -21,7 +34,7 @@ function subArgs(args,g){const reactions={};for(const [id,r] of Object.entries(a
  return {...args,allocations:null,mainTarget:g.targetId,active:{...g.active,reservedShots:g.burst},attackPoint:{...g.active,reservedShots:g.burst},activeSD:g.sd,weapon:g.weapon,modeId:g.modeId,shape:g.shape,path:g.path,reactions,idle:g.idle,targetless:g.targetless||null,startedMarker:g.startedMarker};
 }
 export function prepare(args,rng=Math.random){const gs=groups(args),activeTargets={},reactions={},meta={};
- for(const g of gs){const a=subArgs(args,g),p=F.preparePools(a,()=>0),ap=p.active;ap.id=g.id;ap.name=g.active.name+' → '+(g.targetless?Z.WEAPONS[g.targetless.weapon].name:args.units.find(u=>u.id===g.targetId)?.name||'待机');ap.label=g.idle&&!g.targetless?'待机 · 不生成攻击骰':(g.targetless?'协调投掷':g.m.template?'独立模板':args.coordinated?'协调攻击':'联动攻击')+' · B'+g.burst;ap.reason=g.targetless?ap.reason:F.templateFailure(g.shape,g.active,args.units.find(u=>u.id===g.targetId),g.m,args.terrain,[...args.units,...(args.neutralUnits||[])])||(!g.idle?F.attackSpec(g.active,args.units.find(u=>u.id===g.targetId),g.m,args.terrain,{moving:E.pathLength(g.path)>0}).reason:'待机');ap.dice=Array.from({length:ap.dice.length},()=>1+Math.floor(rng()*20));activeTargets[g.id]=ap;meta[g.id]={activeSV:ap.sv,reactions:p.reactions};for(const [id,rp] of Object.entries(p.reactions))if(!reactions[id])reactions[id]={...rp,dice:[]};}
+ for(const g of gs){const a=subArgs(args,g),p=F.preparePools(a,()=>0),ap=p.active;ap.id=g.id;ap.name=g.active.name+' → '+(g.targetless?Z.WEAPONS[g.targetless.weapon].name:args.units.find(u=>u.id===g.targetId)?.name||'待机');ap.label=g.idle&&!g.targetless?'待机 · 不生成攻击骰':(g.targetless?'协调投掷':g.m.template?'独立模板':args.coordinated?'协调攻击':'联动攻击')+' · B'+g.burst;ap.reason=g.saturationCancelled?'饱和区域：该主目标分配 B−1，本模板不结算':g.targetless?ap.reason:F.templateFailure(g.shape,g.active,args.units.find(u=>u.id===g.targetId),g.m,args.terrain,[...args.units,...(args.neutralUnits||[])])||(!g.idle?F.attackSpec(g.active,args.units.find(u=>u.id===g.targetId),g.m,args.terrain,{moving:E.pathLength(g.path)>0}).reason:'待机');ap.dice=Array.from({length:ap.dice.length},()=>1+Math.floor(rng()*20));activeTargets[g.id]=ap;meta[g.id]={activeSV:ap.sv,reactions:p.reactions};for(const [id,rp] of Object.entries(p.reactions))if(!reactions[id])reactions[id]={...rp,dice:[]};}
  // Generate each reactive pool once, even if it opposes several shots/participants.
  for(const [id,r] of Object.entries(args.reactions)){if(reactions[id]?.dice.length)continue;let rp=Object.values(meta).map(x=>x.reactions[id]).find(Boolean);if(!rp){const who=args.units.find(u=>u.id===(r.targetId||args.active.id))||args.active;rp=F.preparePools({...args,allocations:null,active:who,attackPoint:who,mainTarget:null,idle:true,activeSkill:'idle',reactions:{[id]:r}},()=>0).reactions[id];}if(rp)reactions[id]={...rp,dice:Array.from({length:rp.dice.length},()=>1+Math.floor(rng()*20))};}
  return {active:{...args.active,dice:[],sv:0,sd:0},activeTargets,reactions,volleyMeta:meta};

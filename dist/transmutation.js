@@ -1,6 +1,6 @@
-import * as E from './engine.js?v=117';
-import * as S from './states.js?v=109';
-import * as EQ from './equipment.js?v=36';
+import * as E from './engine.js?v=122';
+import * as S from './states.js?v=122';
+import * as EQ from './equipment.js?v=122';
 const profileKeys=['s','baseRadius','bs','cc','ph','wip','arm','bts','mov','mov2','maxhp','attribute','type','loadout','armyWeapons','climbingPlus','superJump','jetPropulsion','superJumpBonus','mim','visor360','msv','hacker','hackingDevice','protheion','protheionMod','immunities','nwi','dogged','remotePresence','camouflage','holomask','noCover','skillNoCover','courage','religious'];
 export function init(u){const t=u.transmutation;if(!t?.profiles?.length)return null;t.index??=0;if(!t.original){t.original=Object.fromEntries(profileKeys.filter(k=>u[k]!==undefined).map(k=>[k,structuredClone(u[k])]));t.profiles=t.profiles.map(p=>{const n={...structuredClone(t.original),...p};if(p.s!==undefined&&p.s!==t.original.s&&p.baseRadius===undefined)delete n.baseRadius;return n;});}return t;}
 export function position(u,profile,match='center',angle=0){const delta=E.radius(u)-E.radius({...u,...profile}),a=angle*Math.PI/180;return {x:u.x+(match==='edge'?delta*Math.cos(a):0),y:u.y+(match==='edge'?delta*Math.sin(a):0),z:u.z||0,wall:u.wall||null};}

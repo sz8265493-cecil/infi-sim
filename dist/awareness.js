@@ -1,9 +1,9 @@
 // Infinity N5.3 Common Skills: Cautious Movement, Look Out!, Alert!.
 // Geometry is checked after movement declaration; declaration menus never expose range.
-import * as E from './engine.js?v=117';
-import * as S from './states.js?v=109';
-import * as K from './skills.js?v=117';
-import * as H from './hacking.js?v=82';
+import * as E from './engine.js?v=122';
+import * as S from './states.js?v=122';
+import * as K from './skills.js?v=122';
+import * as H from './hacking.js?v=122';
 export const SOURCES=['https://infinitythewiki.com/Cautious_Movement','https://infinitythewiki.com/Look_Out','https://infinitythewiki.com/Alert'];
 const living=u=>u&&S.active(u)&&S.onTable(u)&&!S.has(u,'disconnected');
 const trooper=u=>living(u)&&!u.isDeployable&&!u.isDecoy;

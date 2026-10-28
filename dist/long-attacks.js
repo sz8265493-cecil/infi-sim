@@ -1,5 +1,5 @@
-import * as E from './engine.js?v=117';
-import * as S from './states.js?v=109';
+import * as E from './engine.js?v=122';
+import * as S from './states.js?v=122';
 // Derived modes preserve ammunition/weapon effects; only the declaration and roll change.
 export function addModes(w){for(const m of [...w.modes]){if(m.longAttack||m.guided||m.sf)continue;for(const [trait,kind,label] of [['intuitive','intuitiveAttack','直觉攻击 · WIP整令'],['speculative','speculativeDamage','推测射击 · 整令']])if(m[trait]&&!w.modes.some(n=>n.id===kind+'_'+m.id))w.modes.push({...m,id:kind+'_'+m.id,name:m.name+' · '+label,kind:'impact',b:1,longAttack:kind,attribute:kind==='intuitiveAttack'?'wip':m.attribute});}}
 export function spec(a,b,m,terrain,{reactive=false,declaration=false}={}){

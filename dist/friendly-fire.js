@@ -1,6 +1,6 @@
-import * as E from './engine.js?v=117';
-import * as S from './states.js?v=109';
-import * as V from './saves.js?v=109';
+import * as E from './engine.js?v=122';
+import * as S from './states.js?v=122';
+import * as V from './saves.js?v=122';
 const participant=u=>S.onTable(u)&&S.active(u)&&!u.isDeployable&&!['immA','immB'].some(k=>S.has(u,k));
 export function sync(units,terrain){for(const u of units){u.engagedPeers=[];u.engagedAllies={};if(!participant(u))continue;const linked=new Set([u.id]),queue=[u];while(queue.length){const a=queue.shift();for(const b of units)if(!linked.has(b.id)&&participant(b)&&a.team!==b.team&&E.inContact(a,b,terrain)){linked.add(b.id);queue.push(b);}}if(linked.size<2)continue;u.engagedPeers=units.filter(v=>v.id!==u.id&&linked.has(v.id)).map(v=>({id:v.id,name:v.name,team:v.team,x:v.x,y:v.y,z:v.z||0,s:v.s,baseRadius:v.baseRadius,prone:v.prone,hp:v.hp,states:[...v.states]}));for(const v of u.engagedPeers)(u.engagedAllies[v.team]??=[]).push(v.id);}}
 export const penalty=(a,b)=>-6*(b.engagedAllies?.[a.team]?.length||0);

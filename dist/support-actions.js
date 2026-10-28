@@ -1,6 +1,6 @@
 // N5.3: Doctor / Engineer. Effects are committed only after optional rerolls.
-import * as S from './states.js?v=109';
-import {edgeDistance} from './engine.js?v=117';
+import * as S from './states.js?v=122';
+import {edgeDistance} from './engine.js?v=122';
 
 export const SOURCES=['https://infinitythewiki.com/Doctor','https://infinitythewiki.com/Engineer','https://infinitythewiki.com/Stunned_State','https://infinitythewiki.com/Technorganic','https://infinitythewiki.com/Command_Tokens'];
 export const LABELS={doctor:'医生',engineer:'工程师'};

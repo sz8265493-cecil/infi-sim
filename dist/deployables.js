@@ -1,10 +1,10 @@
-import * as PM from './perimeter.js?v=84';
+import * as PM from './perimeter.js?v=122';
 // N5.3: Place Deployable, Reload, Mines, Deployable Repeater and Traits.
 // Declaration helpers do not measure; placement/trigger checks run at resolution.
-import * as E from './engine.js?v=117';
-import * as S from './states.js?v=109';
-import {WEAPONS as TARGETLESS} from './targetless.js?v=75';
-import {inZone} from './hacking.js?v=82';
+import * as E from './engine.js?v=122';
+import * as S from './states.js?v=122';
+import {WEAPONS as TARGETLESS} from './targetless.js?v=122';
+import {inZone} from './hacking.js?v=122';
 export const ITEMS={shockMine:{id:'shockMine',name:'休克地雷',capacity:3,deployable:true,s:0,concealed:true,ps:7,ammo:'SHOCK'},deployableRepeater:{id:'deployableRepeater',name:'可部署中继器',capacity:3,deployable:true,s:1,repeater:true},panzerfaust:{id:'panzerfaust',name:'铁拳火箭筒',capacity:2}};
 for(const [id,name,ammo,ps] of [['apMine','穿甲地雷','AP',7],['emMine','电磁地雷','EM',7],['paraMine','麻痹地雷','PARA',0],['monoMine','单分子地雷','MONO',8],['viralMine','病毒地雷','VIRAL',7]])ITEMS[id]={...ITEMS.shockMine,id,name,ammo,ps};
 ITEMS.cyberMine={...ITEMS.shockMine,id:'cyberMine',name:'电子地雷 Cybermine',ps:5,ammo:'DA',cyber:true};

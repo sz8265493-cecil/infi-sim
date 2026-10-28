@@ -1,5 +1,5 @@
-import * as S from './states.js?v=109';
-import * as V from './saves.js?v=109';
+import * as S from './states.js?v=122';
+import * as V from './saves.js?v=122';
 // Resolve healing before simultaneous incoming damage, as specified by Protheion.
 export function settle(result,units){const gains=new Map(),victims=new Map();for(const p of V.allPlans(result)){
  const a=units.find(u=>u.id===p.attacker?.id),t=p.target;

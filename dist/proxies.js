@@ -1,4 +1,4 @@
-import * as S from './states.js?v=109';
+import * as S from './states.js?v=122';
 export const key=u=>u.proxyGroup?u.team+':'+u.proxyGroup:null;
 export const eligible=u=>S.active(u)&&!S.has(u,'isolated');
 export const members=(units,u)=>u.proxyGroup?units.filter(v=>key(v)===key(u)):[u];

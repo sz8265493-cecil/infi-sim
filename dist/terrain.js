@@ -1,4 +1,4 @@
-import * as E from './engine.js?v=117';
+import * as E from './engine.js?v=122';
 export const LEGACY_TERRAIN=[{x:5,y:5,w:7,h:6,kind:'building',name:'01 / STORAGE'},{x:20,y:4,w:8,h:4,kind:'building',name:'02 / DEPOT'},{x:36,y:5,w:7,h:6,kind:'building',name:'03 / TRANSIT'},{x:7,y:16,w:7,h:6,kind:'building',name:'04 / STACK'},{x:28,y:14,w:6,h:6,kind:'building',name:'05 / LAB'},{x:18,y:25,w:6,h:6,kind:'building',name:'06 / HUB'},{x:36,y:27,w:7,h:6,kind:'building',name:'07 / STORAGE'},{x:6,y:36,w:7,h:6,kind:'building',name:'08 / TRANSIT'},{x:24,y:38,w:7,h:5,kind:'building',name:'09 / HANGAR'},{x:17,y:16,w:4,h:.6,kind:'cover',name:'BARRIER'},{x:15,y:26,w:.6,h:4,kind:'cover',name:'BARRIER'},{x:28,y:29,w:4,h:.6,kind:'cover',name:'BARRIER'},{x:37,y:19,w:4,h:1.4,kind:'cover',name:'CARGO'},{x:5,y:27,w:4,h:1.4,kind:'cover',name:'CARGO'},{x:36,y:39,w:5,h:1.2,kind:'cover',name:'CARGO'}];
 LEGACY_TERRAIN.forEach((t,i)=>Object.assign(t,{id:'t'+i,height:t.kind==='building'?[4,6,9,6,4,6,9,4,6][i]:1.2}));
 LEGACY_TERRAIN[9].height=1.7;LEGACY_TERRAIN[10].height=.7;LEGACY_TERRAIN[11].height=.7;

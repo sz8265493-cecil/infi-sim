@@ -1,8 +1,8 @@
-import {inZone,hackingArea} from './hacking.js?v=82';
-import * as E from './engine.js?v=117';
-import * as S from './states.js?v=109';
-import * as M from './movement.js?v=88';
-import * as V from './saves.js?v=109';
+import {inZone,hackingArea} from './hacking.js?v=122';
+import * as E from './engine.js?v=122';
+import * as S from './states.js?v=122';
+import * as M from './movement.js?v=122';
+import * as V from './saves.js?v=122';
 export const engaged=(u,units)=>S.onTable(u)&&units.some(v=>!v.isDeployable&&v.team!==u.team&&v.team>=0&&S.onTable(v)&&S.active(v)&&E.edgeDistance(u,v)<.025);
 export const successValue=u=>u.wip+S.rollMod(u);
 export const autoFail=(u,g)=>!!g.failedStun&&!u.courage&&!u.religious;

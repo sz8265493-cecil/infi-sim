@@ -1,7 +1,7 @@
 // N5.3: Targetless, Smoke/Eclipse, Disco Baller, Drop Bears, Pitcher.
-import * as E from './engine.js?v=117';
-import * as H from './hacking.js?v=82';
-import * as S from './states.js?v=109';
+import * as E from './engine.js?v=122';
+import * as H from './hacking.js?v=122';
+import * as S from './states.js?v=122';
 export const WEAPONS={
  symbioMirrorball:{name:'共生炸弹 · Mirrorball',attribute:'wip',bands:[[8,0]],zone:'eclipse',comms:true,noLof:true},
  smokeGrenade:{name:'烟雾手雷',attribute:'ph',bands:[[8,0],[16,-3]],zone:'smoke',speculative:true},
@@ -14,11 +14,12 @@ export const WEAPONS={
  mineDispenser:{name:'地雷发射器（休克）',attribute:'bs',bands:[[8,0],[16,3],[24,-3],[48,-6]],entity:'shockMine',capacity:2,speculative:true,doubleShot:true}
 };
 export const owned=u=>[...new Set([...(u.loadout||[]),...(u.deployableItems||[]),...(u.symbioBomb?['symbioMirrorball']:[])])].filter(id=>WEAPONS[id]);
-export function available(u,{reactive=false,lof=false}={}){return S.allowed(u,'attack')&&!u.isDeployable&&!(u.wall&&!u.climbingPlus)&&!u.engaged&&(!reactive||lof)?owned(u).filter(id=>!WEAPONS[id].capacity||(u.spentWeapons?.[id]||0)<WEAPONS[id].capacity):[];}
+export function available(u,{reactive=false,lof=false}={}){return S.allowed(u,'attack')&&!u.isDeployable&&!(u.wall&&!u.climbingPlus)&&!u.engaged&&(!reactive||lof)?owned(u).filter(id=>!(WEAPONS[id].comms&&S.has(u,'isolated'))&&(!WEAPONS[id].capacity||(u.spentWeapons?.[id]||0)<WEAPONS[id].capacity)):[];}
 export const pointModel=p=>({...p,s:0,baseRadius:0,hp:1,states:[],facing:0});
 export function spec(u,d,terrain,{measure=true,reactive=false,lof=false}={}){
  const w=WEAPONS[d?.weapon];let reason='';
  if(!w||!owned(u).includes(d.weapon))reason='未携带该武器';
+ else if(w.comms&&S.has(u,'isolated'))reason='孤立状态禁用通讯攻击';
  else if(!S.allowed(u,'attack')||u.wall&&!u.climbingPlus||u.engaged)reason='当前状态不能攻击';
  else if(reactive&&(!lof||d.speculative))reason='Targetless ARO 需要看到主动单位，不能推测射击';
  else if(d.speculative&&!w.speculative)reason='该武器没有推测攻击属性';

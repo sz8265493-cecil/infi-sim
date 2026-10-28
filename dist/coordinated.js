@@ -1,9 +1,10 @@
-import * as S from './states.js?v=109';
-import * as O from './orders.js?v=102';
+import {restrictedController} from './peripherals.js?v=122';
+import * as S from './states.js?v=122';
+import * as O from './orders.js?v=122';
 export function memberReason(s,u,leader){
  if(!u||u.team!==s.team)return '只能选择主动方单位';
  if(!S.active(u)||!S.onTable(u)&&!S.has(u,'hiddenDeployment')&&!(u.offTable&&(u.combatJump||u.parachutist)))return '须为可行动单位或可入场的隐匿／空降单位';
- if(u.peripheral||u.controllerId||s.units.some(v=>v.controllerId===u.id))return '附属模型及其控制者不能协调';
+ if(u.peripheral||u.controllerId||restrictedController(u,s.units))return '附属模型及其控制者不能协调';
  if(u.ftId||s.fireteams?.some(f=>!f.cancelled&&f.members?.includes(u.id)))return '火力组成员须先脱组';
  if(u.isDeployable||u.noOrders||S.has(u,'isolated'))return '不能使用该战斗组公共命令';
  if(leader&&O.group(u)!==O.group(leader))return '必须属于同一战斗组';

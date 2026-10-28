@@ -1,7 +1,7 @@
-import * as HP from './hidden-placement.js?v=118';
-import * as E from './engine.js?v=117';
-import * as S from './states.js?v=109';
-import * as P from './pregame.js?v=102';
+import * as HP from './hidden-placement.js?v=122';
+import * as E from './engine.js?v=122';
+import * as S from './states.js?v=122';
+import * as P from './pregame.js?v=122';
 const has=u=>S.has(u,'holoecho');
 export const bearer=(units,u)=>u?.holoOwnerId?units.find(v=>v.id===u.holoOwnerId):u;
 export const echoes=(units,u)=>units.filter(v=>v.holoOwnerId===u.id&&S.present(v));
@@ -25,5 +25,24 @@ export function needsPublicMarker(u){return has(u)&&S.has(u,'holomask')&&!u.holo
 export function publish(units,u,id){if(!has(u))return false;if(u.holoPublic)return true;const group=[u,...echoes(units,u)];if(needsPublicMarker(u)&&!group.some(v=>v.id===id))return false;u.holoPublic=true;u.holoMarkerId=id||u.id;return true;}
 export function appearance(u){return (S.has(u,'holomask')||u.maskCancelled)&&u.holoAppearance;}
 export function publicTokens(u,units){const c=bearer(units,u);if(!c)return {hideHolo:false,showHolo:false};const combined=!!appearance(c);return {hideHolo:combined,showHolo:combined&&has(c)&&c.holoPublic&&c.holoMarkerId===u.id};}
-export function revealHidden(units,u,terrain=[]){if(!S.has(u,'hiddenDeployment')&&!u.hiddenRevealPending)return [];const c=bearer(units,u),group=[c,...echoes(units,c)];for(const n of group){const placement=HP.position(n,units,terrain);if(placement.error){n.hiddenPlacementError=placement.error;n.states=[...new Set([...(n.states||[]),'hiddenDeployment'])];continue;}if(placement.moved){n.hiddenRecordedPosition=placement.origin;n.hiddenPlacementDistance=placement.distance;Object.assign(n,placement.point);}delete n.hiddenPlacementError;n.states=(n.states||[]).filter(k=>k!=='hiddenDeployment');n.hiddenOrderAvailable=false;delete n.hiddenRevealPending;}return check(units,c,{start:true});}
+// Plan every recorded position before making any of the hidden group public.
+// The virtual table reserves earlier placements, so moved echoes cannot overlap.
+export function planHiddenReveal(units,u,terrain=[]){
+ const c=bearer(units,u);
+ if(!c)return {can:false,error:'找不到隐匿全息的真实模型'};
+ const group=[c,...echoes(units,c)].filter(n=>S.has(n,'hiddenDeployment')||n.hiddenRevealPending),ids=new Set(group.map(n=>n.id)),virtual=units.map(n=>({...n,states:ids.has(n.id)?[...new Set([...(n.states||[]),'hiddenDeployment'])]:[...(n.states||[])]})),placements=[];
+ for(const n of group){
+  const copy=virtual.find(v=>v.id===n.id),placement=HP.position(copy,virtual,terrain);
+  if(placement.error)return {can:false,error:placement.error,failedId:n.id,groupIds:[...ids]};
+  placements.push({id:n.id,...placement});Object.assign(copy,placement.point);copy.states=copy.states.filter(k=>k!=='hiddenDeployment');
+ }
+ return {can:true,placements,groupIds:[...ids]};
+}
+export function revealHidden(units,u,terrain=[]){
+ if(!S.has(u,'hiddenDeployment')&&!u.hiddenRevealPending)return [];
+ const c=bearer(units,u),plan=planHiddenReveal(units,u,terrain);
+ if(!plan.can){for(const n of units.filter(n=>plan.groupIds?.includes(n.id))){n.hiddenPlacementError=plan.error;n.states=[...new Set([...(n.states||[]),'hiddenDeployment'])];}return Object.assign([],{error:plan.error});}
+ for(const placement of plan.placements){const n=units.find(v=>v.id===placement.id);if(placement.moved){n.hiddenRecordedPosition=placement.origin;n.hiddenPlacementDistance=placement.distance;Object.assign(n,placement.point);}delete n.hiddenPlacementError;n.states=(n.states||[]).filter(k=>k!=='hiddenDeployment');n.hiddenOrderAvailable=false;delete n.hiddenRevealPending;}
+ return check(units,c,{start:true});
+}
 export function syncHidden(units,terrain=[]){for(const u of units.filter(v=>v.hiddenRevealPending))revealHidden(units,u,terrain);}

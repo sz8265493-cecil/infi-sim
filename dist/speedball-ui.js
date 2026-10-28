@@ -1,6 +1,6 @@
-import * as SB from './speedball.js?v=48';
-import * as E from './engine.js?v=117';
-import * as S from './states.js?v=109';
+import * as SB from './speedball.js?v=122';
+import * as E from './engine.js?v=122';
+import * as S from './states.js?v=122';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const team=t=>t?'◆ 蓝方':'▲ 红方';
 export function installSpeedballUI({getState,getTerrain,render,log,toast,checkpoint,roll}){

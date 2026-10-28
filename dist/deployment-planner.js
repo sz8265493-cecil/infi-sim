@@ -1,7 +1,7 @@
-import * as E from './engine.js?v=117';
-import * as P from './pregame.js?v=102';
-import * as Q from './mission.js?v=81';
-import * as S from './states.js?v=109';
+import * as E from './engine.js?v=122';
+import * as P from './pregame.js?v=122';
+import * as Q from './mission.js?v=122';
+import * as S from './states.js?v=122';
 export const missionRules={name:'Hardlock · 信标封锁',depth:12,enemyDepth:12,exclusionZones:[]};
 export function role(u){const names=Object.values(u.armyWeapons||{}).map(w=>w.en||w.name||'').join(' ');if(u.tagcom||u.baggage||u.hackingDevice==='EVO')return '后场支援';if(u.lieutenant)return '指挥支援';if(u.specialist||u.hacker||u.engineer||u.doctor||u.forwardObserver)return '任务专家';if(/Sniper|Missile|Rocket|Hyper-Rapid/i.test(names))return '远程火力';if(u.type==='TAG')return '重型突击';if(u.lieutenant)return '指挥支援';if(u.tagcom||u.baggage)return '后场支援';return '战线支援';}
 export function stageUnits(s){return s.units.filter(u=>s.pregame?.stage==='deploy'&&u.team===P.deploymentTeam(s)&&u.peripheral!=='ancillary'&&!u.isDecoy&&!u.isDeployable&&(P.reserveStep(s)===s.pregame.reserves[u.team].includes(P.reserveOwner(u))));}

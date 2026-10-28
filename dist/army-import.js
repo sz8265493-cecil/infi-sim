@@ -1,8 +1,8 @@
-import {decodeArmyCode,encodeArmyCode} from './army-code.js?v=36';
-import * as F from './combat.js?v=117';
-import * as D from './deployables.js?v=84';
-import * as E from './engine.js?v=117';
-import * as Q from './mission.js?v=81';
+import {decodeArmyCode,encodeArmyCode} from './army-code.js?v=122';
+import * as F from './combat.js?v=122';
+import * as D from './deployables.js?v=122';
+import * as E from './engine.js?v=122';
+import * as Q from './mission.js?v=122';
 export const label=t=>t.name+(t.extras?.length?' ('+t.extras.map(x=>x.name).join(', ')+')':'');
 const alias={'Combi Rifle':'复合步枪','Pistol':'手枪','CC Weapon':'近战武器','Heavy Machine Gun':'重机枪','Spitfire':'轻机枪','Light Flamethrower':'轻型喷火器','Heavy Flamethrower':'重型喷火器','Chain Rifle':'链式步枪','Boarding Shotgun':'登舰霰弹枪','Light Shotgun':'轻型霰弹枪','Flash Pulse':'闪光脉冲','PARA CC Weapon':'麻痹近战武器'};
 const special={'CrazyKoala':'crazyKoala','CrazyKoalas':'crazyKoala','FastPanda':'fastPanda','WildParrot':'wildParrot','Cybermine':'cyberMine','Smoke Grenades':'smokeGrenade','Smoke Grenade Launcher':'smokeLauncher','Eclipse Grenades':'eclipseGrenade','Eclipse Grenade Launcher':'eclipseLauncher','Disco Baller':'discoBaller','Drop Bears':'dropBears','Pitcher':'pitcher','Shock Mine':'shockMine','AP Mine':'apMine','E/M Mine':'emMine','PARA Mine':'paraMine','Monofilament Mine':'monoMine','Viral Mine':'viralMine','Deployable Repeater':'deployableRepeater'};

@@ -1,8 +1,8 @@
-import {kept,activePools} from './combat.js?v=117';
-import * as E from './engine.js?v=117';
-import * as V from './saves.js?v=109';
-import * as S from './states.js?v=109';
-import * as K from './skills.js?v=117';
+import {kept,activePools} from './combat.js?v=122';
+import * as E from './engine.js?v=122';
+import * as V from './saves.js?v=122';
+import * as S from './states.js?v=122';
+import * as K from './skills.js?v=122';
 // Reuse the declared Dodge die, but assess the mine separately at PH -3.
 // The no-LoF and Deployable -3 circumstances do not stack with each other.
 export function applyMineAttacks(result,attacks,units,pools,actorId){

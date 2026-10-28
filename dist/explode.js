@@ -1,9 +1,9 @@
-import * as E from './engine.js?v=117';
-import * as S from './states.js?v=109';
-import * as F from './combat.js?v=117';
-import * as D from './deployables.js?v=84';
-import {applyMineAttacks} from './mine-resolution.js?v=79';
-import * as V from './saves.js?v=109';
+import * as E from './engine.js?v=122';
+import * as S from './states.js?v=122';
+import * as F from './combat.js?v=122';
+import * as D from './deployables.js?v=122';
+import {applyMineAttacks} from './mine-resolution.js?v=122';
+import * as V from './saves.js?v=122';
 // Trigger only on a transition this Order, never on a pre-existing unconscious model.
 export const pending=units=>units.filter(u=>u.pendingExplode&&u.explode&&S.onTable(u)&&S.unconscious(u)&&!S.pendingSurvival(u).length);
 export function wave(units,terrain,pools,templates,options={}){

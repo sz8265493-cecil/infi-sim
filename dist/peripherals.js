@@ -1,7 +1,9 @@
-import * as CP from './cyberplug.js?v=102';
-import * as S from './states.js?v=109';
-import * as H from './hacking.js?v=82';
+import * as CP from './cyberplug.js?v=122';
+import * as S from './states.js?v=122';
+import * as H from './hacking.js?v=122';
 export const source='https://infinitythewiki.com/Peripheral';
+// Ancillary explicitly exempts its controller while undeployed, Disconnected or Null.
+export const restrictedController=(u,units)=>units.some(v=>v.controllerId===u.id&&(v.peripheral!=='ancillary'||S.onTable(v)&&S.active(v)&&!S.has(v,'disconnected')));
 export const controller=(u,units)=>u.peripheral?units.find(v=>v.id===u.controllerId):u;
 export const members=(c,units,type)=>units.filter(v=>v.controllerId===c?.id&&(!type||v.peripheral===type)&&S.onTable(v));
 export function choice(c,units,type){const key=type==='servant'?'activeServantId':'controlSpearheadId';return members(c,units,type).find(v=>v.id===c?.[key]&&S.active(v))||members(c,units,type).find(v=>S.active(v));}

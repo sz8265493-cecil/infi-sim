@@ -1,14 +1,16 @@
-import * as E from './engine.js?v=117';
-import * as S from './states.js?v=109';
+import * as E from './engine.js?v=122';
+import * as S from './states.js?v=122';
 export const impLevel=u=>S.has(u,'impersonation1')?1:S.has(u,'impersonation2')?2:0;
 export const marker=u=>!!u&&(S.has(u,'camouflaged')||!!impLevel(u));
 export const delayable=u=>marker(u)||S.has(u,'holoecho');
+// Freeze these before revealing a hidden model or cancelling a Marker state.
+export function attackStart(u){return {startedMarker:delayable(u)||S.has(u,'hiddenDeployment')||S.has(u,'decoy'),startedImpersonation:!!impLevel(u),surpriseSource:impLevel(u)?'imp':S.has(u,'holoecho')?'holo':null};}
 export const discoverable=u=>delayable(u)||S.has(u,'holomask')||S.has(u,'hiddenDeployment');
 export const sixth=u=>!!u.sixthSense||(u.ftLevel||0)>=5;
 export const fullVision=u=>!!u.visor360||marker(u);
 export const mimetism=(a,b,{discover=false,directMarker=false}={})=>(b.nfbWhiteNoise||b.nfbCybermask)?0:directMarker?Math.abs(b.mim||0):Math.max(0,Math.abs(b.mim||0)-(a.msv>=2?6:a.msv===1?3:0));
 export const albedoMod=(a,b)=>!b.nfbWhiteNoise&&!b.nfbCybermask&&(a.msv||a.marksmanship)?-Math.abs(b.albedo||0):0;
-export const specialDice=(u,m,{longSkill=false}={})=>longSkill||!m||['direct','hack'].includes(m.kind)?0:m.kind==='cc'?martial(u).sd+(u.ccSpecialDice||0):(['bs','impact'].includes(m.kind)?((u.ftLevel||0)>=2?1:0)+(u.bsSpecialDice||0):0);
+export const specialDice=(u,m,{longSkill=false}={})=>longSkill||!m||(m.kind==='direct'||m.kind==='hack'&&!m.pheroware)?0:m.kind==='cc'?martial(u).sd+(u.ccSpecialDice||0):(['bs','impact'].includes(m.kind)||m.pheroware?((u.ftLevel||0)>=2?1:0)+(u.bsSpecialDice||0):0);
 export function attackMode(u,m){const cc=m.kind==='cc',bs=['bs','impact','direct'].includes(m.kind);if(!cc&&!bs)return {...m};const added=cc?u.ccAmmo:u.bsAmmo,ammo=[...new Set([...(m.ammo||(m.saves===3?(m.ap?'AP+EXP':'EXP'):m.ap?'AP':'N')).split('+'),...(Array.isArray(added)?added:added?[added]:[])])].join('+');return {...m,ammo,continuous:m.continuous||bs&&u.bsContinuous,srMod:(m.srMod||0)+(cc?u.ccSaveMod||0:u.bsSaveMod||0)};}
 export const turnKey=state=>`${state.round}:${state.team}`;
 export const markerKey=u=>`${u.id}:${u.markerGeneration||0}`;
