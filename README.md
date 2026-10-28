@@ -2,7 +2,9 @@
 
 Infinity N5 的非官方二维战术沙盘，用于非盈利的规则测试、教学和游戏推广。支持单浏览器中双方手动操作；不是官方 Army 的替代品，也不是已完整实现全部规则的线上对战服务。
 
-> **当前状态（2026-10-27）**：本地开发与网页实操验证，GitHub 私有仓库存储源码，Actions 自动测试。**不启用 GitHub Pages，也不向 GPT Sites 发布更新。** 历史部署文档不代表当前工作流。
+> **当前发布方案（2026-10-28）**：GitHub 公开源码，GitHub Pages 托管网页；本地开发和真实网页验收后同步 `main`，Actions 通过测试才发布。此前“私有仓库／不启用Pages”的记录属于历史工作流。
+>
+> 网页地址：[https://sz8265493-cecil.github.io/infi-sim/](https://sz8265493-cecil.github.io/infi-sim/)（首次部署完成后可访问）。
 >
 > 规则争议以最新官方规则、FAQ 和赛事裁定为准。已实现基本行动，不代表所有交叉组合均通过验证；具体证据见[覆盖矩阵](docs/rules/EXAMPLE_EXECUTION_MATRIX.md)。
 
@@ -17,7 +19,7 @@ npm start
 # 打开 http://localhost:4173/
 ```
 
-私有仓库需要有权限的 GitHub 账号认证。不要直接双击 HTML：ES Modules 和 JSON 需要 HTTP 服务。
+公开仓库可以直接克隆。不要直接双击 HTML：ES Modules 和 JSON 需要 HTTP 服务。
 
 也可以只用 Python 启动仅本机可访问的预览：
 
@@ -55,15 +57,38 @@ npm test
 for file in dist/*.js; do node --check "$file"; done
 ```
 
-2026-10-27 本地结果：**549/549 自动测试通过，67 个网页 JS 模块语法检查通过**。另有真实 Chrome 手动操作记录，自动测试不能替代它：
+2026-10-28 本地结果：**583/583 自动测试通过，68 个网页 JS 模块语法检查通过**。另有真实 Chrome 手动操作记录，自动测试不能替代它：
 
 - [恢复、复合弹药与协调命令](docs/rules/BOOK_EXAMPLES_113.md)
 - [两份完整军表部署、双方交战、火力组解散与重组](docs/rules/BOOK_EXAMPLES_116.md)
 - [跨层区域、饱和与困难地形](docs/rules/BOOK_EXAMPLES_117.md)
 - [隐匿占位与全息直射模板](docs/rules/BOOK_EXAMPLES_118.md)
+- [本轮规则复查：23个网页实操场景与明确边界](docs/rules/BOOK_EXAMPLES_122.md)
 - [覆盖矩阵与下一步清单](docs/rules/EXAMPLE_EXECUTION_MATRIX.md)
 
 开发流程：修改源码 → 运行测试 → 在本地网页实际走完受影响流程 → 更新验证记录与已知限制 → 推送 GitHub → 检查 Actions。模块使用版本查询串，修改依赖时需保持同一模块引用版本一致，避免浏览器重复加载不同实例。
+
+## 站点资源与国内访问
+
+网页使用系统字体，不请求 Google Fonts。单位徽标、状态图标、军表 JSON 和规则模块随 `dist/` 一起发布，日常运行不依赖官方 CDN 或在线 Army 接口。旧存档中的已收录官方图片地址会在显示时映射到本地资源；未知外部图片显示问号占位，不向外站请求，也不替换单位配置。官方规则及官网链接仍保留，只有主动点击才离开本站。
+
+部署时必须上传完整 `dist/`，包括 `assets/vendor/`，不能只上传 HTML 和 JS。资源来源与 SHA-256 记录见 [LOCAL_ASSETS.json](docs/rules/LOCAL_ASSETS.json)。本地化不改变第三方素材权利，也不代表增加离线缓存或联网对战能力。
+
+## GitHub Pages 发布与更新
+
+发布源在仓库 **Settings → Pages → Build and deployment → Source** 设为 **GitHub Actions**。
+
+- `.github/workflows/test.yml` 保留 push／PR 的独立自动测试。
+- `.github/workflows/deploy-pages.yml` 在 `main` 推送或手动运行时，先执行全部测试和 JS 语法检查，再上传完整 `dist/`，最后部署到 `github-pages` 环境。失败的构建不会发布。
+- 网页为静态站点，无需数据库、后端、API密钥或付费套餐。使用仓库子路径的相对资源地址，图片／JSON／规则代码一起部署。
+- 更新流程：本地修改 → `npm test` → 本地网页实操 → 提交／推送 `main` → 查看 Actions 的 **Deploy GitHub Pages** → 验证线上入口、军表和教学流程。
+- 重新发布：Actions → Deploy GitHub Pages → Run workflow → `main`。
+- 回退：对引入问题的提交执行 `git revert` 后推送 `main`，通过检查后重新部署；不要强制推送改写历史。
+- 本地、旧GPT域名与Pages域名的浏览器存档互不共享。公开仓库和网页不上传访客的localStorage存档；当前也没有多人联网对战。
+
+## 开源许可
+
+原创程序代码使用 [MIT License](LICENSE)。官方图标、军表数据、规则及商标不随代码取得MIT许可，见 [第三方资料说明](THIRD_PARTY_NOTICES.md)。本项目继续作为非官方、非盈利的教学和推广工具。
 
 ## 工程目录
 
@@ -73,6 +98,7 @@ for file in dist/*.js; do node --check "$file"; done
 - `docs/rules/`：规则来源、学习记录、网页实操证据与覆盖矩阵。
 - `artifacts/`：本地网页验收截图，不含玩家浏览器存档。
 - `.github/workflows/test.yml`：push/PR/手动触发的自动测试，只读权限。
+- `.github/workflows/deploy-pages.yml`：测试通过后将完整`dist/`发布到GitHub Pages。
 - `MIGRATION.md`：独立托管和存档迁移；其中旧部署方案仅作历史记录。
 - `RULES_V8.md`、`README_HISTORY.md`：历史实现说明，当前覆盖范围以最新矩阵为准。
 - `.openai/hosting.json`：旧站点关联信息，不用于当前部署，也不是认证密钥。

@@ -1,9 +1,9 @@
 # Project workflow
 
-- Canonical repository: https://github.com/sz8265493-cecil/infi-sim (private).
-- Latest user instruction, 2026-10-27: organize README and publish the validated local changes to the existing private GitHub repository. Ongoing workflow: develop locally, start the local web app and manually exercise the affected flows in a real browser, then push validated changes to GitHub. Automated tests alone do not replace browser verification.
-- Retain GitHub Actions Tests for push/PR regression tests and JavaScript syntax checks.
-- GitHub stores source and versions. GitHub Pages is unpublished and the deployment workflow is removed. Do not enable automatic publishing or publish through GPT Sites without a new user request.
+- Latest user instruction, 2026-10-28: make sz8265493-cecil/infi-sim public/open source and deploy the website on GitHub Pages. This supersedes earlier instructions to keep the repository private, pause synchronization and disable Pages.
+- Canonical repository: https://github.com/sz8265493-cecil/infi-sim. Public site: https://sz8265493-cecil.github.io/infi-sim/.
+- Develop locally, manually exercise affected flows in a real browser, then sync validated changes. Automated tests alone do not replace browser verification.
+- Retain the independent Tests workflow. Pages deployment publishes complete dist/ only after tests and syntax checks pass; use GitHub Actions as the Pages source. Do not publish through GPT Sites.
 - Record what was actually exercised and any remaining limitations. Do not claim untested flows passed.
 - The user authorized sharing this private repository with GitHub account JFungx, author of JFungx/Tactical_Helper.
 - This checkout uses GitHub's canonical history. Older migration checkouts have divergent history; never force-push those.

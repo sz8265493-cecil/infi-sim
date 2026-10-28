@@ -1,8 +1,10 @@
+> 当前方案（2026-10-28）：公开仓库＋GitHub Pages，Pages Source为GitHub Actions。发布与回退说明见README；下方早期迁移过程仅作历史记录。
+
 # infi-sim 独立迁移说明
 
 ## 当前结构
 
-迁移前的旧地址由 Sites 托管，配置见 `.openai/hosting.json`，静态目录为 `dist/`。没有数据库、服务端API、账号系统或付费API密钥。HTML、JS、JSON、图片等运行文件均在 `dist/`；浏览器通过相对路径加载资源。Sites的登录／访问控制属于托管平台，不是游戏源码中的功能。样式还引用Google Fonts；加载失败时回退到系统字体，不影响游戏逻辑，必要时可改用本地字体。
+迁移前的旧地址由 Sites 托管，配置见 `.openai/hosting.json`，静态目录为 `dist/`。没有数据库、服务端API、账号系统或付费API密钥。HTML、JS、JSON、图片等运行文件均在 `dist/`；浏览器通过相对路径加载资源。Sites的登录／访问控制属于托管平台，不是游戏源码中的功能。样式已改用系统字体；单位徽标及补充状态图标也已随 assets/vendor/ 发布，不再从 Google Fonts 或官方图片 CDN 加载。必须完整上传 dist/。
 
 ## 迁移静态站
 
