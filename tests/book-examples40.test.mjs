@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as F from '../dist/combat.js?v=117';
-import * as S from '../dist/states.js?v=102';
-import {LESSONS} from '../dist/lessons.js?v=118';
+import * as F from '../dist/combat.js?v=122';
+import * as S from '../dist/states.js?v=122';
+import {LESSONS} from '../dist/lessons.js?v=122';
 const unit=(id,team,p,mods)=>({id,team,name:id,type:'LI',s:2,x:p[0],y:p[1],z:0,facing:team?90:-90,bs:13,ph:10,wip:13,arm:1,bts:0,hp:1,maxhp:1,states:[],loadout:['spitfire','cc'],...mods});
 function args(){const l=LESSONS.auditImmA165,a=unit('a',0,l.positions[0],l.overrides[0]),b=unit('b',1,l.positions[1],l.overrides[1]);return {active:a,attackPoint:a,mainTarget:'b',weapon:'spitfire',modeId:'hit',path:[a],units:[a,b],terrain:l.terrain,reactions:{b:{id:'b',action:'dodge',lof:true}}};}
 test('book p165 IMM-A example: BS13 range+3 cover-3 vs PH10-6, exactly three save tasks',()=>{const a=args(),p=F.preparePools(a,()=>.2);assert.equal(p.active.sv,13);assert.equal(p.reactions.b.sv,4);assert.equal(S.allowed(a.units[1],'reset'),false);assert.equal(S.allowed(a.units[1],'attack'),false);p.active.dice=[5,9,12,14];p.reactions.b.dice=[20];const r=F.resolveOrder({...a,pools:p,deferSaves:true});assert.equal(r.details[0].incoming.hits,3);assert.equal(r.details[0].incoming.initialCount,3);assert.equal(r.details[0].incoming.pending[0].sv,10);assert.deepEqual(r.dodgers,[]);});

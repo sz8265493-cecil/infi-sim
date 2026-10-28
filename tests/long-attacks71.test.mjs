@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import * as F from '../dist/combat.js?v=117';import * as LA from '../dist/long-attacks.js?v=71';
+import test from 'node:test';import assert from 'node:assert/strict';import * as F from '../dist/combat.js?v=122';import * as LA from '../dist/long-attacks.js?v=122';
 const a={id:'a',team:0,s:2,x:20,y:28,z:0,facing:-90,hp:1,maxhp:1,states:[],wip:13,ph:13,bs:11,loadout:['heavyFlame','grenades'],longAttack:'intuitiveAttack',ruleTurn:'1:0',bsBurstBonus:3,bsSpecialDice:1};
 const b={id:'b',team:1,s:2,x:20,y:24,z:0,facing:90,hp:3,maxhp:3,states:['camouflaged'],ph:10,mim:6};F.availableWeapons(a);
 const im=F.ARMS.heavyFlame.modes.find(m=>m.longAttack),sm=F.ARMS.grenades.modes.find(m=>m.longAttack);

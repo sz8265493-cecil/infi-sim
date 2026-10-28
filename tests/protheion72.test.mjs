@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import * as P from '../dist/protheion.js?v=73';import * as F from '../dist/combat.js?v=117';import * as K from '../dist/skills.js?v=117';
+import test from 'node:test';import assert from 'node:assert/strict';import * as P from '../dist/protheion.js?v=122';import * as F from '../dist/combat.js?v=122';import * as K from '../dist/skills.js?v=122';
 const actor=(extra={})=>({id:'a',name:'吸取者',protheion:true,hp:1,maxhp:1,states:[],...extra});
 const victim=(extra={})=>({id:'b',hp:1,maxhp:1,attribute:'VITA',states:[],...extra});
 function result(a,b,{ammo='N',hits=[1],dice=[20],execution=false}={}){let p=F.saveHits(b,hits,10,{kind:'cc',ammo,ps:5},false,()=>dice.shift()||20);p.attacker=a;p.execution=execution;return {details:[{incoming:p,outgoing:{}}]};}

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import {ARMY_EXAMPLES} from '../dist/army-examples.js';
 import {decodeArmyCode,encodeArmyCode} from '../dist/army-code.js';
 import {previewArmy,registerWeapons} from '../dist/army-import.js';
-import * as F from '../dist/combat.js?v=117';
+import * as F from '../dist/combat.js?v=122';
 import * as O from '../dist/orders.js';
 import * as P from '../dist/pregame.js';
 const previews=ARMY_EXAMPLES.map(e=>previewArmy(e.code,JSON.parse(fs.readFileSync(new URL(`../dist/assets/army-${e.factionId===201?'yujing':'103'}.json`,import.meta.url)))));

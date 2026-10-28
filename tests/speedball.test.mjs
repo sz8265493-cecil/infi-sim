@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import * as B from '../dist/speedball.js?v=48';import * as V from '../dist/saves.js?v=75';import * as S from '../dist/states.js?v=102';
-import {movementRange} from '../dist/post-move-range.js?v=47';
+import * as B from '../dist/speedball.js?v=122';import * as V from '../dist/saves.js?v=122';import * as S from '../dist/states.js?v=122';
+import {movementRange} from '../dist/post-move-range.js?v=122';
 const unit=(id,team=0,x=10,y=10,more={})=>({id,team,x,y,z:0,s:2,hp:1,maxhp:1,states:[],attribute:'VITA',ph:10,mov:4,mov2:4,arm:1,bts:0,loadout:['combi'],...more});
 const state=()=>({phase:'play',team:0,units:[unit('a')],commandTokens:[4,4],speedballTokens:[2,0],objectives:[],hvts:[]});
 test('logistics: deployment finished, initiative order, once each, one command for two tokens',()=>{const s=state();s.pregame={stage:'ready',firstTurn:1};assert.equal(B.logistics(s,0,true).can,false);assert.equal(B.logistics(s,1,true).can,true);assert.equal(s.commandTokens[1],3);assert.equal(s.speedballTokens[1],2);assert.equal(B.logistics(s,0,false).can,true);assert.equal(B.logisticsTeam(s),null);assert.equal(B.logistics(s,1,true).can,false);});

@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import * as S from '../dist/states.js?v=102';import * as X from '../dist/explode.js?v=79';import * as V from '../dist/saves.js?v=75';import * as D from '../dist/deployables.js?v=84';import {LESSONS} from '../dist/lessons.js?v=118';
+import * as S from '../dist/states.js?v=122';import * as X from '../dist/explode.js?v=122';import * as V from '../dist/saves.js?v=122';import * as D from '../dist/deployables.js?v=122';import {LESSONS} from '../dist/lessons.js?v=122';
 const pools={active:{id:'a0',dice:[],sv:0},reactions:{}};
 function scene(id){const l=LESSONS[id],base={s:2,team:0,hp:1,maxhp:1,arm:0,ph:10,states:[],attribute:'STR',explode:false};return {terrain:l.terrain,units:[...l.positions.map((p,i)=>({...base,id:i?'b0':'a0',team:i,x:p[0],y:p[1],z:p[2]||0,...l.overrides[i]})),...l.extras.map(u=>({...base,...structuredClone(u)}))]};}
 const finish=r=>{for(const p of V.allPlans(r))V.finishSaves(p,()=>20);};

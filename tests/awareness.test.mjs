@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as AW from '../dist/awareness.js?v=39';
-import * as E from '../dist/engine.js?v=117';
-import * as F from '../dist/combat.js?v=117';
-import * as M from '../dist/movement.js?v=88';
-import {LESSONS} from '../dist/lessons.js?v=118';
+import * as AW from '../dist/awareness.js?v=122';
+import * as E from '../dist/engine.js?v=122';
+import * as F from '../dist/combat.js?v=122';
+import * as M from '../dist/movement.js?v=122';
+import {LESSONS} from '../dist/lessons.js?v=122';
 const unit=(o={})=>({id:'a',name:'unit',team:0,type:'LI',s:2,x:20,y:30,z:0,facing:-90,hp:1,maxhp:1,ph:13,bs:12,cc:15,wip:13,arm:1,bts:0,mov:4,mov2:4,loadout:['combi','cc'],states:[],...o});
 test('Cautious Movement only active Long Skill; type/state restrictions are explicit',()=>{const a=unit();assert.equal(AW.cautiousDeclaration(a).can,true);assert.equal(M.isLong('cautious'),true);assert.equal(M.budget(a,{moveKind:'cautious',path:[a],stance:'keep'}),4);assert.equal(AW.cautiousDeclaration(a,{reactive:true}).can,false);assert.equal(AW.cautiousDeclaration(a,{impetuous:true}).can,false);for(const o of [{type:'TAG'},{type:'REM'},{type:'VH'},{motorcycle:true},{aerial:true},{states:['targeted']},{states:['unconscious'],hp:0}])assert.equal(AW.cautiousDeclaration(unit(o)).can,false);});
 test('Cautious endpoints suppress visible intermediate route; exposed endpoint restores normal ARO',()=>{const l=LESSONS.cautious,a=unit({x:l.positions[0][0],y:l.positions[0][1],facing:0}),b=unit({id:'b',team:1,x:32,y:23.5,facing:180});assert.ok(F.eligibility(a,l.route,[a,b],l.terrain).some(r=>r.id==='b'));assert.equal(AW.cautiousSafety(a,l.route,[a,b],l.terrain).safe,true);assert.equal(AW.cautiousSafety(a,l.route.slice(0,2),[a,b],l.terrain).safe,false);});

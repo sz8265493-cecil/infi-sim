@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import * as E from '../dist/engine.js?v=117';
+import test from 'node:test';import assert from 'node:assert/strict';import * as E from '../dist/engine.js?v=122';
 const a={id:'a',team:0,x:20,y:28,z:0,s:2,facing:-90,hp:1,states:[]},b={...a,id:'b',team:1,y:20,facing:90},block={...a,id:'wall-model',x:20,y:24,s:7};
 const scene=(u,moving=[])=>Object.assign([],{units:[a,b,u],movingIds:moving});
 test('stationary friendly/enemy cylinder blocks minimum visible patch; a side-step and altitude restore LoF',()=>{assert.equal(E.visibility(a,b,scene(block)).visible,false);assert.equal(E.visibility(a,b,scene({...block,team:1})).visible,false);assert.equal(E.visibility(a,b,scene({...block,x:22})).visible,true);assert.equal(E.visibility({...a,z:4},b,scene(block)).visible,true);});

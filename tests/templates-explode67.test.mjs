@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as E from '../dist/engine.js?v=117';
-import * as F from '../dist/combat.js?v=117';
-import * as S from '../dist/states.js?v=102';
-import * as X from '../dist/explode.js?v=79';
-import * as V from '../dist/saves.js?v=75';
+import * as E from '../dist/engine.js?v=122';
+import * as F from '../dist/combat.js?v=122';
+import * as S from '../dist/states.js?v=122';
+import * as X from '../dist/explode.js?v=122';
+import * as V from '../dist/saves.js?v=122';
 const u=(id,x,team=0,more={})=>({id,name:id,x,y:20,z:0,s:2,team,hp:1,maxhp:1,attribute:'STR',arm:0,states:[],explode:true,ph:12,...more});
 const pools={active:{id:'shooter',dice:[],sv:0},reactions:{}};
 test('circular volume includes vertical contact, rejects outside height, blocks solid scenery',()=>{

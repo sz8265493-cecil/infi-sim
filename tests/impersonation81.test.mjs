@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import * as K from '../dist/skills.js?v=117';import * as F from '../dist/combat.js?v=117';import * as P from '../dist/pregame.js?v=102';
+import * as K from '../dist/skills.js?v=122';import * as F from '../dist/combat.js?v=122';import * as P from '../dist/pregame.js?v=122';
 const u=(id,team,x,extra={})=>({id,name:id,team,x,y:20,z:0,s:2,bs:12,wip:13,ph:11,hp:1,maxhp:1,states:[],facing:team?180:0,...extra});
 const gun={kind:'bs',b:3,bands:[[48,0]],ps:7};
 test('IMP1 simultaneous Discover snapshots downgrade once; Biometric bypasses both layers',()=>{const a=u('a',0,10),b=u('b',1,15,{states:['impersonation1'],impersonation:1}),s1=K.discoverSpec(a,b,[]),s2=K.discoverSpec(a,b,[]);assert.equal(s1.sv,13);K.discoverResult(a,b,s1,8,'1:0');K.discoverResult(a,b,s2,8,'1:0');assert.equal(K.impLevel(b),2);const next=K.discoverSpec(a,b,[]);assert.equal(next.sv,16);K.discoverResult(a,b,next,8,'1:0');assert.equal(K.marker(b),false);K.enterIMP(b);const bio=K.discoverSpec({...a,biometricVisor:true},b,[]);assert.equal(bio.sv,16);K.discoverResult(a,b,bio,8,'1:0');assert.equal(K.marker(b),false);});

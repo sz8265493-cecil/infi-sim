@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import * as F from '../dist/combat.js?v=117';import * as K from '../dist/skills.js?v=117';
+import * as F from '../dist/combat.js?v=122';import * as K from '../dist/skills.js?v=122';
 const a={id:'a',name:'a',team:0,x:20,y:20,s:2,cc:20,hp:3,states:[],facing:0},b={...a,id:'b',team:1,x:20+25/25.4,facing:180};
 test('Martial Arts levels 4/5 retain their burst in ARO, profile +B does not',()=>{
  const m=F.weaponMode('cc','cc');

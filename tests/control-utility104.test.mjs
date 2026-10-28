@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as P from '../dist/peripherals.js?v=104';
-import * as D from '../dist/deployables.js?v=79';
-import * as S from '../dist/states.js?v=102';
-import * as X from '../dist/extra-actions.js?v=41';
-import * as U from '../dist/support-actions.js?v=99';
+import * as P from '../dist/peripherals.js?v=122';
+import * as D from '../dist/deployables.js?v=122';
+import * as S from '../dist/states.js?v=122';
+import * as X from '../dist/extra-actions.js?v=122';
+import * as U from '../dist/support-actions.js?v=122';
 const make=(id,extra={})=>({id,name:id,team:0,x:20,y:20,z:0,s:2,hp:1,maxhp:1,attribute:'VITA',states:[],wip:13,...extra});
 const c=make('c',{controlSpearheadId:'a'}),a=make('a',{peripheral:'control',controllerId:'c'}),b=make('b',{peripheral:'control',controllerId:'c'}),all=[c,a,b];
 test('Control restricts targeted utility only in Active Turn, independently of Attack label',()=>{

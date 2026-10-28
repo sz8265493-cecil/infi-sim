@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as S from '../dist/states.js?v=102';
-import * as EX from '../dist/explode.js?v=79';
-import * as V from '../dist/saves.js?v=75';
+import * as S from '../dist/states.js?v=122';
+import * as EX from '../dist/explode.js?v=122';
+import * as V from '../dist/saves.js?v=122';
 const unit=(id,team,x,y,extra={})=>({id,name:id,team,x,y,z:0,s:2,hp:1,maxhp:1,arm:0,bts:0,attribute:'VITA',states:[],nwi:true,dogged:true,shockImmune:true,explode:true,...extra});
 test('Three simultaneous survival decisions suppress own explosions; later wound kills NWI without recursion',()=>{
  const left=unit('left',1,12,22),spear=unit('spear',0,32,28),source=unit('source',1,32,26),units=[left,spear,source];

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as F from '../dist/combat.js?v=117';
+import * as F from '../dist/combat.js?v=122';
 const unit=(id,team,x,extra={})=>({id,name:id,team,x,y:10,z:0,s:2,facing:team?180:0,hp:1,maxhp:1,states:[],wip:13,bs:12,ph:12,arm:0,bts:0,type:'LI',hackingDevice:'HD',hackingUpgrades:['zeroPain'],...extra});
 const fixture=(activeSkill='attack',reaction='zeroPain',weapon='hack_carbonite')=>{const a=unit('a',0,10),b=unit('b',1,14);return {active:a,attackPoint:a,mainTarget:b.id,weapon,modeId:F.weaponMode(weapon).id,path:[a],reactions:{b:{id:'b',action:reaction,weapon:'hack_carbonite',modeId:'carbonite',point:a,lof:true}},units:[a,b],terrain:[],idle:activeSkill==='zeroPain',activeSkill,deferSaves:true};};
 test('Zero Pain ARO shares two animated dice, imposes -3 and cancels incoming hacking with no counter-damage',()=>{

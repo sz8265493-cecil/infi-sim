@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as F from '../dist/combat.js?v=117';
-import * as VO from '../dist/volley.js?v=117';
-import * as CO from '../dist/coordinated.js?v=51';
-import * as V from '../dist/saves.js?v=75';
+import * as F from '../dist/combat.js?v=122';
+import * as VO from '../dist/volley.js?v=122';
+import * as CO from '../dist/coordinated.js?v=122';
+import * as V from '../dist/saves.js?v=122';
 import templates from '../dist/templates.json' with {type:'json'};
 const u=(x={})=>({id:'a',team:0,x:20,y:30,z:0,s:2,bs:12,ph:12,wip:13,cc:15,arm:0,bts:0,hp:5,maxhp:5,states:[],facing:-90,loadout:['hmg','combi','lightFlame','cc'],...x});
 const args=(a,b,c)=>({active:a,attackPoint:a,mainTarget:b.id,weapon:'hmg',modeId:'hit',path:[a],units:[a,b,c].filter(Boolean),terrain:[],templates,reactions:{},activeSkill:'attack',declarations:[{actorId:a.id,targetId:b.id,weapon:'hmg',modeId:'hit',origin:a,path:[a]}]});

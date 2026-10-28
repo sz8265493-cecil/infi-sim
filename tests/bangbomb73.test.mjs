@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import * as F from '../dist/combat.js?v=117';import * as K from '../dist/skills.js?v=117';
+import test from 'node:test';import assert from 'node:assert/strict';import * as F from '../dist/combat.js?v=122';import * as K from '../dist/skills.js?v=122';
 const u={id:'a',name:'Bangbomb',team:0,s:2,x:20,y:28,z:0,hp:2,maxhp:2,states:[],facing:-90,ph:13,bangbomb:4,loadout:['combi'],bs:11};
 const rifle={id:'b',name:'Rifle',team:1,s:2,x:18,y:24,z:0,hp:1,states:[],facing:90,bs:11,loadout:['combi']},flame={...rifle,id:'c',x:22,loadout:['heavyFlame']};
 const base={active:u,attackPoint:u,mainTarget:null,weapon:'combi',modeId:'hit',path:[u],units:[u,rifle,flame],terrain:[],idle:true,activeSkill:'dodge'};

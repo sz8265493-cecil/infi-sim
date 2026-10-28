@@ -1,6 +1,6 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
 import {previewArmy} from '../dist/army-import.js';import {ARMY_EXAMPLES} from '../dist/army-examples.js';
-import * as D from '../dist/deployables.js?v=84';import * as O from '../dist/orders.js?v=102';import * as P from '../dist/peripherals.js?v=102';import * as S from '../dist/states.js?v=102';
+import * as D from '../dist/deployables.js?v=122';import * as O from '../dist/orders.js?v=122';import * as P from '../dist/peripherals.js?v=122';import * as S from '../dist/states.js?v=122';
 const catalog=JSON.parse(fs.readFileSync(new URL('../dist/assets/army-103.json',import.meta.url)));
 const actor=()=>({...structuredClone(previewArmy(ARMY_EXAMPLES[0].code,catalog).units[0]),id:'seraph',team:0,x:10,y:10,z:0});
 test('Ancillary belongs to complete Seraph profile but is absent from initial battlefield roster',()=>{const p=previewArmy(ARMY_EXAMPLES[0].code,catalog);assert.equal(p.units.length,14);assert.deepEqual(p.errors,[]);assert.equal(p.points,299);assert.equal(p.units.filter(u=>u.en==='CRABBOT').length,0);assert.equal(p.units[0].ancillaryProfiles[0].s,1);assert.equal(p.units[0].ancillaryProfiles[0].specialist,true);});
@@ -9,7 +9,7 @@ test('Ancillary can be deployed along active route but reactive placement uses c
 test('one Ancillary cannot be duplicated or reloaded and does not mark controller Unloaded',()=>{let a=actor();a=D.consume(a,'ancillary').unit;assert.equal(D.remaining(a,'ancillary'),0);assert.equal(S.has(a,'unloaded'),false);assert.equal(D.canReload(a,[{...a,id:'baggage',baggage:true}]).can,false);assert.equal(D.declaration(a,'ancillary').can,false);});
 test('Ancillary shares controller group and order without generating its own',()=>{const a=actor(),b=D.entity(a,'ancillary',{x:12,y:10},1),s={units:[a,b],orders:[0,0],lieutenantOrders:[0,0]};O.refresh(s,0);assert.equal(s.groupOrders[0][1],1);assert.equal(O.spend(s,b,'regular'),true);assert.equal(s.groupOrders[0][1],0);assert.equal(P.apportionedPoints(a,s.units)+P.apportionedPoints(b,s.units),74);});
 test('controller Null or Isolated disconnects Ancillary at order conclusion',()=>{for(const state of ['unconscious','isolated']){const a=actor(),b=D.entity(a,'ancillary',{x:12,y:10},1);a.states=[state];P.conclude([a,b]);assert.equal(S.has(b,'disconnected'),true);assert.equal(S.allowed(b,'move'),false);assert.deepEqual(O.sources({units:[a,b]},b),[]);}});
-import * as F from '../dist/combat.js?v=117';
+import * as F from '../dist/combat.js?v=122';
 test('enemy may target activated Ancillary: saves and damage belong to it, not its controller',()=>{
  const a={id:'a',team:0,x:10,y:10,z:0,s:2,hp:3,maxhp:3,arm:0,bs:12,ph:10,wip:12,cc:14,facing:0,weapon:'combi',states:[]},p={...a,id:'p',x:12,peripheral:'ancillary',controllerId:'a',noOrders:true,loadout:[],armyLocked:true},b={...a,id:'b',team:1,x:16,facing:180};
  const args={active:a,attackPoint:a,mainTarget:'b',weapon:'combi',modeId:'hit',path:[a],reactions:{b:{id:'b',targetId:'p',action:'attack',weapon:'combi',modeId:'hit',point:{x:12,y:10,z:0},lof:true}},units:[a,p,b],terrain:[],deferSaves:true};

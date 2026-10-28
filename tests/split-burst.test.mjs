@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as F from '../dist/combat.js?v=117';
+import * as F from '../dist/combat.js?v=122';
 const u=(x={})=>({id:'a',team:0,x:20,y:30,z:0,s:2,bs:14,ph:10,cc:14,wip:13,arm:1,bts:0,hp:3,maxhp:3,states:[],facing:-90,loadout:['hmg','combi','cc'],...x});
 function fixture(){const a=u(),b=u({id:'b',team:1,y:20,facing:90}),c=u({id:'c',team:1,x:25,y:20,facing:90,mim:3});return {active:a,attackPoint:a,mainTarget:'b',weapon:'hmg',modeId:'hit',path:[a],reactions:Object.fromEntries([b,c].map(v=>[v.id,{id:v.id,action:'attack',weapon:'combi',modeId:'hit',point:a,lof:true}])),units:[a,b,c],terrain:[],allocations:[{targetId:'b',burst:2},{targetId:'c',burst:2}]};}
 test('active full B is mandatory: B4 cannot declare or resolve 2+1, while 2+2 and 4 pass',()=>{const a=fixture(),short={...a,allocations:[{targetId:'b',burst:2},{targetId:'c',burst:1}]};const check=F.validateAllocations(short);assert.equal(check.can,false);assert.equal(check.total,4);assert.equal(check.used,3);assert.match(check.reason,/3\/4/);assert.throws(()=>F.preparePools(short),/完整B/);assert.equal(F.validateAllocations(a).can,true);assert.equal(F.validateAllocations({...a,allocations:[{targetId:'b',burst:4}]}).can,true);});

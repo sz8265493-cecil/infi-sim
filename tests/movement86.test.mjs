@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import * as E from '../dist/engine.js?v=117';import * as M from '../dist/movement.js?v=88';
+import test from 'node:test';import assert from 'node:assert/strict';import * as E from '../dist/engine.js?v=122';import * as M from '../dist/movement.js?v=122';
 const u={id:'u',team:0,s:2,x:20.5,y:24,z:4,mov:4,hp:1,states:[]};
 const bridge=[{x:18,y:22,w:3,h:4,height:4,kind:'building'},{x:21,y:24-25/101.6,w:2,h:25/50.8,bottom:3.7,height:4,kind:'building'},{x:23,y:22,w:3,h:4,height:4,kind:'building'}];
 const stairs=w=>[{x:20,y:22,w,h:4,height:1.2,kind:'building'},{x:20+w,y:22,w,h:4,height:2.4,kind:'building'},{x:20+2*w,y:22,w:4,h:4,height:3.6,kind:'building'}];

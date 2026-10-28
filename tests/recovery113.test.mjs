@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as R from '../dist/recovery-resolution.js';
-import * as F from '../dist/combat.js?v=117';
-import * as H from '../dist/hacking.js?v=82';
+import * as F from '../dist/combat.js?v=122';
+import * as H from '../dist/hacking.js?v=122';
 const u=(id,extra={})=>({id,name:id,team:0,x:20,y:20,z:0,s:2,facing:90,hp:1,maxhp:1,states:[],wip:13,...extra});
 test('same-order recovery freezes attack qualification but leaves restored health available for damage',()=>{
  const patient=u('p',{hp:0,states:['unconscious'],prone:true}),other=u('x'),units=[patient,other],order={supports:[{kind:'gizmokit',targetId:'p'}]},terrain=[];terrain.zones=[{kind:'smoke',x:20,y:20,r:2}];terrain.movingIds=['x'];

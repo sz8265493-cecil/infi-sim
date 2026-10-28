@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as P from '../dist/peripherals.js?v=106';
-import * as H from '../dist/hacking.js?v=82';
+import * as P from '../dist/peripherals.js?v=122';
+import * as H from '../dist/hacking.js?v=122';
 const unit=(id,extra={})=>({id,name:id,team:0,x:20,y:20,s:2,z:0,hp:1,maxhp:1,states:[],wip:13,hackingDevice:'EVO',...extra});
 const c=unit('c',{controlSpearheadId:'a'}),a=unit('a',{x:24,peripheral:'control',controllerId:'c'}),b=unit('b',{x:28,peripheral:'control',controllerId:'c'}),r=unit('r',{x:20,y:24,type:'REM',hackingDevice:null}),r2=unit('r2',{x:24,y:24,type:'REM',hackingDevice:null});
 test('Targeted support respects active Control role and own equipment',()=>{for(const id of ['assistedFire','enhancedReaction','fairyDust']){assert.equal(P.programRestriction(a,[c,a,b],id),'');assert.match(P.programRestriction(b,[c,a,b],id),/先锋/);assert.notEqual(P.programRestriction({...a,hackingDevice:null},[c,a,b],id),'');}assert.equal(P.programRestriction(b,[c,a,b],'controlledJump'),'');});

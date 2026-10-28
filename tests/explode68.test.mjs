@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import * as S from '../dist/states.js?v=102';import * as V from '../dist/saves.js?v=75';import * as X from '../dist/explode.js?v=79';import {applyMineAttacks} from '../dist/mine-resolution.js?v=79';
+import * as S from '../dist/states.js?v=122';import * as V from '../dist/saves.js?v=122';import * as X from '../dist/explode.js?v=122';import {applyMineAttacks} from '../dist/mine-resolution.js?v=122';
 const u=(id,x=20,team=0,more={})=>({id,name:id,x,y:20,z:0,s:2,team,hp:1,maxhp:1,attribute:'STR',arm:0,ph:12,states:[],explode:true,...more});
 const pools={active:{id:'a',dice:[],sv:0},reactions:{}};
 test('Shock immunity accepts Army uppercase and titlecase, still loses one Wound',()=>{for(const name of ['SHOCK','Shock']){const n=u('a',20,0,{attribute:'VITA',nwi:true,immunities:[name]});const p=V.planSaves(n,[-1],0,{ps:7,ammo:'SHOCK'},false);V.finishSaves(p,()=>20);S.apply(n,p.damage,p.effects);assert.equal(n.hp,0);assert.deepEqual(S.pendingSurvival(n),['nwi']);S.chooseSurvival(n,'nwi');assert.equal(X.pending([n]).length,0);S.apply(n,1);assert.ok(S.has(n,'dead'));}});

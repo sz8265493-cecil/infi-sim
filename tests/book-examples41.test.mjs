@@ -1,16 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import * as F from '../dist/combat.js?v=117';
-import * as E from '../dist/engine.js?v=117';
-import * as M from '../dist/movement.js?v=88';
-import * as U from '../dist/support-actions.js?v=99';
-import * as X from '../dist/extra-actions.js?v=46';
-import * as S from '../dist/states.js?v=102';
-import * as V from '../dist/saves.js?v=75';
-import {applyMineAttacks} from '../dist/mine-resolution.js?v=79';
-import {LESSONS} from '../dist/lessons.js?v=118';
-import {skillResultsHTML} from '../dist/skill-roll-ui.js?v=45';
+import * as F from '../dist/combat.js?v=122';
+import * as E from '../dist/engine.js?v=122';
+import * as M from '../dist/movement.js?v=122';
+import * as U from '../dist/support-actions.js?v=122';
+import * as X from '../dist/extra-actions.js?v=122';
+import * as S from '../dist/states.js?v=122';
+import * as V from '../dist/saves.js?v=122';
+import {applyMineAttacks} from '../dist/mine-resolution.js?v=122';
+import {LESSONS} from '../dist/lessons.js?v=122';
+import {skillResultsHTML} from '../dist/skill-roll-ui.js?v=122';
 
 const unit=(id,team,p,mods={})=>({id,team,name:id,type:'LI',s:2,x:p[0],y:p[1],z:p[2]||0,facing:team?90:-90,bs:11,cc:15,ph:10,wip:13,mov:4,mov2:4,arm:1,bts:0,attribute:'VITA',hp:1,maxhp:1,states:[],loadout:['combi','cc'],...mods});
 const scene=key=>{const l=LESSONS[key];return {l,units:[unit('a0',0,l.positions[0],l.overrides[0]),unit('b0',1,l.positions[1],l.overrides[1]),...(l.extras||[]).map(v=>unit(v.id,v.team,[v.x,v.y,v.z],v))]};};

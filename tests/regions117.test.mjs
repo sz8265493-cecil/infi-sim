@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import * as E from '../dist/engine.js?v=117';import * as F from '../dist/combat.js?v=117';import * as M from '../dist/terrain-rules.js?v=117';import {LESSONS} from '../dist/lessons.js?v=118';
+import * as E from '../dist/engine.js?v=122';import * as F from '../dist/combat.js?v=122';import * as M from '../dist/terrain-rules.js?v=122';import {LESSONS} from '../dist/lessons.js?v=122';
 const unit=(id,team,extra={})=>({id,team,name:id,s:2,x:20,y:team?20:28,z:4,facing:team?90:-90,bs:12,ph:12,hp:5,maxhp:5,states:[],...extra});
 for(const id of ['smokeDeck117','smokeOpening117','eclipseDeck117','eclipseOpening117'])test(id+' applies the same floor geometry to visibility and modifiers',()=>{const l=LESSONS[id],t=structuredClone(l.terrain);t.zones=l.zones;const a=unit('a',0,{msv:1}),b=unit('b',1);const sp=F.attackSpec(a,b,F.weaponMode('combi','hit'),t);assert.equal(sp.can,id!=='eclipseOpening117');if(sp.can)assert.equal(sp.sv,id==='smokeOpening117'?9:15);});
 test('saturation reduces each allocated burst after 2+2, preserves SD and does not stack',()=>{
