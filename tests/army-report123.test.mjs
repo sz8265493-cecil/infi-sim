@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {previewArmy} from '../dist/army-import.js';
+import {ARMY_EXAMPLES} from '../dist/army-examples.js';
+import {armyInspectionReport} from '../dist/army-report.js';
+const catalog=JSON.parse(fs.readFileSync(new URL('../dist/assets/army-yujing.json',import.meta.url)));
+const fixture=ARMY_EXAMPLES.find(e=>e.name.includes('玉京'));
+test('self-use report preserves groups, exact IDs, Lieutenant and data provenance',()=>{const p=previewArmy(fixture.code,catalog),report=armyInspectionReport(p,catalog);assert.match(report,/不是给对手的公开军表/);assert.ok(report.includes(catalog.version));assert.match(report,/战斗组 1 · 原始条目 9/);assert.match(report,/战斗组 2 · 原始条目 6/);assert.match(report,/孙子 · 尉官/);for(const u of p.units)assert.ok(report.includes([u.armyRef.unitId,u.armyRef.groupId,u.armyRef.optionId].join('/')));assert.equal(p.units.length,15);});
+test('report does not hide unresolved entries or turn failed checks into passed checks',()=>{const p=previewArmy(fixture.code,catalog);p.units.splice(0,1);p.errors=['G1 #1：无法精确匹配'];p.warnings=['示例技能尚未覆盖'];const report=armyInspectionReport(p,catalog);assert.match(report,/存在错误，禁止导入/);assert.match(report,/#1 .*未匹配或不支持；未自动替换/);assert.ok(report.includes(p.errors[0]));assert.ok(report.includes(p.warnings[0]));});

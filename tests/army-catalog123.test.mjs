@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {createCatalogLoader,validateCatalog} from '../dist/army-catalog.js';
+const catalog=id=>JSON.parse(fs.readFileSync(new URL(`../dist/assets/${id===201?'army-yujing':'army-103'}.json`,import.meta.url)));
+const response=data=>({ok:true,json:async()=>data});
+test('both shipped faction datasets pass version and shape checks',()=>{for(const id of [201,103])assert.equal(validateCatalog(catalog(id),id).factionId,id);});
+test('concurrent consumers share one request and warm cache makes no further request',async()=>{let n=0,release;const load=createCatalogLoader(()=>{n++;return new Promise(r=>release=r);});const a=load(201),b=load(201);assert.equal(a,b);await Promise.resolve();release(response(catalog(201)));assert.equal(await a,await b);await load(201);assert.equal(n,1);});
+test('failed request can be retried without a poisoned promise',async()=>{let n=0;const load=createCatalogLoader(async()=>{if(++n===1)throw Error('offline');return response(catalog(201));});await assert.rejects(load(201),/offline/);assert.equal((await load(201)).factionId,201);assert.equal(n,2);});
+test('wrong faction and malformed collections never enter cache',async()=>{for(const bad of [catalog(103),{...catalog(201),entries:[]},{...catalog(201),version:''}]){let n=0;const load=createCatalogLoader(async()=>response(++n===1?bad:catalog(201)));await assert.rejects(load(201));assert.equal((await load(201)).factionId,201);assert.equal(n,2);}});
+test('HTTP errors remain visible and each faction has independent cache',async()=>{const paths=[];const load=createCatalogLoader(async path=>{paths.push(path);return path.includes('103')?{ok:false,status:503}:response(catalog(201));});await load(201);await assert.rejects(load(103),/503/);await load(201);assert.equal(paths.length,2);await assert.rejects(load(999),/不支持/);assert.equal(paths.length,2);});
+test('timeout aborts a hung request, ignores late data and permits retry',async()=>{let n=0,firstSignal,late;const load=createCatalogLoader((_,opts)=>{n++;if(n===1){firstSignal=opts.signal;return new Promise(r=>late=r);}return Promise.resolve(response(catalog(201)));},{timeoutMs:10});await assert.rejects(load(201),/超时/);assert.equal(firstSignal.aborted,true);late(response(catalog(103)));assert.equal((await load(201)).factionId,201);assert.equal(n,2);});
