@@ -6,4 +6,4 @@
 - Retain the independent Tests workflow. Pages deployment publishes complete dist/ only after tests and syntax checks pass; use GitHub Actions as the Pages source. Do not publish through GPT Sites.
 - Record what was actually exercised and any remaining limitations. Do not claim untested flows passed.
 - The user authorized sharing this private repository with GitHub account JFungx, author of JFungx/Tactical_Helper.
-- This checkout uses GitHub's canonical history. Older migration checkouts have divergent history; never force-push those.
+- This checkout's local Git history differs from browser-created GitHub commits even when file contents match. Never force-push. Reconcile history safely before CLI pushes, or sync validated files through the authenticated browser.

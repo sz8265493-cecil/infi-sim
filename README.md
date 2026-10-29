@@ -4,7 +4,7 @@ Infinity N5 的非官方二维战术沙盘，用于非盈利的规则测试、�
 
 > **当前发布方案（2026-10-28）**：GitHub 公开源码，GitHub Pages 托管网页；本地开发和真实网页验收后同步 `main`，Actions 通过测试才发布。此前“私有仓库／不启用Pages”的记录属于历史工作流。
 >
-> 网页地址：[https://sz8265493-cecil.github.io/infi-sim/](https://sz8265493-cecil.github.io/infi-sim/)（首次部署完成后可访问）。
+> 网页地址：[https://sz8265493-cecil.github.io/infi-sim/](https://sz8265493-cecil.github.io/infi-sim/)（已上线）。
 >
 > 规则争议以最新官方规则、FAQ 和赛事裁定为准。已实现基本行动，不代表所有交叉组合均通过验证；具体证据见[覆盖矩阵](docs/rules/EXAMPLE_EXECUTION_MATRIX.md)。
 
@@ -111,3 +111,7 @@ for file in dist/*.js; do node --check "$file"; done
 - [官方 Army](https://infinityuniverse.com/army/)
 
 本项目与 Corvus Belli 无隶属关系，非官方授权产品。游戏名称、商标、图标、军表数据及其他第三方素材的权利归各自权利人。代码仓库的访问权限不构成这些素材的再授权；本工具不替代官方规则或赛事裁定。
+
+### 军表导入与核对报告
+
+导入预览会显示实际匹配的资料版本和日期。支持下载含完整配置的自用核对报告；其中保留尉官等私人信息，不适合直接交给对手。资料加载失败可重试；关闭窗口或修改军表/队伍后旧预览立即失效。实现与实际验收记录见[参考项目学习记录](docs/TACTICAL_HELPER_STUDY.md)。
